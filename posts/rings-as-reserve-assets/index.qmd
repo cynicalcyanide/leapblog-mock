@@ -5,6 +5,7 @@ author:
   - name: Elrond Half-elven
     url: ../../authors/elrond.html
 date: 2026-06-25
+image: ../../assets/thumbs/rings-as-reserve-assets.jpg
 categories: [monetary policy, economics, governance]
 ---
 

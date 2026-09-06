@@ -5,6 +5,7 @@ author:
   - name: Éowyn of Rohan
     url: ../../authors/eowyn.html
 date: 2026-05-20
+image: ../../assets/thumbs/grey-havens-exit.jpg
 categories: [labour, economics, policy]
 ---
 

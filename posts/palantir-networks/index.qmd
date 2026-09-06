@@ -5,6 +5,7 @@ author:
   - name: Gandalf the Grey
     url: ../../authors/gandalf.html
 date: 2026-07-08
+image: ../../assets/thumbs/palantir-networks.jpg
 categories: [infrastructure, governance, information]
 ---
 
