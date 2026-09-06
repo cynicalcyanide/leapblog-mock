@@ -222,6 +222,30 @@ ul.task-list li input[type="checkbox"] {
 Grey, Gandalf the. 2026. <span>“The Ecology of Middle-Earth: Old-Growth
 Governance from Fangorn to Mirkwood.”</span> August 18. <a href="https://cynicalcyanide.github.io/leapblog-mock/posts/ecology-of-middle-earth/">https://cynicalcyanide.github.io/leapblog-mock/posts/ecology-of-middle-earth/</a>.
 </div></div></section></div></main> <!-- /main -->
+<div id="leap-comments" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #e4e0d5;">
+  <h2>Comments</h2>
+  <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="CUSDIS_APP_ID_PLACEHOLDER" data-page-id="" data-page-url="" data-page-title="">
+  </div>
+</div>
+<script>
+  (function () {
+    // Move the comments block into the article body (an include-after-body
+    // lands at the end of <body>, below the footer, which is not where
+    // readers expect comments).
+    var holder = document.getElementById("leap-comments");
+    var main = document.getElementById("quarto-document-content");
+    if (main && holder) { main.appendChild(holder); }
+    var t = document.getElementById("cusdis_thread");
+    t.setAttribute("data-page-id", location.pathname);
+    t.setAttribute("data-page-url", location.href);
+    t.setAttribute("data-page-title", document.title);
+    var s = document.createElement("script");
+    s.src = "https://cusdis.com/js/cusdis.es.js";
+    s.async = true;
+    s.defer = true;
+    document.body.appendChild(s);
+  })();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -627,35 +651,6 @@ Governance from Fangorn to Mirkwood.”</span> August 18. <a href="https://cynic
     }
   });
   </script>
-<input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
-<script>
-  function loadGiscus() {
-    // Function to get the theme based on body class
-    const getTheme = () => {
-      let baseTheme = document.getElementById('giscus-base-theme').value;
-      let altTheme = document.getElementById('giscus-alt-theme').value;
-      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
-    };
-    const script = document.createElement("script");
-    script.src = "https://giscus.app/client.js";
-    script.async = true;
-    script.dataset.repo = "cynicalcyanide/leapblog-mock";
-    script.dataset.repoId = "R_kgDOUQhT1A";
-    script.dataset.category = "Announcements";
-    script.dataset.categoryId = "DIC_kwDOUQhT1M4DFBlv";
-    script.dataset.mapping = "pathname";
-    script.dataset.reactionsEnabled = "1";
-    script.dataset.emitMetadata = "0";
-    script.dataset.inputPosition = "top";
-    script.dataset.theme = getTheme();
-    script.dataset.lang = "en";
-    script.crossOrigin = "anonymous";
-    // Append the script to the desired div instead of at the end of the body
-    document.getElementById("quarto-content").appendChild(script);
-  }
-  loadGiscus();
-</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
