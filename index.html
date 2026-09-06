@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Articles – The Leap Blog</title>
+<title>The Leap Journal</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -44,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-5290e38513f5d2bb2e11f1869da02659.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-40c7b7b19bb5a407550c3ca0508abdb3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-83af69a385b6a621ff475bd6e89664cd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-afb1f8e1521e159105aa23a550156237.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,20 +77,76 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-hero .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-description','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-engines','listing-language','listing-citation','listing-title','listing-description','listing-author','listing-date','listing-categories','listing-image','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-code-fold','listing-code-summary','listing-bibliography','listing-link-citations',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-categories"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-engines","listing-language","listing-citation","listing-title","listing-description","listing-author","listing-date","listing-categories","listing-image","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-code-fold","listing-code-summary","listing-bibliography","listing-link-citations"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-hero'] = new List('listing-hero', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-events .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-engines','listing-language','listing-title','listing-description','listing-date','listing-toc','listing-path','listing-outputHref','listing-date-modified','listing-author','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-engines","listing-language","listing-title","listing-description","listing-date","listing-toc","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-events'] = new List('listing-events', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-article-grid .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-engines','listing-language','listing-citation','listing-title','listing-description','listing-author','listing-date','listing-categories','listing-image','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-code-fold','listing-code-summary','listing-bibliography','listing-link-citations',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-engines","listing-language","listing-citation","listing-title","listing-description","listing-author","listing-date","listing-categories","listing-image","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-code-fold","listing-code-summary","listing-bibliography","listing-link-citations"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-article-grid'] = new List('listing-article-grid', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -134,12 +190,10 @@ window.Quarto = {
 };
 </script>
 
-<link rel="alternate" type="application/rss+xml" title="The Leap Blog" href="index.xml" data-external="1"><meta property="og:title" content="Articles – The Leap Blog">
-<meta property="og:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/lembas.svg">
-<meta property="og:site_name" content="The Leap Blog">
-<meta name="twitter:title" content="Articles – The Leap Blog">
-<meta name="twitter:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/lembas.svg">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="The Leap Journal">
+<meta property="og:site_name" content="The Leap Journal">
+<meta name="twitter:title" content="The Leap Journal">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -150,7 +204,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">The Leap Blog</span>
+    <span class="navbar-title">The Leap Journal</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -186,272 +240,204 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="YmVoYXZpb3VyYWwlMjBlY29ub21pY3M=">behavioural economics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YQ==">data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWNvbG9neQ==">ecology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWNvbm9taWNz">economics <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Z292ZXJuYW5jZQ==">governance <span class="quarto-category-count">(2)</span></div><div class="category" data-category="aGlzdG9yeQ==">history <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW5mcmFzdHJ1Y3R1cmU=">infrastructure <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW5zdGl0dXRpb25z">institutions <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGFib3Vy">labour <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bW9uZXRhcnklMjBwb2xpY3k=">monetary policy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cG9saWN5">policy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHN5Y2hvbG9neQ==">psychology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c3VwcGx5JTIwY2hhaW5z">supply chains <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Articles</h1>
+
+
+
+<div id="listing-hero" class="quarto-listing quarto-listing-container-custom">
+<a href="./posts/supply-chains-of-middle-earth/index.html" class="leap-hero-link">
+<div class="leap-hero">
+<div class="leap-hero-image" style="background-image:url('/assets/thumbs/lembas.svg')">
+
 </div>
-
-
-
-<div class="quarto-title-meta column-page-left">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-date-sort" data-direction="asc">
-        Date - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Date - Newest
-      </option>
-      <option value="listing-title" data-direction="asc">
-        Title
-      </option>
-      <option value="listing-author" data-direction="asc">
-        Author
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+<div class="leap-hero-body">
+<div class="leap-kicker">
+Latest article
 </div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="c3VwcGx5JTIwY2hhaW5zJTJDZWNvbm9taWNzJTJDZGF0YQ==" data-listing-date-sort="1788220800000" data-listing-file-modified-sort="1788730617241" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="625">
-<div class="thumbnail"><a href="./posts/supply-chains-of-middle-earth/index.html" class="no-external">
-
-<img loading="lazy" src="./assets/thumbs/lembas.svg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/supply-chains-of-middle-earth/index.html" class="no-external">Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse</a>
+<h2 class="leap-hero-title anchored">
+Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse
+</h2>
+<div class="leap-byline">
+Words by <strong>Samwise Gamgee</strong>
+</div>
+<p class="leap-hero-desc">
+One bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output.
+</p>
+<div class="leap-readmore">
+Read more →
+</div>
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">supply chains</span><span class="leap-cat">economics</span><span class="leap-cat">data</span>
+</div>
+</div>
+</a><p><a href="./posts/supply-chains-of-middle-earth/index.html" class="leap-hero-link"></a></p>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+<section id="announcements" class="level2 leap-section-heading">
+<h2 class="leap-section-heading anchored" data-anchor-id="announcements">Announcements</h2>
+<div class="leap-mid-row">
+<div id="listing-events" class="quarto-listing quarto-listing-container-custom">
+<div class="leap-events">
+<a class="leap-event-main" href="./announcements/events/council-of-elrond-3025.html">
+<div class="leap-kicker">
+Announcement
+</div>
+<h3 class="anchored">
+Call for papers: Council of Elrond 3025 — Annual Conference on Ring Disposal Policy
 </h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3VwcGx5JTIwY2hhaW5z'); return false;">supply chains</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbm9taWNz'); return false;">economics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YQ=='); return false;">data</div>
-
+<p>
+Rivendell, 25 October. Theme: ‘Credible commitment mechanisms for the destruction of systemically important assets.’ Nine discussant slots; walking shoes required.
+</p>
+<div class="leap-readmore">
+Details →
 </div>
-<div class="delink listing-description"><a href="./posts/supply-chains-of-middle-earth/index.html" class="no-external">
-<p>One bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/supply-chains-of-middle-earth/index.html" class="no-external">
-<div class="listing-date">
-Sep 1, 2026
-</div>
-<div class="listing-author">
-Samwise Gamgee
-</div>
-<div class="listing-reading-time">4 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="ZWNvbG9neSUyQ2dvdmVybmFuY2UlMkNpbnN0aXR1dGlvbnM=" data-listing-date-sort="1787011200000" data-listing-file-modified-sort="1788730617241" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="354">
-<div class="thumbnail"><a href="./posts/ecology-of-middle-earth/index.html" class="no-external">
-
-<img loading="lazy" src="./assets/thumbs/ecology.svg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/ecology-of-middle-earth/index.html" class="no-external">The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbG9neQ=='); return false;">ecology</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z292ZXJuYW5jZQ=='); return false;">governance</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5zdGl0dXRpb25z'); return false;">institutions</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/ecology-of-middle-earth/index.html" class="no-external">
-<p>Forests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/ecology-of-middle-earth/index.html" class="no-external">
-<div class="listing-date">
-Aug 18, 2026
-</div>
-<div class="listing-author">
-Gandalf the Grey
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="cHN5Y2hvbG9neSUyQ2JlaGF2aW91cmFsJTIwZWNvbm9taWNz" data-listing-date-sort="1784678400000" data-listing-file-modified-sort="1788730617241" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
-<div class="thumbnail"><a href="./posts/psychology-of-gollum/index.html" class="no-external">
-
-<img loading="lazy" src="./assets/thumbs/gollum.svg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/psychology-of-gollum/index.html" class="no-external">The Psychology of Gollum: A Two-Agent Bargaining Model of the Self</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHN5Y2hvbG9neQ=='); return false;">psychology</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YmVoYXZpb3VyYWwlMjBlY29ub21pY3M='); return false;">behavioural economics</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/psychology-of-gollum/index.html" class="no-external">
-<p>Sméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/psychology-of-gollum/index.html" class="no-external">
-<div class="listing-date">
-Jul 22, 2026
-</div>
-<div class="listing-author">
-Elrond Half-elven
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="bGFib3VyJTJDZWNvbm9taWNzJTJDcG9saWN5" data-listing-date-sort="1781049600000" data-listing-file-modified-sort="1788730617241" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="277">
-<div class="thumbnail"><a href="./posts/shieldmaidens-labour-market/index.html" class="no-external">
-
-<img loading="lazy" src="./assets/thumbs/shieldmaiden.svg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/shieldmaidens-labour-market/index.html" class="no-external">Shieldmaidens and the Rohirrim Labour Market</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bGFib3Vy'); return false;">labour</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbm9taWNz'); return false;">economics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cG9saWN5'); return false;">policy</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/shieldmaidens-labour-market/index.html" class="no-external">
-<p>Rohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/shieldmaidens-labour-market/index.html" class="no-external">
-<div class="listing-date">
-Jun 10, 2026
-</div>
-<div class="listing-author">
-Éowyn of Rohan
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="aW5mcmFzdHJ1Y3R1cmUlMkNlY29ub21pY3MlMkNnb3Zlcm5hbmNl" data-listing-date-sort="1777939200000" data-listing-file-modified-sort="1788730617241" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="307">
-<div class="thumbnail"><a href="./posts/eagles-transport-infrastructure/index.html" class="no-external">
-
-<img loading="lazy" src="./assets/thumbs/eagles.svg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/eagles-transport-infrastructure/index.html" class="no-external">Eagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mcmFzdHJ1Y3R1cmU='); return false;">infrastructure</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbm9taWNz'); return false;">economics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z292ZXJuYW5jZQ=='); return false;">governance</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/eagles-transport-infrastructure/index.html" class="no-external">
-<p>The Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/eagles-transport-infrastructure/index.html" class="no-external">
-<div class="listing-date">
-May 5, 2026
-</div>
-<div class="listing-author">
-Gandalf the Grey
-</div>
-<div class="listing-reading-time">2 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="bW9uZXRhcnklMjBwb2xpY3klMkNlY29ub21pY3MlMkNoaXN0b3J5" data-listing-date-sort="1776124800000" data-listing-file-modified-sort="1788730617241" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="411">
-<div class="thumbnail"><a href="./posts/dragon-hoards-monetary-policy/index.html" class="no-external">
-
-<img loading="lazy" src="./assets/thumbs/smaug.svg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/dragon-hoards-monetary-policy/index.html" class="no-external">Dragon Hoards as Monetary Policy: Smaug and the Deflationary Trap</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bW9uZXRhcnklMjBwb2xpY3k='); return false;">monetary policy</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbm9taWNz'); return false;">economics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aGlzdG9yeQ=='); return false;">history</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/dragon-hoards-monetary-policy/index.html" class="no-external">
-<p>When a single actor withdraws a region’s entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/dragon-hoards-monetary-policy/index.html" class="no-external">
-<div class="listing-date">
-Apr 14, 2026
-</div>
-<div class="listing-author">
-Bilbo Baggins
-</div>
-<div class="listing-reading-time">3 min</div>
-</a>
-</div>
+</a><p><a class="leap-event-main" href="./announcements/events/council-of-elrond-3025.html"></a></p>
+<div class="leap-event-rest">
+<a class="leap-event-item" href="./announcements/events/entmoot-3026.html"><span>EntMoot 3026 — registration open</span><span>→</span></a><a class="leap-event-item" href="./announcements/events/mordor-industrial-policy-summit.html"><span>Mordor Industrial Policy Summit — venue changed</span><span>→</span></a><a class="leap-event-item" href="./announcements/events/pipeweed-futures-workshop.html"><span>Workshop: Pipe-weed Futures and Commodity Markets in the Southfarthing</span><span>→</span></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+<!-- Subscribe box: front-end only for now. When the newsletter phase lands
+     (listmonk), point the form action at its /subscription endpoint. -->
+<div class="leap-subscribe">
+  <h3 class="anchored">Get new articles by owl… or email</h3>
+  <p>Every new article, straight to your inbox. No spam, no forwarding to Mordor.</p>
+  <form id="leap-subscribe-form">
+    <input type="email" name="email" placeholder="you@bagend.me" required="" aria-label="Email address">
+    <button type="submit">Subscribe</button>
+  </form>
+  <script>
+    document.getElementById("leap-subscribe-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      this.innerHTML = '<div class="leap-subscribe-done">Thanks! Subscriptions go live when the newsletter launches &mdash; this mock just says hello.</div>';
+    });
+  </script>
+</div>
+</div>
+</section>
+<section id="all-articles" class="level2 leap-section-heading">
+<h2 class="leap-section-heading anchored" data-anchor-id="all-articles">All articles</h2>
+<div id="listing-article-grid" class="quarto-listing quarto-listing-container-custom">
+<div class="leap-grid">
+<a class="leap-card" href="./posts/ecology-of-middle-earth/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood
+</h3>
+<div class="leap-byline">
+Words by <strong>Gandalf the Grey</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+Forests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">ecology</span><span class="leap-cat">governance</span>
+</div>
+</a><p><a class="leap-card" href="./posts/ecology-of-middle-earth/index.html"></a></p>
+<a class="leap-card" href="./posts/psychology-of-gollum/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+The Psychology of Gollum: A Two-Agent Bargaining Model of the Self
+</h3>
+<div class="leap-byline">
+Words by <strong>Elrond Half-elven</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+Sméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">psychology</span><span class="leap-cat">behavioural economics</span>
+</div>
+</a><p><a class="leap-card" href="./posts/psychology-of-gollum/index.html"></a></p>
+<a class="leap-card" href="./posts/shieldmaidens-labour-market/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+Shieldmaidens and the Rohirrim Labour Market
+</h3>
+<div class="leap-byline">
+Words by <strong>Éowyn of Rohan</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+Rohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">labour</span><span class="leap-cat">economics</span>
+</div>
+</a><p><a class="leap-card" href="./posts/shieldmaidens-labour-market/index.html"></a></p>
+<a class="leap-card" href="./posts/eagles-transport-infrastructure/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+Eagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere
+</h3>
+<div class="leap-byline">
+Words by <strong>Gandalf the Grey</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+The Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">infrastructure</span><span class="leap-cat">economics</span>
+</div>
+</a><p><a class="leap-card" href="./posts/eagles-transport-infrastructure/index.html"></a></p>
+<a class="leap-card" href="./posts/dragon-hoards-monetary-policy/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+Dragon Hoards as Monetary Policy: Smaug and the Deflationary Trap
+</h3>
+<div class="leap-byline">
+Words by <strong>Bilbo Baggins</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+When a single actor withdraws a region’s entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">monetary policy</span><span class="leap-cat">economics</span>
+</div>
+</a><p><a class="leap-card" href="./posts/dragon-hoards-monetary-policy/index.html"></a></p>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -864,7 +850,7 @@ Bilbo Baggins
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>The Leap Blog — a mock site built with Quarto. All hobbits fictional; all economics questionable.</p>
+<p>The Leap Journal — a mock site built with Quarto. All hobbits fictional; all economics questionable.</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

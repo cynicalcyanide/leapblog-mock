@@ -102,7 +102,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "This is a mock site — a full-featured rehearsal for the migration of The Leap Blog from Blogger to Quarto. Everything here exercises a real planned feature: listings, announcements, author pages, comments, copyable citations, PDF downloads, search, topic filters, and executable charts.\nThe content is deliberately fictional. The Leap Blog does not, to our knowledge, employ any wizards."
+    "text": "This is a mock site — a full-featured rehearsal for the migration of The Leap Journal from Blogger to Quarto. Everything here exercises a real planned feature: listings, announcements, author pages, comments, copyable citations, PDF downloads, search, topic filters, and executable charts.\nThe content is deliberately fictional. The Leap Journal does not, to our knowledge, employ any wizards."
   },
   {
     "objectID": "about.html#what-to-poke-at",
@@ -177,9 +177,23 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Articles",
+    "title": "The Leap Journal",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSupply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse\n\n\n\nsupply chains\n\neconomics\n\ndata\n\n\n\nOne bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output.\n\n\n\n\n\nSep 1, 2026\n\n\nSamwise Gamgee\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\nThe Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood\n\n\n\necology\n\ngovernance\n\ninstitutions\n\n\n\nForests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.\n\n\n\n\n\nAug 18, 2026\n\n\nGandalf the Grey\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nThe Psychology of Gollum: A Two-Agent Bargaining Model of the Self\n\n\n\npsychology\n\nbehavioural economics\n\n\n\nSméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium.\n\n\n\n\n\nJul 22, 2026\n\n\nElrond Half-elven\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nShieldmaidens and the Rohirrim Labour Market\n\n\n\nlabour\n\neconomics\n\npolicy\n\n\n\nRohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks.\n\n\n\n\n\nJun 10, 2026\n\n\nÉowyn of Rohan\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nEagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere\n\n\n\ninfrastructure\n\neconomics\n\ngovernance\n\n\n\nThe Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.\n\n\n\n\n\nMay 5, 2026\n\n\nGandalf the Grey\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nDragon Hoards as Monetary Policy: Smaug and the Deflationary Trap\n\n\n\nmonetary policy\n\neconomics\n\nhistory\n\n\n\nWhen a single actor withdraws a region’s entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography.\n\n\n\n\n\nApr 14, 2026\n\n\nBilbo Baggins\n\n3 min\n\n\n\n\nNo matching items"
+    "text": "Latest article\n\n\n\nWords by Samwise Gamgee\n\n\nOne bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output.\n\n\nRead more →\n\n\n\nsupply chainseconomicsdata\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#announcements",
+    "href": "index.html#announcements",
+    "title": "The Leap Journal",
+    "section": "Announcements",
+    "text": "Announcements\n\n\n\n\n\nAnnouncement\n\n\nCall for papers: Council of Elrond 3025 — Annual Conference on Ring Disposal Policy\n\n\nRivendell, 25 October. Theme: ‘Credible commitment mechanisms for the destruction of systemically important assets.’ Nine discussant slots; walking shoes required.\n\n\nDetails →\n\n\n\nEntMoot 3026 — registration open→Mordor Industrial Policy Summit — venue changed→Workshop: Pipe-weed Futures and Commodity Markets in the Southfarthing→\n\n\nNo matching items\n\n\n\n  Get new articles by owl… or email\n  Every new article, straight to your inbox. No spam, no forwarding to Mordor.\n  \n    \n    Subscribe"
+  },
+  {
+    "objectID": "index.html#all-articles",
+    "href": "index.html#all-articles",
+    "title": "The Leap Journal",
+    "section": "All articles",
+    "text": "All articles\n\n\n\n\n\nThe Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood\n\n\nWords by Gandalf the Grey\n\n\n\n\nForests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.\n\n\n\nRead more →\n\n\necologygovernance\n\n\n\n\n\nThe Psychology of Gollum: A Two-Agent Bargaining Model of the Self\n\n\nWords by Elrond Half-elven\n\n\n\n\nSméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium.\n\n\n\nRead more →\n\n\npsychologybehavioural economics\n\n\n\n\n\nShieldmaidens and the Rohirrim Labour Market\n\n\nWords by Éowyn of Rohan\n\n\n\n\nRohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks.\n\n\n\nRead more →\n\n\nlaboureconomics\n\n\n\n\n\nEagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere\n\n\nWords by Gandalf the Grey\n\n\n\n\nThe Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.\n\n\n\nRead more →\n\n\ninfrastructureeconomics\n\n\n\n\n\nDragon Hoards as Monetary Policy: Smaug and the Deflationary Trap\n\n\nWords by Bilbo Baggins\n\n\n\n\nWhen a single actor withdraws a region’s entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography.\n\n\n\nRead more →\n\n\nmonetary policyeconomics\n\n\n\nNo matching items"
   },
   {
     "objectID": "authors/index.html",
