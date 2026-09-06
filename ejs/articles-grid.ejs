@@ -1,6 +1,6 @@
 <div class="leap-grid">
 <% items.forEach(function (item) { %>
 <% const author = Array.isArray(item.author) ? item.author.join(" & ") : (item.author || ""); %>
-<div class="leap-card"><% if (item.image) { %><div class="leap-card-image" style="background-image:url('<%- item.image %>')"></div><% } %><div class="leap-card-head"><h3><a href="<%- item.path %>"><%= item.title %></a></h3><div class="leap-byline">Words by <strong><%= author %></strong></div></div><div class="leap-card-body"><p><%= item.description %></p></div><div class="leap-readmore">Read more &rarr;</div><div class="leap-card-footer"><% (item.categories || []).slice(0, 2).forEach(function (c) { %><span class="leap-cat"><%= c %></span><% }); %></div></div>
+<div class="leap-card"><% if (item.image) { %><div class="leap-card-image" style="background-image:url('<%- item.image.replace(/^\//, '') %>')"></div><% } %><div class="leap-card-head"><h3><a href="<%- item.path %>"><%= item.title %></a></h3><div class="leap-byline">Words by <strong><%= author %></strong></div></div><div class="leap-card-body"><p><%= item.description %></p></div><div class="leap-readmore">Read more &rarr;</div><div class="leap-card-footer"><% (item.categories || []).slice(0, 2).forEach(function (c) { %><span class="leap-cat"><%= c %></span><% }); %></div></div>
 <% }); %>
 </div>
