@@ -1,0 +1,29 @@
+<div id="leap-comments" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #e4e0d5;">
+  <h2>Comments</h2>
+  <div id="cusdis_thread"
+    data-host="https://cusdis.com"
+    data-app-id="CUSDIS_APP_ID_PLACEHOLDER"
+    data-page-id=""
+    data-page-url=""
+    data-page-title="">
+  </div>
+</div>
+<script>
+  (function () {
+    // Move the comments block into the article body (an include-after-body
+    // lands at the end of <body>, below the footer, which is not where
+    // readers expect comments).
+    var holder = document.getElementById("leap-comments");
+    var main = document.getElementById("quarto-document-content");
+    if (main && holder) { main.appendChild(holder); }
+    var t = document.getElementById("cusdis_thread");
+    t.setAttribute("data-page-id", location.pathname);
+    t.setAttribute("data-page-url", location.href);
+    t.setAttribute("data-page-title", document.title);
+    var s = document.createElement("script");
+    s.src = "https://cusdis.com/js/cusdis.es.js";
+    s.async = true;
+    s.defer = true;
+    document.body.appendChild(s);
+  })();
+</script>

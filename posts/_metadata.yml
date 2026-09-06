@@ -2,18 +2,14 @@
 
 citation: true
 
-comments:
-  giscus:
-    repo: cynicalcyanide/leapblog-mock
-    repo-id: R_kgDOUQhT1A
-    category: Announcements
-    category-id: DIC_kwDOUQhT1M4DFBlv
-    mapping: pathname
-    reactions-enabled: true
-    loading: lazy
-
 format:
   html:
+    # Comments: Cusdis (open source, email/anonymous commenting, moderated).
+    # The embed lives in partials/comments.html; giscus was removed because it
+    # requires commenters to have a GitHub account. HTML-scoped so the raw
+    # HTML never reaches the Typst PDF render.
+    include-after-body:
+      - ../../partials/comments.html
     format-links: false
     other-links:
       - text: Download PDF
