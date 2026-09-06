@@ -1,0 +1,28 @@
+---
+title: "The Grey Havens Exit: Brain Drain and the Elven Diaspora"
+description: "When your most skilled workers can emigrate to a strictly better jurisdiction, retention policy is everything. Middle-earth's slowest and most total brain drain, examined."
+author:
+  - name: Éowyn of Rohan
+    url: ../../authors/eowyn.html
+date: 2026-05-20
+categories: [labour, economics, policy]
+image: ../../assets/thumbs/default.svg
+---
+
+Every labour economist eventually confronts the Grey Havens problem: what happens to an economy when its most skilled cohort holds a standing, irrevocable visa to a strictly superior jurisdiction — and the visa never expires, but the workers slowly choose to use it.
+
+## The world's politest brain drain
+
+The elven emigration ran for two Ages. It took the smiths first-rate, the loremasters, the healers — precisely the workers whose skills had the largest spillovers. No war drove them out (mostly); no policy could hold them. The West simply dominated on every margin an immortal values, and the exit option repriced every domestic decision. Why invest in Eregion's institutions when the fallback is Valinor?
+
+The lesson for mortal jurisdictions is uncomfortable but familiar: you do not compete with a superior jurisdiction by lecturing your talent about loyalty. You compete on the margins you control — mastery, meaning, and whether staying feels like building or like waiting. Rohan learned a version of this the hard way with [its own excluded workers](../shieldmaidens-labour-market/index.qmd): the shieldmaiden problem and the Havens problem are the same problem, misallocation by exit and misallocation by bar.
+
+## What the leavers leave
+
+The interesting economics is in the residue. Elven emigration was staggered over millennia, which meant each departing cohort *trained its replacements* — the great spillover exception to the usual brain-drain story. Imladris functioned for an Age as, in effect, a teaching hospital run by people with confirmed outbound bookings. Compare the [Shire's approach to knowledge circulation](../second-breakfast-political-economy/index.qmd), which achieves the same transmission through lunch.
+
+The ecological analogue is exact, as [Gandalf's forest comparison](../ecology-of-middle-earth/index.qmd) shows: what matters is not whether the controlling cohort leaves, but the time horizon over which control is handed on.
+
+## Policy conclusion
+
+If your best people hold an exit visa, your only durable policy is to make the years before departure productive and the handover long. The Elves, to their credit, took three thousand years to leave and swept the workshop on the way out. Most departing talent gets two weeks' notice. Choose which regime you'd rather manage.

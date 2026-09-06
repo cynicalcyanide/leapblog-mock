@@ -1,0 +1,28 @@
+---
+title: "Barrow-wight Estates: The Property Rights of the Dead"
+description: "The Barrow-downs are Middle-earth's oldest probate dispute: assets held in perpetuity by claimants with no heirs, no liquidity, and a strong security posture. An auditor's view."
+author:
+  - name: Bilbo Baggins
+    url: ../../authors/bilbo.html
+date: 2026-05-02
+categories: [economics, institutions, history]
+image: ../../assets/thumbs/default.svg
+---
+
+Having once audited [a dragon's balance sheet](../dragon-hoards-monetary-policy/index.qmd), I considered myself finished with hazardous asset verification. The Barrow-downs, which I passed closer to than I ever intended, present a subtler case: not one large hoard held by one large creditor, but thousands of small estates held in perpetuity by the *previous owners* — who are dead, disagree, and bite.
+
+## Probate, interrupted
+
+The barrows were tombs of the men of Cardolan, furnished in the usual way: the dead interred with their gold, swords, and circlets. Sound custom, terrible succession planning. When the Witch-king seeded the downs with wights, every estate acquired a sitting tenant with an infinite time horizon, no consumption needs, and an unmatched incentive to hold. The result is the purest illiquidity in recorded history: assets untouched for two thousand years, four hundred yards from a road.
+
+In portfolio terms — and here I defer to [Elrond's doctrine on counterparties who outlive you](../rings-as-reserve-assets/index.qmd) — a wight is the limiting case: a counterparty that *is* the collateral.
+
+## The liquidity event
+
+The dataset contains exactly one successful probate: Tom Bombadil's intervention, which broke a barrow open, evicted the tenant by song — a legal instrument unavailable to most practitioners — and, crucially, *distributed the assets*. Treasure was laid on the grass, free to all finders, and blades of Westernesse thereby re-entered circulation, one of which later performed [a rather important piece of work at Pelennor](../shieldmaidens-labour-market/index.qmd).
+
+The economics writes itself: two millennia of zero yield, then a single liquidity event with a social return beyond any audit's power to state. Dead capital is not merely idle; it is *waiting*, and what it is waiting for is institutions capable of clearing title.
+
+## The auditor's note
+
+Every economy holds barrow-wealth — assets locked by defunct claims, guarded by whatever we have instead of wights: lost deeds, dissolved firms, heirs unknown. The Downs merely make the problem visible and give it teeth. My recommendation is unchanged from the dragon case: value nothing you cannot exit, and be exceedingly polite to whatever is holding the ledger.

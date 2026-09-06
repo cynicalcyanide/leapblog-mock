@@ -1,0 +1,12 @@
+<div class="leap-grid">
+<% items.forEach(function (item) { %>
+<% const author = Array.isArray(item.author) ? item.author.join(" & ") : (item.author || ""); %>
+<a class="leap-card" href="<%- item.path %>"><div class="leap-card-head">
+<h3><%= item.title %></h3>
+<div class="leap-byline">Words by <strong><%= author %></strong></div></div>
+<div class="leap-card-body"><p><%= item.description %></p></div>
+<div class="leap-readmore">Read more &rarr;</div>
+<div class="leap-card-footer"><% (item.categories || []).slice(0, 2).forEach(function (c) { %><span class="leap-cat"><%= c %></span><% }); %></div>
+</a>
+<% }); %>
+</div>

@@ -1,0 +1,30 @@
+---
+title: "Rings as Reserve Assets: A Portfolio Theory of Power"
+description: "Three were held and never used; nine were leveraged to insolvency; one was systemically important. What the Rings of Power teach about reserve management and counterparty risk."
+author:
+  - name: Elrond Half-elven
+    url: ../../authors/elrond.html
+date: 2026-06-25
+categories: [monetary policy, economics, governance]
+image: ../../assets/thumbs/default.svg
+---
+
+Treat the Rings of Power as what they were: high-yield instruments issued by a single counterparty, and the Third Age becomes a case study in reserve management. I declare an interest — I held one of the assets in question for three thousand years — but long custody is, in this field, a qualification.
+
+## Three portfolios
+
+**The Nine** were leveraged immediately and fully. Their holders drew maximum yield — dominion, longevity — and the leverage converted them, over a few centuries, into wholly-owned subsidiaries of the issuer. Total loss, with the holders themselves becoming liabilities on someone else's balance sheet.
+
+**The Seven** were held by parties whose native risk appetite ran to accumulation rather than dominion. The issuer recovered some and destroyed others, but note: the dwarven habit of *hoarding without exercising* limited the contagion. There are worse instincts in a crisis, as [the Erebor case](../dragon-hoards-monetary-policy/index.qmd) shows from the other direction — there, the hoard itself was the crisis.
+
+**The Three** were never touched by the issuer, but their value was *derivative* — contingent on the One. We held them unused whenever prudence demanded, which was most of the time. An asset you cannot safely deploy is not a reserve; it is an exposure with good publicity.
+
+## The systemically important asset
+
+The One Ring was, in modern language, too connected to fail safely and too dangerous to hold. Every party that proposed to *use* it against its issuer — and the proposal was made in my own house, at [a conference we still discuss](../../announcements/events/council-of-elrond-3025.qmd) — was proposing to become the counterparty they feared. The only stable resolution was to remove the asset from circulation entirely.
+
+Compare the information network built by the same issuer, [analysed by Gandalf](../palantir-networks/index.qmd): identical structure, softer instrument. Concentrated issuance, dispersed holders, and every channel of value flowing back to one balance sheet. When a single counterparty stands behind your yield, your reserves are their leverage.
+
+## Doctrine
+
+Hold nothing whose issuer outlives you, wants you, and can wait. This rules out more portfolios than the profession likes to admit — including, for the record, [certain estates held by the deceased](../barrow-wight-estates/index.qmd), where the counterparty problem takes its purest form.

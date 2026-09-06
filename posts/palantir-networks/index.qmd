@@ -1,0 +1,28 @@
+---
+title: "Palantír Networks: Information Asymmetry on the Seeing-Stone Market"
+description: "Seven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers."
+author:
+  - name: Gandalf the Grey
+    url: ../../authors/gandalf.html
+date: 2026-07-08
+categories: [infrastructure, governance, information]
+image: ../../assets/thumbs/default.svg
+---
+
+The palantíri were, by a comfortable margin, the most advanced communications infrastructure ever deployed on this continent: seven nodes, instantaneous transmission, no maintenance, no message loss. The network nonetheless destroyed two of its three most senior users. The failure mode deserves close study, because we keep rebuilding it.
+
+## The protocol had no integrity layer
+
+A palantír transmits true images. This is precisely the danger. When the Enemy captured the Ithil-stone, he acquired something better than the ability to lie: the ability to *select*. Denethor saw only true things — fleets that existed, armies that marched — and was steered to despair entirely by curation. Saruman, a subtler mind, was captured the same way.
+
+The design lesson generalises. A network that authenticates *content* but not *counterparties* converts every compromised node into an influence platform. This is the same structural error I documented in [the Eagle transport question](../eagles-transport-infrastructure/index.qmd): critical capacity whose governance was never specified, used heavily anyway, until the day its interests diverged.
+
+## Asymmetry as a market
+
+Note who profited. The party with the larger information budget — one node, unlimited attention, centuries of patience — extracted concessions from parties who each glanced occasionally into their stone between crises. Information asymmetry is not a state of nature; it is *purchased*, with attention. Denethor was outspent, not outsmarted.
+
+The psychology of the individual user under such asymmetry — the conviction that one is uniquely strong enough to look — is [Elrond's territory](../psychology-of-gollum/index.qmd), and his model of self-serving bargaining applies to stone-gazers with embarrassing precision. For the portfolio consequences of hoarding powerful assets one dares not use, see [the reserve-asset problem](../rings-as-reserve-assets/index.qmd).
+
+## Recommendation
+
+Networks carrying strategic information need counterparty authentication, usage norms, and an off switch. The palantíri had none of the three. We buried the surviving stones. Modern designers, take note: burial is also a governance mechanism, but it is best regarded as a last resort.

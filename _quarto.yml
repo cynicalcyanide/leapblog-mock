@@ -12,6 +12,8 @@ website:
     pinned: true
     left:
       - href: index.qmd
+        text: Home
+      - href: articles.qmd
         text: Articles
       - href: announcements/index.qmd
         text: Announcements
@@ -21,7 +23,7 @@ website:
         text: About
   search:
     location: navbar
-    type: overlay
+    type: textbox
   page-footer:
     center: >
       The Leap Journal — a mock site built with Quarto.

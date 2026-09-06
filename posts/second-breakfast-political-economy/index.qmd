@@ -1,0 +1,28 @@
+---
+title: "The Political Economy of Second Breakfast"
+description: "The Shire's six-meal day looks like idleness and functions as social insurance. On meal-timing institutions and why productivity statistics miss them."
+author:
+  - name: Samwise Gamgee
+    url: ../../authors/samwise.html
+date: 2026-08-05
+categories: [economics, institutions, labour]
+image: ../../assets/thumbs/default.svg
+---
+
+Visitors to the Shire reliably make the same two observations: the food is excellent, and nobody seems to work. The first is true. The second is a measurement error, and the error is instructive.
+
+## Six meals as infrastructure
+
+The hobbit meal schedule — breakfast, second breakfast, elevenses, luncheon, afternoon tea, dinner, and supper where obtainable — is usually treated as appetite. It is better understood as *institutional* infrastructure. Each meal is a standing, scheduled occasion for information exchange: crop prices at elevenses, labour-sharing arrangements over luncheon, credit (in the form of remembered favours) extended across the tea table.
+
+The Shire has no banks, no courts worth mentioning, and no police beyond a dozen Shirriffs concerned chiefly with stray livestock. What it has instead is contract enforcement by reputation, cleared six times daily. As I argued in [my study of wartime provisioning](../supply-chains-of-middle-earth/index.qmd), the region's logistics run on trust; second breakfast is where the trust is manufactured.
+
+## The measurement problem
+
+Standard labour accounting counts hours at visible work. It therefore records the Shire as a low-effort economy, which would puzzle anyone who has seen the harvest brought in — or seen [the Rohirrim wrestle with the opposite problem](../shieldmaidens-labour-market/index.qmd), a society that counts martial labour meticulously and wastes half its supply.
+
+The general lesson: institutions that look like leisure may be doing the work your formal institutions aren't. Audit what the long lunch *produces* before you abolish it.
+
+## A note on exits
+
+It is sometimes objected that the system only works because nobody leaves. This is broadly right, and what happens when the talented *do* leave is taken up in [Elrond's account of the westward migration](../grey-havens-exit/index.qmd) — a rather larger version of the same problem.

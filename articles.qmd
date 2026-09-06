@@ -1,0 +1,16 @@
+---
+pagetitle: "Articles — The Leap Journal"
+page-layout: full
+toc: false
+title-block-banner: false
+listing:
+  - id: all-articles
+    contents: posts
+    sort: "date desc"
+    template: ejs/grid-all.ejs
+---
+
+## All articles {.leap-section-heading}
+
+::: {#all-articles}
+:::
