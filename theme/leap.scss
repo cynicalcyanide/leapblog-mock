@@ -324,6 +324,9 @@ $btn-border-radius: 0;
   background-position: center;
   border-bottom: 1px solid $leap-ink;
 }
+// Uniform card dimensions: title fixed at 2 lines, byline at 1, description
+// at 3 — so every card WITH a thumbnail is one standard size and every card
+// WITHOUT is another. Long text clips with an ellipsis.
 .leap-card-head {
   padding: 1.1rem 1.25rem 0.85rem 1.25rem;
   border-bottom: 1px solid $leap-ink;
@@ -332,6 +335,16 @@ $btn-border-radius: 0;
     font-size: 1.35rem;
     line-height: 1.2;
     margin: 0 0 0.6rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: calc(2 * 1.2em);
+  }
+  .leap-byline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 .leap-card-body {
@@ -341,9 +354,10 @@ $btn-border-radius: 0;
     line-height: 1.45;
     margin-bottom: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    height: calc(3 * 1.45em);
   }
 }
 .leap-card .leap-readmore {
