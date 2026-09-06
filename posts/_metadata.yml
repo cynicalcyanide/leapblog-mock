@@ -13,14 +13,15 @@ comments:
     loading: lazy
 
 format:
-  html: default
+  html:
+    format-links: false
+    other-links:
+      - text: Download PDF
+        icon: file-pdf
+        href: index.pdf
   typst:
     papersize: a4
     margin:
       x: 2.5cm
       y: 2.5cm
 
-format-links:
-  - format: typst
-    text: Download PDF
-    icon: file-pdf
