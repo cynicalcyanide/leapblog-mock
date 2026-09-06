@@ -6,7 +6,6 @@ author:
     url: ../../authors/samwise.html
 date: 2026-08-05
 categories: [economics, institutions, labour]
-image: ../../assets/thumbs/default.svg
 ---
 
 Visitors to the Shire reliably make the same two observations: the food is excellent, and nobody seems to work. The first is true. The second is a measurement error, and the error is instructive.

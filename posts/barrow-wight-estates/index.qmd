@@ -6,7 +6,6 @@ author:
     url: ../../authors/bilbo.html
 date: 2026-05-02
 categories: [economics, institutions, history]
-image: ../../assets/thumbs/default.svg
 ---
 
 Having once audited [a dragon's balance sheet](../dragon-hoards-monetary-policy/index.qmd), I considered myself finished with hazardous asset verification. The Barrow-downs, which I passed closer to than I ever intended, present a subtler case: not one large hoard held by one large creditor, but thousands of small estates held in perpetuity by the *previous owners* — who are dead, disagree, and bite.

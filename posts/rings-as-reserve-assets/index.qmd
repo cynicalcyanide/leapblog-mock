@@ -6,7 +6,6 @@ author:
     url: ../../authors/elrond.html
 date: 2026-06-25
 categories: [monetary policy, economics, governance]
-image: ../../assets/thumbs/default.svg
 ---
 
 Treat the Rings of Power as what they were: high-yield instruments issued by a single counterparty, and the Third Age becomes a case study in reserve management. I declare an interest — I held one of the assets in question for three thousand years — but long custody is, in this field, a qualification.

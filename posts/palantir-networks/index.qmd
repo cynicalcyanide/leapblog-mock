@@ -6,7 +6,6 @@ author:
     url: ../../authors/gandalf.html
 date: 2026-07-08
 categories: [infrastructure, governance, information]
-image: ../../assets/thumbs/default.svg
 ---
 
 The palantíri were, by a comfortable margin, the most advanced communications infrastructure ever deployed on this continent: seven nodes, instantaneous transmission, no maintenance, no message loss. The network nonetheless destroyed two of its three most senior users. The failure mode deserves close study, because we keep rebuilding it.

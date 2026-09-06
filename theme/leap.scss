@@ -300,6 +300,12 @@ $btn-border-radius: 0;
   color: $leap-ink;
   &:hover { box-shadow: 5px 5px 0 $leap-ink; color: $leap-ink; }
 }
+.leap-card-image {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid $leap-ink;
+}
 .leap-card-head {
   padding: 1.1rem 1.25rem 0.85rem 1.25rem;
   border-bottom: 1px solid $leap-ink;

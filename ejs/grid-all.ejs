@@ -1,7 +1,7 @@
 <div class="leap-grid">
 <% items.forEach(function (item) { %>
 <% const author = Array.isArray(item.author) ? item.author.join(" & ") : (item.author || ""); %>
-<a class="leap-card" href="<%- item.path %>"><div class="leap-card-head">
+<a class="leap-card" href="<%- item.path %>"><% if (item.image) { %><div class="leap-card-image" style="background-image:url('<%- item.image %>')"></div><% } %><div class="leap-card-head">
 <h3><%= item.title %></h3>
 <div class="leap-byline">Words by <strong><%= author %></strong></div></div>
 <div class="leap-card-body"><p><%= item.description %></p></div>

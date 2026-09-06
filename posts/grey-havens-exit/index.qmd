@@ -6,7 +6,6 @@ author:
     url: ../../authors/eowyn.html
 date: 2026-05-20
 categories: [labour, economics, policy]
-image: ../../assets/thumbs/default.svg
 ---
 
 Every labour economist eventually confronts the Grey Havens problem: what happens to an economy when its most skilled cohort holds a standing, irrevocable visa to a strictly superior jurisdiction — and the visa never expires, but the workers slowly choose to use it.
