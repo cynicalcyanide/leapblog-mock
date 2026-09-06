@@ -6,7 +6,7 @@ author:
     url: ../../authors/gandalf.html
 date: 2026-08-18
 categories: [ecology, governance, institutions]
-image: ../../assets/thumbs/ecology.svg
+image: ../../assets/thumbs/ecology-of-middle-earth.svg
 ---
 
 Middle-earth offers ecologists something modern datasets rarely do: forests with continuous institutional records running to tens of thousands of years, and stakeholders old enough to remember every policy intervention personally. The comparison between Fangorn and Mirkwood is, in effect, a natural experiment in woodland governance.

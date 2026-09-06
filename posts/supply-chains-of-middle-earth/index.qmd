@@ -6,7 +6,7 @@ author:
     url: ../../authors/samwise.html
 date: 2026-09-01
 categories: [supply chains, economics, data]
-image: ../../assets/thumbs/lembas.svg
+image: ../../assets/thumbs/supply-chains-of-middle-earth.svg
 code-fold: true
 code-summary: "Show the code behind this chart"
 ---
@@ -22,6 +22,8 @@ Yet output never scaled. The chart below assembles the (entirely invented) produ
 ```{python}
 #| label: fig-lembas
 #| fig-cap: "Waybread output by region, Third Age 3001–3021 (thousand cakes/year). Entirely fictional data; hover for values."
+import sys; sys.path.insert(0, "../../theme")
+import leaptheme  # house style: colours, fonts, hover crosshairs — automatic
 import pandas as pd
 import plotly.express as px
 
@@ -47,18 +49,11 @@ fig = px.line(
     df, x="year", y="output", color="region",
     labels={"year": "Third Age year", "output": "Output ('000 cakes)",
             "region": "Region"},
-    color_discrete_sequence=["#2e5d43", "#8a6d3b", "#5b6b62", "#a63d40"],
 )
-fig.update_xaxes(showspikes=True, spikemode="across", spikedash="dot",
-                 spikethickness=1)
-fig.update_yaxes(showspikes=True, spikemode="across", spikedash="dot",
-                 spikethickness=1, gridcolor="#e4e0d5")
-fig.update_layout(
-    hovermode="x unified",
-    plot_bgcolor="white",
-    font=dict(family="Source Sans 3, sans-serif"),
-    legend=dict(orientation="h", yanchor="bottom", y=1.02),
-    margin=dict(l=10, r=10, t=30, b=10),
+leaptheme.watermark(
+    fig,
+    article="Supply Chains of Middle-earth",
+    citation="Gamgee (2026)",
 )
 fig.show()
 ```

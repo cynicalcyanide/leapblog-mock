@@ -6,7 +6,7 @@ author:
     url: ../../authors/elrond.html
 date: 2026-07-22
 categories: [psychology, behavioural economics]
-image: ../../assets/thumbs/gollum.svg
+image: ../../assets/thumbs/psychology-of-gollum.svg
 ---
 
 The clinical literature treats Gollum as a cautionary tale about addiction. This is correct but incomplete. What the record actually documents — in unusual detail, thanks to two attentive hobbit observers — is a *bargaining game between two selves sharing one body*, and it rewards formal treatment.

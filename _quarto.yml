@@ -11,8 +11,6 @@ website:
     title: "The Leap Journal"
     pinned: true
     left:
-      - href: index.qmd
-        text: Home
       - href: articles.qmd
         text: Articles
       - href: announcements/index.qmd

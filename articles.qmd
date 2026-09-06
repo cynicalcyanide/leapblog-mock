@@ -7,7 +7,7 @@ listing:
   - id: all-articles
     contents: posts
     sort: "date desc"
-    template: ejs/grid-all.ejs
+    template: ejs/articles-grid.ejs
 ---
 
 ## All articles {.leap-section-heading}

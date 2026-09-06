@@ -7,15 +7,15 @@ listing:
   - id: hero
     contents: posts
     sort: "date desc"
-    template: ejs/hero.ejs
+    template: ejs/home-hero.ejs
   - id: events
     contents: announcements/events
     sort: "date desc"
-    template: ejs/events.ejs
+    template: ejs/home-events.ejs
   - id: article-grid
     contents: posts
     sort: "date desc"
-    template: ejs/grid.ejs
+    template: ejs/home-grid.ejs
 ---
 
 ::: {#hero}

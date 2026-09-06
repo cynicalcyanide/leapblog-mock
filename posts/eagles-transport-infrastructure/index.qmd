@@ -6,7 +6,7 @@ author:
     url: ../../authors/gandalf.html
 date: 2026-05-05
 categories: [infrastructure, economics, governance]
-image: ../../assets/thumbs/eagles.svg
+image: ../../assets/thumbs/eagles-transport-infrastructure.svg
 ---
 
 No question is put to this author more often, at conferences and in taverns, than the Eagle Question: *why didn't you simply fly?* The question is understandable and the answer is institutional, so naturally nobody stays for it. Here it is in writing.
