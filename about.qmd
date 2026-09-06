@@ -1,0 +1,17 @@
+---
+title: "About"
+toc: false
+---
+
+**This is a mock site** — a full-featured rehearsal for the migration of The Leap Blog from Blogger to Quarto. Everything here exercises a real planned feature: listings, announcements, author pages, comments, copyable citations, PDF downloads, search, topic filters, and executable charts.
+
+The content is deliberately fictional. The Leap Blog does not, to our knowledge, employ any wizards.
+
+## What to poke at
+
+- **Search** (magnifying glass in the navbar) — full text of every article.
+- **Topic filters** on the [Articles](index.qmd) page — click a category, or type in the filter box.
+- **[Authors](authors/index.qmd)** — tiles for each contributor, each with their own page.
+- On any article: the **Download PDF** button, the **Cite this article** block (copy the BibTeX with one click), and the **comment section** at the bottom.
+- The [supply chains article](posts/supply-chains-of-middle-earth/index.qmd) has an **interactive chart** — hover over it.
+- The [dragon hoards article](posts/dragon-hoards-monetary-policy/index.qmd) has real **inline citations and a bibliography**.

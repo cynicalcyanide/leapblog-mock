@@ -1,0 +1,29 @@
+---
+title: "Shieldmaidens and the Rohirrim Labour Market"
+description: "Rohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks."
+author:
+  - name: Éowyn of Rohan
+    url: ../../authors/eowyn.html
+date: 2026-06-10
+categories: [labour, economics, policy]
+image: ../../assets/thumbs/shieldmaiden.svg
+---
+
+Rohan's principal export is cavalry. Its principal labour-market institution is a hard occupational bar excluding half the adult population from the cavalry. This column examines how that worked out.
+
+## The steady-state cost
+
+The static loss is the familiar one: talent misallocation. The kingdom's defence output was produced from an artificially restricted labour pool, with predictable effects on quality at the margin. The shadow price of the restriction was invisible in peacetime — restrictions usually are — because the counterfactual soldier is a statistic and the norm is a tradition with songs.
+
+## The stress test
+
+The Pelennor Fields provided the out-of-sample test. Two observations:
+
+1. **The binding constraint bit at the extreme tail.** The single most consequential combat action of the battle — the destruction of the Witch-king — was performed by an excluded worker, operating outside the licensing regime, who had entered the sector through what economists call *irregular channels* and what Rohan calls *disguise*.
+2. **The prophecy was a market signal everyone misread.** "Not by the hand of man shall he fall" was, in retrospect, a standing arbitrage opportunity: an adversary invulnerable only to the excluded category. A rational personnel office would have recruited against it. Tradition priced it at zero.
+
+## The general point
+
+Occupational restrictions are usually defended on average-quality grounds and usually costed in average terms. But defence — like several other sectors — is a tail-risk business. The value of an open labour market is not the mean worker it adds; it is the specific worker you cannot predict needing. You do not know, in advance, whose hand the job requires.
+
+Rohan has since reformed its recruitment practices. The songs, it must be said, adapted immediately; the pension system is taking longer.

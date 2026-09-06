@@ -1,0 +1,34 @@
+---
+title: "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood"
+description: "Forests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes."
+author:
+  - name: Gandalf the Grey
+    url: ../../authors/gandalf.html
+date: 2026-08-18
+categories: [ecology, governance, institutions]
+image: ../../assets/thumbs/ecology.svg
+---
+
+Middle-earth offers ecologists something modern datasets rarely do: forests with continuous institutional records running to tens of thousands of years, and stakeholders old enough to remember every policy intervention personally. The comparison between Fangorn and Mirkwood is, in effect, a natural experiment in woodland governance.
+
+## Fangorn: common-pool resources with shepherds
+
+Fangorn is the canonical case of a common-pool resource managed by resident stewards with effectively infinite time horizons. The Ents do not discount the future in any measurable way; when your deliberative assembly takes a month to agree on the agenda, quarterly thinking is not a risk.
+
+Three institutional features stand out:
+
+1. **Monitoring is continuous and ambulatory.** The shepherds walk the resource. Enforcement is personal, proportionate, and occasionally involves throwing rocks at industrial facilities.
+2. **Membership is closed but succession is a crisis.** The absence of Entwives is, in economic terms, a catastrophic failure of demographic replacement that no governance structure can indefinitely survive. Institutions require heirs.
+3. **Exit from passivity is discontinuous.** Fangorn tolerated marginal encroachment for centuries, then internalised an entire externality in one afternoon by demolishing Isengard. Regulators everywhere should note the shape of that response function: flat, flat, flat, vertical.
+
+## Mirkwood: what happens under absentee pressure
+
+Greenwood the Great became Mirkwood not through harvesting but through a hostile change in effective ownership. A single unaccountable actor established residence at Dol Guldur, and the ecosystem repriced immediately: species composition shifted toward spiders of unusual size, path networks decayed, and the river acquired properties best described as non-standard.
+
+The elven response — retreat northward, fortify, tax passing traffic — is recognisably the strategy of a minority stakeholder who cannot dislodge the majority polluter and settles for enclave quality. It works, for the enclave. The rest of the forest carries the cost.
+
+## What travels
+
+Strip the wizards out and the lesson is portable: forest outcomes track the time horizon of whoever holds effective control. Patient residents with enforcement power produce old growth. Absentee extraction produces spiders. The policy instrument that matters is not the harvesting quota but the identity, tenure, and patience of the controlling party.
+
+Further fieldwork is planned, pending the availability of the author, who is expected back around the turn of the age.

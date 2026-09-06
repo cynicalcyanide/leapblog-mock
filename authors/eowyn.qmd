@@ -1,0 +1,21 @@
+---
+title: "Éowyn of Rohan"
+description: "Defence economist. Studies labour-market participation, occupational licensing of shieldmaidens, and succession risk."
+image: ../assets/authors/eowyn.svg
+toc: false
+listing:
+  id: author-posts
+  contents: "../posts/*/index.qmd"
+  include:
+    author: "Éowyn of Rohan"
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories]
+---
+
+Éowyn's research examines who is allowed to work, at what, and what it costs a society to waste half its talent. Her methodological stance is that identification problems, like certain kings of the Nazgûl, are rarely as insurmountable as advertised.
+
+## Articles by Éowyn
+
+::: {#author-posts}
+:::

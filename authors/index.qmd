@@ -1,0 +1,17 @@
+---
+title: "Authors"
+listing:
+  contents:
+    - gandalf.qmd
+    - samwise.qmd
+    - eowyn.qmd
+    - elrond.qmd
+    - bilbo.qmd
+  type: grid
+  grid-columns: 3
+  sort: "title"
+  fields: [image, title, description]
+  image-height: "200px"
+page-layout: full
+toc: false
+---

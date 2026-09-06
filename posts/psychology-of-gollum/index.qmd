@@ -1,0 +1,32 @@
+---
+title: "The Psychology of Gollum: A Two-Agent Bargaining Model of the Self"
+description: "Sméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium."
+author:
+  - name: Elrond Half-elven
+    url: ../../authors/elrond.html
+date: 2026-07-22
+categories: [psychology, behavioural economics]
+image: ../../assets/thumbs/gollum.svg
+---
+
+The clinical literature treats Gollum as a cautionary tale about addiction. This is correct but incomplete. What the record actually documents — in unusual detail, thanks to two attentive hobbit observers — is a *bargaining game between two selves sharing one body*, and it rewards formal treatment.
+
+## The setup
+
+Model the individual as two agents. **Sméagol** has conventional preferences: food, memory of sunlight, the approval of others. **Gollum** has a single dominant preference with an infinite reservation price. The two alternate control of the body — the observable "arguments" are, in this reading, negotiation rounds over the allocation of future control.
+
+The Ring functions as an *asymmetric commitment device*: every period it strengthens Gollum's bargaining position and erodes Sméagol's outside option. After five hundred years, Sméagol's threat point is approximately zero. That he negotiates anything at all is remarkable.
+
+## The Frodo intervention
+
+The most interesting event in the dataset is exogenous: Frodo extends trust, addresses Sméagol by name, and — critically — creates *external* value for the Sméagol identity. For a period, the equilibrium visibly shifts: service is rendered, promises are kept, the Gollum agent is suppressed in daylight hours.
+
+The mechanism matters for policy. Frodo did not strengthen Sméagol's willpower (an intra-personal resource); he changed the *payoff structure* by making cooperation externally rewarded. Recovery, in this model, is not a triumph of will but a renegotiation under improved outside options.
+
+## The relapse, and the stairs of Cirith Ungol
+
+The equilibrium collapses on contact with a third party who assigns the Sméagol identity zero value. One act of misrecognition — Sam's accusation over the innocent matter of the rabbits — reprices Sméagol's cooperative strategy to worthless, and Gollum resumes control permanently. Practitioners will recognise the pattern: the relapse is triggered not by the addictive good but by the withdrawal of the identity that made abstention worthwhile.
+
+## Implication
+
+If the self is a coalition, treatment is coalition management. Punishing the whole individual strengthens precisely the agent you wish to weaken — a result this author has verified, at length, in committee.

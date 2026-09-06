@@ -1,0 +1,16 @@
+---
+title: "Articles"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  filter-ui: [title, author, categories]
+  sort-ui: [date, title, author]
+  fields: [image, date, title, author, description, categories, reading-time]
+  feed: true
+  image-placeholder: assets/thumbs/default.svg
+page-layout: full
+title-block-banner: false
+toc: false
+---

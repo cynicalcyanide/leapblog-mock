@@ -1,0 +1,21 @@
+---
+title: "Bilbo Baggins"
+description: "Memoirist and burglar-turned-auditor. Writes on monetary economics, asset valuation, and the accounting treatment of dragon hoards."
+image: ../assets/authors/bilbo.svg
+toc: false
+listing:
+  id: author-posts
+  contents: "../posts/*/index.qmd"
+  include:
+    author: "Bilbo Baggins"
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories]
+---
+
+Bilbo conducted the only known physical audit of a dragon-held reserve portfolio and lived to write the annexes. He is interested in liquidity (specifically its absence), the valuation of unique assets, and contract design for expeditions. He remains, he wishes to stress, entirely respectable.
+
+## Articles by Bilbo
+
+::: {#author-posts}
+:::

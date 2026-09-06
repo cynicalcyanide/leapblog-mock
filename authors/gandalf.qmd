@@ -1,0 +1,21 @@
+---
+title: "Gandalf the Grey"
+description: "Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation."
+image: ../assets/authors/gandalf.svg
+toc: false
+listing:
+  id: author-posts
+  contents: "../posts/*/index.qmd"
+  include:
+    author: "Gandalf the Grey"
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories]
+---
+
+Gandalf has spent several thousand years doing fieldwork, mostly on foot. His research programme concerns why good institutions fail slowly and then all at once. He is a fellow of no institution, on principle, and is frequently late — though he would note that a researcher is never late; he publishes precisely when he means to.
+
+## Articles by Gandalf
+
+::: {#author-posts}
+:::

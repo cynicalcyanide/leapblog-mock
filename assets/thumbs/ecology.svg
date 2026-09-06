@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#2e5d43"/>
+  <circle cx="650" cy="90" r="180" fill="#faf8f3" opacity="0.12"/>
+  <circle cx="120" cy="380" r="140" fill="#1f2a24" opacity="0.15"/>
+  <text x="60" y="270" font-family="Georgia, serif" font-size="150" font-weight="bold" fill="#faf8f3" opacity="0.95">🌳</text>
+  <text x="64" y="330" font-family="Helvetica, Arial, sans-serif" font-size="30" letter-spacing="6" fill="#faf8f3" opacity="0.8">ECOLOGY</text>
+</svg>

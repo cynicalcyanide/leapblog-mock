@@ -1,0 +1,82 @@
+---
+title: "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse"
+description: "One bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output."
+author:
+  - name: Samwise Gamgee
+    url: ../../authors/samwise.html
+date: 2026-09-01
+categories: [supply chains, economics, data]
+image: ../../assets/thumbs/lembas.svg
+code-fold: true
+code-summary: "Show the code behind this chart"
+---
+
+Every economy in Middle-earth solved provisioning differently: the Shire solved it with surplus and cellars, Rohan with mobility, Gondor with fortified granaries, and the Elves with a technology so far ahead of everyone else's that it should have restructured the continent's logistics — and didn't.
+
+## The lembas anomaly
+
+Lembas is, on the numbers, absurd. One cake sustains a working adult for a day; it keeps for months wrapped in a leaf; it weighs almost nothing. In supply-chain terms, elvish waybread collapses the *tooth-to-tail ratio* of any expedition to nearly zero. An army provisioned on lembas needs no baggage train, which means no roads, which means no predictable routes to ambush. It is a strategic technology.
+
+Yet output never scaled. The chart below assembles the (entirely invented) production series this correspondent compiled from regional records. Hover over it: you'll get crosshairs, exact values for every region at that date, and you can zoom into any period. Click a region in the legend to hide it.
+
+```{python}
+#| label: fig-lembas
+#| fig-cap: "Waybread output by region, Third Age 3001–3021 (thousand cakes/year). Entirely fictional data; hover for values."
+import pandas as pd
+import plotly.express as px
+
+years = list(range(3001, 3022))
+data = []
+for region, base, trend, shock_year, shock in [
+    ("Lothlórien",  84, 0.5, 3018, -30),
+    ("Rivendell",   41, 0.3, 3018, -12),
+    ("Mirkwood",    23, -0.8, 3010, -6),
+    ("Grey Havens", 12, 0.9, None, 0),
+]:
+    level = base
+    for y in years:
+        level += trend
+        if shock_year and y >= shock_year:
+            level += shock / 3
+        data.append({"year": y, "region": region,
+                     "output": round(max(level, 1), 1)})
+
+df = pd.DataFrame(data)
+
+fig = px.line(
+    df, x="year", y="output", color="region",
+    labels={"year": "Third Age year", "output": "Output ('000 cakes)",
+            "region": "Region"},
+    color_discrete_sequence=["#2e5d43", "#8a6d3b", "#5b6b62", "#a63d40"],
+)
+fig.update_xaxes(showspikes=True, spikemode="across", spikedash="dot",
+                 spikethickness=1)
+fig.update_yaxes(showspikes=True, spikemode="across", spikedash="dot",
+                 spikethickness=1, gridcolor="#e4e0d5")
+fig.update_layout(
+    hovermode="x unified",
+    plot_bgcolor="white",
+    font=dict(family="Source Sans 3, sans-serif"),
+    legend=dict(orientation="h", yanchor="bottom", y=1.02),
+    margin=dict(l=10, r=10, t=30, b=10),
+)
+fig.show()
+```
+
+::: {.content-visible unless-format="html"}
+*(The interactive figure is available in the web version of this article.)*
+:::
+
+Note the structural break at 3018: the War disrupted Lothlórien's output — and the industry never recovered its peak, because the workforce emigrated. Which brings us to the real constraint.
+
+## Why the technology never diffused
+
+Three hypotheses circulate in the literature, of unequal quality:
+
+1. **Recipe secrecy (weak).** Trade secrets leak over ten thousand years. Something else binds.
+2. **Non-transferable inputs (stronger).** If production requires inputs that exist only where Elves and their particular ecology persist — a *terroir* theory of waybread — then the technology is land-linked and cannot be licensed out.
+3. **The gift-good hypothesis (strongest).** Lembas was never a commodity. It moves only as a gift, between parties in specific relationships. The Elves were not running an industry below capacity; they were refusing, on principle, to have an industry at all. As with the Eagles, the constraint is institutional, not technical.
+
+## The practitioner's postscript
+
+For actual expedition provisioning, this correspondent's advice is unchanged: take the lembas gratefully, count on nothing you cannot grow or carry, and remember that the finest logistics innovation of the Third Age remains the humble coney, stewed, with taters. *PO-TA-TOES.*

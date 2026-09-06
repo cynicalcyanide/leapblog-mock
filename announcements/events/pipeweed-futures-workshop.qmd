@@ -1,0 +1,17 @@
+---
+title: "Workshop: Pipe-weed Futures and Commodity Markets in the Southfarthing"
+description: "Hobbiton, 22 September (second breakfast onwards). A hands-on workshop on hedging, storage, and why Longbottom Leaf forward contracts keep settling in kind."
+date: 2026-05-30
+toc: false
+---
+
+A one-day workshop for practitioners and academics on the Shire's most liquid commodity market.
+
+**Sessions include:**
+
+- Basis risk between Longbottom Leaf and Old Toby: is it quality or marketing?
+- Warehouse receipts you can trust: lessons from the Lockholes.
+- Why forward contracts keep settling in kind, and why nobody minds.
+- Panel: *Should second breakfast be a trading halt?*
+
+Lunch, elevenses, luncheon, and afternoon tea provided. Registration closes when the food runs out, which historical data suggests is early.

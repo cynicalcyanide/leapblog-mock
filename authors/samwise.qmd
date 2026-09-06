@@ -1,0 +1,21 @@
+---
+title: "Samwise Gamgee"
+description: "Agrarian economist. Works on Shire land-use policy, potato yield gaps, and logistics under adversarial conditions."
+image: ../assets/authors/samwise.svg
+toc: false
+listing:
+  id: author-posts
+  contents: "../posts/*/index.qmd"
+  include:
+    author: "Samwise Gamgee"
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories]
+---
+
+Sam came to economics through gardening, which he maintains is the same discipline with better weather. His work focuses on smallholder agriculture and supply chains that must function when everything has gone wrong. He is the only author on this blog to have carried his co-author up a volcano.
+
+## Articles by Samwise
+
+::: {#author-posts}
+:::

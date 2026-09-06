@@ -1,0 +1,26 @@
+# Applies to every article under posts/
+
+citation: true
+
+comments:
+  giscus:
+    repo: cynicalcyanide/leapblog-mock
+    repo-id: R_kgDOUQhT1A
+    category: Announcements
+    category-id: DIC_kwDOUQhT1M4DFBlv
+    mapping: pathname
+    reactions-enabled: true
+    loading: lazy
+
+format:
+  html: default
+  typst:
+    papersize: a4
+    margin:
+      x: 2.5cm
+      y: 2.5cm
+
+format-links:
+  - format: typst
+    text: Download PDF
+    icon: file-pdf

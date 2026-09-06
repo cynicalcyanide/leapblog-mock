@@ -1,0 +1,37 @@
+---
+title: "Dragon Hoards as Monetary Policy: Smaug and the Deflationary Trap"
+description: "When a single actor withdraws a region's entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography."
+author:
+  - name: Bilbo Baggins
+    url: ../../authors/bilbo.html
+date: 2026-04-14
+categories: [monetary policy, economics, history]
+image: ../../assets/thumbs/smaug.svg
+bibliography: references.bib
+link-citations: true
+---
+
+The standard histories treat the sack of Erebor as a security event. This is an accounting error. What Smaug executed in T.A. 2770 was the largest monetary contraction in recorded history: the withdrawal of an entire region's specie stock from circulation, consolidated under a single balance sheet, held at zero velocity for 171 years [@oakenshield3018].
+
+## The mechanics of a dragon-induced deflation
+
+Dale and Erebor ran a metallic standard. When the gold left circulation — all of it, in one afternoon — the price level had nowhere to go but down, and the regional economy contracted along exactly the path the older literature on specie drains would predict [@grubb2941]. Wages fell, then employment, then the towns themselves. Lake-town's subsequent two centuries of stagnation are usually blamed on geography. Geography did not eat the money supply.
+
+What makes the case theoretically clean is the dragon's demand function. Smaug held gold for neither transaction nor investment purposes; the hoard generated no lending, no seigniorage, nothing. His famous remark about knowing every coin in the pile [@baggins2941] describes, in effect, a central banker running a full-reserve policy with a personal grudge. The literature on liquidity traps assumes the zero lower bound is a floor made of arithmetic; in Erebor it was a floor made of dragon.
+
+## The reflation of 2941
+
+The Battle of the Five Armies is conventionally studied as a military engagement. Monetarily, it was a disorderly quantitative easing: the entire consolidated hoard re-entered circulation within a decade, distributed across dwarven reconstruction, Dale's rebuilding, and a modest fourteenth share carried west in two small chests [@baggins2942]. The regional recovery that followed was rapid, broad, and — as @gamgee3020 notes in his study of post-war agricultural prices — mildly inflationary for exactly the reasons one would hope.
+
+The episode thus provides both halves of the experiment: contraction by hoard, reflation by burglary. Few monetary interventions have been so thoroughly documented by their own instrument.
+
+## What the auditor saw
+
+This author's field observation of the hoard remains, so far as he knows, the only physical inspection of a dragon-held reserve portfolio [@baggins2941]. Two findings deserve emphasis. First, mark-to-market valuation of a hoard is meaningless when the market comprises one dragon and no bids. Second — and practitioners underestimate this — the custody arrangements were impeccable. Nothing was missing. It is the *velocity*, not the security, of a nation's money that keeps it alive.
+
+There is a lesson here for modern reserve managers, but this author is a respectable hobbit and will let the reader draw it.
+
+## References
+
+::: {#refs}
+:::

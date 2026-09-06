@@ -1,0 +1,167 @@
+/*-- scss:defaults --*/
+
+// ============================================================
+// DESIGN TOKENS — mock palette approximating the reference
+// screenshots. Swap these values for the Figma tokens later;
+// nothing below the token block should need to change.
+// ============================================================
+
+// Color tokens
+$leap-ink: #1f2a24;          // primary text
+$leap-ink-soft: #5b6b62;     // secondary text
+$leap-paper: #faf8f3;        // page background
+$leap-surface: #ffffff;      // cards
+$leap-accent: #2e5d43;       // deep forest green — links, buttons
+$leap-accent-dark: #21452f;
+$leap-rule: #e4e0d5;         // hairlines / borders
+$leap-highlight: #f3ecd9;    // category chips, code bg
+
+// Type tokens
+$leap-font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+$leap-font-body: "Source Sans 3", -apple-system, "Helvetica Neue", Arial, sans-serif;
+$leap-font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, monospace;
+
+// Bootstrap variable mapping
+$body-bg: $leap-paper;
+$body-color: $leap-ink;
+$link-color: $leap-accent;
+$link-hover-color: $leap-accent-dark;
+$font-family-sans-serif: $leap-font-body;
+$font-family-monospace: $leap-font-mono;
+$headings-font-family: $leap-font-display;
+$headings-font-weight: 600;
+$headings-color: $leap-ink;
+$navbar-bg: $leap-paper;
+$navbar-fg: $leap-ink;
+$footer-bg: $leap-paper;
+$code-block-bg: $leap-highlight;
+$code-bg: $leap-highlight;
+$code-color: $leap-accent-dark;
+$toc-color: $leap-ink-soft;
+
+/*-- scss:rules --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+// ---------- Navbar ----------
+.navbar {
+  border-bottom: 1px solid $leap-rule;
+  .navbar-brand {
+    font-family: $leap-font-display;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0.01em;
+  }
+  .nav-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+}
+
+// ---------- Article pages ----------
+.quarto-title h1.title {
+  font-size: 2.4rem;
+  line-height: 1.15;
+}
+
+.quarto-title-meta-heading {
+  color: $leap-ink-soft;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+}
+
+#title-block-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid $leap-rule;
+  padding-bottom: 1.25rem;
+}
+
+main p {
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+
+// Category chips
+.quarto-category, .quarto-title .quarto-categories .quarto-category {
+  background: $leap-highlight;
+  color: $leap-accent-dark;
+  border: none;
+  border-radius: 999px;
+  padding: 0.2em 0.8em;
+  font-size: 0.72rem;
+  opacity: 1;
+}
+
+// ---------- Listings ----------
+div.quarto-post {
+  border-bottom: 1px solid $leap-rule;
+  padding-bottom: 1.4rem;
+  .listing-title {
+    font-family: $leap-font-display;
+    font-weight: 600;
+    font-size: 1.3rem;
+    a { color: $leap-ink; }
+    a:hover { color: $leap-accent; }
+  }
+  .listing-description { color: $leap-ink-soft; }
+}
+
+.quarto-grid-item {
+  background: $leap-surface;
+  border: 1px solid $leap-rule;
+  border-radius: 10px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(31, 42, 36, 0.08);
+  }
+  .card-title {
+    font-family: $leap-font-display;
+    font-weight: 600;
+  }
+}
+
+// ---------- "Other Formats" (PDF) link styled as a button ----------
+.quarto-alternate-formats, #quarto-alternate-formats {
+  a {
+    display: inline-block;
+    background: $leap-accent;
+    color: #fff !important;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    &:hover { background: $leap-accent-dark; }
+  }
+  h2 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: $leap-ink-soft;
+    border-bottom: none;
+  }
+}
+
+// ---------- Citation appendix ----------
+#quarto-appendix {
+  background: $leap-surface;
+  border-top: 1px solid $leap-rule;
+  #quarto-citation .quarto-appendix-secondary-label,
+  .quarto-appendix-heading {
+    font-family: $leap-font-display;
+  }
+  pre.sourceCode, div.sourceCode {
+    background: $leap-highlight;
+    border: 1px solid $leap-rule;
+    border-radius: 8px;
+  }
+}
+
+// ---------- Footer ----------
+.nav-footer {
+  border-top: 1px solid $leap-rule;
+  color: $leap-ink-soft;
+  font-size: 0.85rem;
+}

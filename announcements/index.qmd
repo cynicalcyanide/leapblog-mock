@@ -1,0 +1,12 @@
+---
+title: "Announcements"
+listing:
+  contents: events
+  sort: "date desc"
+  type: default
+  fields: [date, title, description]
+page-layout: full
+toc: false
+---
+
+Conference calls, workshops, and events. Submissions from all Free Peoples welcome; orcs must supply an ethics statement.

@@ -1,0 +1,21 @@
+---
+title: "Elrond Half-elven"
+description: "Long-horizon policy. Works on intergenerational discounting, committee design, and the political economy of very long meetings."
+image: ../assets/authors/elrond.svg
+toc: false
+listing:
+  id: author-posts
+  contents: "../posts/*/index.qmd"
+  include:
+    author: "Elrond Half-elven"
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories]
+---
+
+Elrond has chaired exactly one committee meeting of consequence and has been apologising for its outcomes for three thousand years. His current work applies behavioural models to individuals with unusually severe time-inconsistency problems. He discounts the future at approximately zero, which his referees find implausible.
+
+## Articles by Elrond
+
+::: {#author-posts}
+:::
