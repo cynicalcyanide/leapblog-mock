@@ -1,0 +1,62 @@
+<div id="leap-share" class="leap-share" hidden>
+  <span class="leap-share-label">Share</span>
+  <a id="ls-x" target="_blank" rel="noopener">X</a>
+  <a id="ls-li" target="_blank" rel="noopener">LinkedIn</a>
+  <a id="ls-em">Email</a>
+  <a id="ls-cp" href="#">Copy link</a>
+</div>
+<div id="leap-quote-pop" class="leap-quote-pop" hidden>
+  <a id="lq-x" target="_blank" rel="noopener">Post quote on X</a>
+  <a id="lq-cp" href="#">Copy quote</a>
+</div>
+<script>
+(function () {
+  var url = location.href.split("#")[0];
+  var title = document.title;
+  var bar = document.getElementById("leap-share");
+  var tb = document.getElementById("title-block-header");
+  if (tb && bar) { tb.appendChild(bar); bar.hidden = false; }
+
+  document.getElementById("ls-x").href =
+    "https://x.com/intent/post?text=" + encodeURIComponent(title) + "&url=" + encodeURIComponent(url);
+  document.getElementById("ls-li").href =
+    "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+  document.getElementById("ls-em").href =
+    "mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(url);
+  document.getElementById("ls-cp").addEventListener("click", function (e) {
+    e.preventDefault();
+    var el = e.target;
+    navigator.clipboard.writeText(url).then(function () {
+      el.textContent = "Copied!";
+      setTimeout(function () { el.textContent = "Copy link"; }, 1500);
+    });
+  });
+
+  // Medium-style: select any passage to share it as a quote
+  var pop = document.getElementById("leap-quote-pop");
+  var main = document.getElementById("quarto-document-content");
+  if (!main) return;
+  document.addEventListener("mouseup", function () {
+    setTimeout(function () {
+      var sel = window.getSelection();
+      var text = sel ? sel.toString().trim() : "";
+      if (text.length > 3 && text.length < 700 && sel.anchorNode && main.contains(sel.anchorNode)) {
+        var r = sel.getRangeAt(0).getBoundingClientRect();
+        var quote = "“" + text + "”";
+        document.getElementById("lq-x").href =
+          "https://x.com/intent/post?text=" + encodeURIComponent(quote) + "&url=" + encodeURIComponent(url);
+        document.getElementById("lq-cp").onclick = function (e) {
+          e.preventDefault();
+          navigator.clipboard.writeText(quote + " — " + url);
+          pop.hidden = true;
+        };
+        pop.hidden = false;
+        pop.style.top = (window.scrollY + r.top - pop.offsetHeight - 8) + "px";
+        pop.style.left = Math.max(8, window.scrollX + r.left + r.width / 2 - pop.offsetWidth / 2) + "px";
+      } else {
+        pop.hidden = true;
+      }
+    }, 10);
+  });
+})();
+</script>

@@ -17,6 +17,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true  # article PDFs are typeset with LaTeX
 
       # Executed code (the Plotly chart) is cached via `freeze: auto`,
       # so CI needs no Python — it renders from the committed _freeze dir.

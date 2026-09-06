@@ -1,23 +1,26 @@
 # Applies to every article under posts/
 
 citation: true
+number-sections: true
 
 format:
   html:
-    # Comments: Cusdis (open source, email/anonymous commenting, moderated).
-    # The embed lives in partials/comments.html; giscus was removed because it
-    # requires commenters to have a GitHub account. HTML-scoped so the raw
-    # HTML never reaches the Typst PDF render.
+    # Comments (Cusdis) + share bar / select-to-quote. HTML-scoped so the
+    # raw HTML never reaches the PDF render.
     include-after-body:
       - ../../partials/comments.html
+      - ../../partials/share.html
     format-links: false
     other-links:
       - text: Download PDF
         icon: file-pdf
         href: index.pdf
-  typst:
+  # Old-school LaTeX paper look for the downloadable PDFs
+  pdf:
+    documentclass: article
     papersize: a4
-    margin:
-      x: 2.5cm
-      y: 2.5cm
-
+    fontsize: 11pt
+    geometry:
+      - margin=1.1in
+    colorlinks: true
+    links-as-notes: true
