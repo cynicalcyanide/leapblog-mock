@@ -1,0 +1,1 @@
+Sitemap: https://cynicalcyanide.github.io/leapblog-mock/sitemap.xml

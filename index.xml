@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>The Leap Blog</title>
+<link>https://cynicalcyanide.github.io/leapblog-mock/</link>
+<atom:link href="https://cynicalcyanide.github.io/leapblog-mock/index.xml" rel="self" type="application/rss+xml"/>
+<description>A mock rehearsal of the new Leap Blog — economics, ecology and policy from Middle-earth.</description>
+<generator>quarto-1.8.26</generator>
+<lastBuildDate>Mon, 31 Aug 2026 18:30:00 GMT</lastBuildDate>
+<item>
+  <title>Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse</title>
+  <dc:creator>Samwise Gamgee</dc:creator>
+  <link>https://cynicalcyanide.github.io/leapblog-mock/posts/supply-chains-of-middle-earth/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Every economy in Middle-earth solved provisioning differently: the Shire solved it with surplus and cellars, Rohan with mobility, Gondor with fortified granaries, and the Elves with a technology so far ahead of everyone else’s that it should have restructured the continent’s logistics — and didn’t.</p>
+<section id="the-lembas-anomaly" class="level2">
+<h2 class="anchored" data-anchor-id="the-lembas-anomaly">The lembas anomaly</h2>
+<p>Lembas is, on the numbers, absurd. One cake sustains a working adult for a day; it keeps for months wrapped in a leaf; it weighs almost nothing. In supply-chain terms, elvish waybread collapses the <em>tooth-to-tail ratio</em> of any expedition to nearly zero. An army provisioned on lembas needs no baggage train, which means no roads, which means no predictable routes to ambush. It is a strategic technology.</p>
+<p>Yet output never scaled. The chart below assembles the (entirely invented) production series this correspondent compiled from regional records. Hover over it: you’ll get crosshairs, exact values for every region at that date, and you can zoom into any period. Click a region in the legend to hide it.</p>
+<div id="cell-fig-lembas" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Show the code behind this chart</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> plotly.express <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> px</span>
+<span id="cb1-3"></span>
+<span id="cb1-4">years <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3001</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3022</span>))</span>
+<span id="cb1-5">data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> []</span>
+<span id="cb1-6"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> region, base, trend, shock_year, shock <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> [</span>
+<span id="cb1-7">    (<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Lothlórien"</span>,  <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">84</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3018</span>, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>),</span>
+<span id="cb1-8">    (<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Rivendell"</span>,   <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">41</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3018</span>, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>),</span>
+<span id="cb1-9">    (<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Mirkwood"</span>,    <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">23</span>, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3010</span>, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>),</span>
+<span id="cb1-10">    (<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Grey Havens"</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.9</span>, <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),</span>
+<span id="cb1-11">]:</span>
+<span id="cb1-12">    level <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> base</span>
+<span id="cb1-13">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> y <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> years:</span>
+<span id="cb1-14">        level <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> trend</span>
+<span id="cb1-15">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> shock_year <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">and</span> y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;=</span> shock_year:</span>
+<span id="cb1-16">            level <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> shock <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb1-17">        data.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"year"</span>: y, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"region"</span>: region,</span>
+<span id="cb1-18">                     <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"output"</span>: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">round</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(level, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)})</span>
+<span id="cb1-19"></span>
+<span id="cb1-20">df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame(data)</span>
+<span id="cb1-21"></span>
+<span id="cb1-22">fig <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> px.line(</span>
+<span id="cb1-23">    df, x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"year"</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"output"</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"region"</span>,</span>
+<span id="cb1-24">    labels<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"year"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Third Age year"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"output"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Output ('000 cakes)"</span>,</span>
+<span id="cb1-25">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"region"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Region"</span>},</span>
+<span id="cb1-26">    color_discrete_sequence<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#2e5d43"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#8a6d3b"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#5b6b62"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#a63d40"</span>],</span>
+<span id="cb1-27">)</span>
+<span id="cb1-28">fig.update_xaxes(showspikes<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, spikemode<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"across"</span>, spikedash<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dot"</span>,</span>
+<span id="cb1-29">                 spikethickness<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb1-30">fig.update_yaxes(showspikes<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, spikemode<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"across"</span>, spikedash<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dot"</span>,</span>
+<span id="cb1-31">                 spikethickness<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, gridcolor<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#e4e0d5"</span>)</span>
+<span id="cb1-32">fig.update_layout(</span>
+<span id="cb1-33">    hovermode<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"x unified"</span>,</span>
+<span id="cb1-34">    plot_bgcolor<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"white"</span>,</span>
+<span id="cb1-35">    font<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">dict</span>(family<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Source Sans 3, sans-serif"</span>),</span>
+<span id="cb1-36">    legend<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">dict</span>(orientation<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"h"</span>, yanchor<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bottom"</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.02</span>),</span>
+<span id="cb1-37">    margin<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">dict</span>(l<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, r<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, t<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span>, b<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>),</span>
+<span id="cb1-38">)</span>
+<span id="cb1-39">fig.show()</span></code></pre></div></div>
+</details>
+<div id="fig-lembas" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lembas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div style="height:525px; width:100%;">            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-4.0.0.min.js" integrity="sha256-FEYfO0yRyLtZCpnW0Dw/0DHKQO7Afrq3ml4+rBB818o=" crossorigin="anonymous"></script>                <div id="ce2345c0-6f9f-4326-b853-d8c3f4077c1c" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("ce2345c0-6f9f-4326-b853-d8c3f4077c1c")) {                    Plotly.newPlot(                        "ce2345c0-6f9f-4326-b853-d8c3f4077c1c",                        [{"hovertemplate":"Region=Lothl\u00f3rien\u003cbr\u003eThird Age year=%{x}\u003cbr\u003eOutput ('000 cakes)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Lothl\u00f3rien","line":{"color":"#2e5d43","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Lothl\u00f3rien","orientation":"v","showlegend":true,"x":{"dtype":"i2","bdata":"uQu6C7sLvAu9C74LvwvAC8ELwgvDC8QLxQvGC8cLyAvJC8oLywvMC80L"},"xaxis":"x","y":{"dtype":"f8","bdata":"AAAAAAAgVUAAAAAAAEBVQAAAAAAAYFVAAAAAAACAVUAAAAAAAKBVQAAAAAAAwFVAAAAAAADgVUAAAAAAAABWQAAAAAAAIFZAAAAAAABAVkAAAAAAAGBWQAAAAAAAgFZAAAAAAACgVkAAAAAAAMBWQAAAAAAA4FZAAAAAAAAAV0AAAAAAACBXQAAAAAAAwFRAAAAAAABgUkAAAAAAAABQQAAAAAAAQEtA"},"yaxis":"y","type":"scatter"},{"hovertemplate":"Region=Rivendell\u003cbr\u003eThird Age year=%{x}\u003cbr\u003eOutput ('000 cakes)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Rivendell","line":{"color":"#8a6d3b","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Rivendell","orientation":"v","showlegend":true,"x":{"dtype":"i2","bdata":"uQu6C7sLvAu9C74LvwvAC8ELwgvDC8QLxQvGC8cLyAvJC8oLywvMC80L"},"xaxis":"x","y":{"dtype":"f8","bdata":"ZmZmZmamREDNzMzMzMxEQDMzMzMz80RAmpmZmZkZRUAAAAAAAEBFQGZmZmZmZkVAzczMzMyMRUAzMzMzM7NFQJqZmZmZ2UVAAAAAAAAARkBmZmZmZiZGQM3MzMzMTEZAMzMzMzNzRkCamZmZmZlGQAAAAAAAwEZAZmZmZmbmRkDNzMzMzAxHQDMzMzMzM0VAmpmZmZlZQ0AAAAAAAIBBQM3MzMzMTD9A"},"yaxis":"y","type":"scatter"},{"hovertemplate":"Region=Mirkwood\u003cbr\u003eThird Age year=%{x}\u003cbr\u003eOutput ('000 cakes)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Mirkwood","line":{"color":"#5b6b62","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Mirkwood","orientation":"v","showlegend":true,"x":{"dtype":"i2","bdata":"uQu6C7sLvAu9C74LvwvAC8ELwgvDC8QLxQvGC8cLyAvJC8oLywvMC80L"},"xaxis":"x","y":{"dtype":"f8","bdata":"MzMzMzMzNkBmZmZmZmY1QJqZmZmZmTRAzczMzMzMM0AAAAAAAAAzQDMzMzMzMzJAZmZmZmZmMUCamZmZmZkwQJqZmZmZmS9AAAAAAAAAKkBmZmZmZmYkQJqZmZmZmR1AZmZmZmZmEkDNzMzMzMz8PwAAAAAAAPA\u002fAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA\u002fAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA\u002f"},"yaxis":"y","type":"scatter"},{"hovertemplate":"Region=Grey Havens\u003cbr\u003eThird Age year=%{x}\u003cbr\u003eOutput ('000 cakes)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Grey Havens","line":{"color":"#a63d40","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"Grey Havens","orientation":"v","showlegend":true,"x":{"dtype":"i2","bdata":"uQu6C7sLvAu9C74LvwvAC8ELwgvDC8QLxQvGC8cLyAvJC8oLywvMC80L"},"xaxis":"x","y":{"dtype":"f8","bdata":"zczMzMzMKUCamZmZmZkrQGZmZmZmZi1AMzMzMzMzL0AAAAAAAIAwQGZmZmZmZjFAzczMzMxMMkAzMzMzMzMzQJqZmZmZGTRAAAAAAAAANUBmZmZmZuY1QM3MzMzMzDZAMzMzMzOzN0CamZmZmZk4QAAAAAAAgDlAZmZmZmZmOkDNzMzMzEw7QDMzMzMzMzxAmpmZmZkZPUAAAAAAAAA+QGZmZmZm5j5A"},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Third Age year"},"showspikes":true,"spikemode":"across","spikedash":"dot","spikethickness":1},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Output ('000 cakes)"},"showspikes":true,"spikemode":"across","spikedash":"dot","spikethickness":1,"gridcolor":"#e4e0d5"},"legend":{"title":{"text":"Region"},"tracegroupgap":0,"orientation":"h","yanchor":"bottom","y":1.02},"font":{"family":"Source Sans 3, sans-serif"},"margin":{"l":10,"r":10,"t":30,"b":10},"hovermode":"x unified","plot_bgcolor":"white"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('ce2345c0-6f9f-4326-b853-d8c3f4077c1c');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lembas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Waybread output by region, Third Age 3001–3021 (thousand cakes/year). Entirely fictional data; hover for values.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Note the structural break at 3018: the War disrupted Lothlórien’s output — and the industry never recovered its peak, because the workforce emigrated. Which brings us to the real constraint.</p>
+</section>
+<section id="why-the-technology-never-diffused" class="level2">
+<h2 class="anchored" data-anchor-id="why-the-technology-never-diffused">Why the technology never diffused</h2>
+<p>Three hypotheses circulate in the literature, of unequal quality:</p>
+<ol type="1">
+<li><strong>Recipe secrecy (weak).</strong> Trade secrets leak over ten thousand years. Something else binds.</li>
+<li><strong>Non-transferable inputs (stronger).</strong> If production requires inputs that exist only where Elves and their particular ecology persist — a <em>terroir</em> theory of waybread — then the technology is land-linked and cannot be licensed out.</li>
+<li><strong>The gift-good hypothesis (strongest).</strong> Lembas was never a commodity. It moves only as a gift, between parties in specific relationships. The Elves were not running an industry below capacity; they were refusing, on principle, to have an industry at all. As with the Eagles, the constraint is institutional, not technical.</li>
+</ol>
+</section>
+<section id="the-practitioners-postscript" class="level2">
+<h2 class="anchored" data-anchor-id="the-practitioners-postscript">The practitioner’s postscript</h2>
+<p>For actual expedition provisioning, this correspondent’s advice is unchanged: take the lembas gratefully, count on nothing you cannot grow or carry, and remember that the finest logistics innovation of the Third Age remains the humble coney, stewed, with taters. <em>PO-TA-TOES.</em></p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{gamgee2026,
+  author = {Gamgee, Samwise},
+  title = {Supply {Chains} of {Middle-earth:} {Lembas,} {Logistics,} and
+    the {Last} {Homely} {Warehouse}},
+  date = {2026-09-01},
+  url = {https://cynicalcyanide.github.io/leapblog-mock/posts/supply-chains-of-middle-earth/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-gamgee2026" class="csl-entry quarto-appendix-citeas">
+Gamgee, Samwise. 2026. <span>“Supply Chains of Middle-Earth: Lembas,
+Logistics, and the Last Homely Warehouse.”</span> September 1, 2026. <a href="https://cynicalcyanide.github.io/leapblog-mock/posts/supply-chains-of-middle-earth/">https://cynicalcyanide.github.io/leapblog-mock/posts/supply-chains-of-middle-earth/</a>.
+</div></div></section></div> ]]></description>
+  <category>supply chains</category>
+  <category>economics</category>
+  <category>data</category>
+  <guid>https://cynicalcyanide.github.io/leapblog-mock/posts/supply-chains-of-middle-earth/</guid>
+  <pubDate>Mon, 31 Aug 2026 18:30:00 GMT</pubDate>
+  <media:content url="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/lembas.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood</title>
+  <dc:creator>Gandalf the Grey</dc:creator>
+  <link>https://cynicalcyanide.github.io/leapblog-mock/posts/ecology-of-middle-earth/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Middle-earth offers ecologists something modern datasets rarely do: forests with continuous institutional records running to tens of thousands of years, and stakeholders old enough to remember every policy intervention personally. The comparison between Fangorn and Mirkwood is, in effect, a natural experiment in woodland governance.</p>
+<section id="fangorn-common-pool-resources-with-shepherds" class="level2">
+<h2 class="anchored" data-anchor-id="fangorn-common-pool-resources-with-shepherds">Fangorn: common-pool resources with shepherds</h2>
+<p>Fangorn is the canonical case of a common-pool resource managed by resident stewards with effectively infinite time horizons. The Ents do not discount the future in any measurable way; when your deliberative assembly takes a month to agree on the agenda, quarterly thinking is not a risk.</p>
+<p>Three institutional features stand out:</p>
+<ol type="1">
+<li><strong>Monitoring is continuous and ambulatory.</strong> The shepherds walk the resource. Enforcement is personal, proportionate, and occasionally involves throwing rocks at industrial facilities.</li>
+<li><strong>Membership is closed but succession is a crisis.</strong> The absence of Entwives is, in economic terms, a catastrophic failure of demographic replacement that no governance structure can indefinitely survive. Institutions require heirs.</li>
+<li><strong>Exit from passivity is discontinuous.</strong> Fangorn tolerated marginal encroachment for centuries, then internalised an entire externality in one afternoon by demolishing Isengard. Regulators everywhere should note the shape of that response function: flat, flat, flat, vertical.</li>
+</ol>
+</section>
+<section id="mirkwood-what-happens-under-absentee-pressure" class="level2">
+<h2 class="anchored" data-anchor-id="mirkwood-what-happens-under-absentee-pressure">Mirkwood: what happens under absentee pressure</h2>
+<p>Greenwood the Great became Mirkwood not through harvesting but through a hostile change in effective ownership. A single unaccountable actor established residence at Dol Guldur, and the ecosystem repriced immediately: species composition shifted toward spiders of unusual size, path networks decayed, and the river acquired properties best described as non-standard.</p>
+<p>The elven response — retreat northward, fortify, tax passing traffic — is recognisably the strategy of a minority stakeholder who cannot dislodge the majority polluter and settles for enclave quality. It works, for the enclave. The rest of the forest carries the cost.</p>
+</section>
+<section id="what-travels" class="level2">
+<h2 class="anchored" data-anchor-id="what-travels">What travels</h2>
+<p>Strip the wizards out and the lesson is portable: forest outcomes track the time horizon of whoever holds effective control. Patient residents with enforcement power produce old growth. Absentee extraction produces spiders. The policy instrument that matters is not the harvesting quota but the identity, tenure, and patience of the controlling party.</p>
+<p>Further fieldwork is planned, pending the availability of the author, who is expected back around the turn of the age.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{the_grey2026,
+  author = {the Grey, Gandalf},
+  title = {The {Ecology} of {Middle-earth:} {Old-growth} {Governance}
+    from {Fangorn} to {Mirkwood}},
+  date = {2026-08-18},
+  url = {https://cynicalcyanide.github.io/leapblog-mock/posts/ecology-of-middle-earth/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-the_grey2026" class="csl-entry quarto-appendix-citeas">
+Grey, Gandalf the. 2026. <span>“The Ecology of Middle-Earth: Old-Growth
+Governance from Fangorn to Mirkwood.”</span> August 18, 2026. <a href="https://cynicalcyanide.github.io/leapblog-mock/posts/ecology-of-middle-earth/">https://cynicalcyanide.github.io/leapblog-mock/posts/ecology-of-middle-earth/</a>.
+</div></div></section></div> ]]></description>
+  <category>ecology</category>
+  <category>governance</category>
+  <category>institutions</category>
+  <guid>https://cynicalcyanide.github.io/leapblog-mock/posts/ecology-of-middle-earth/</guid>
+  <pubDate>Mon, 17 Aug 2026 18:30:00 GMT</pubDate>
+  <media:content url="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/ecology.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>The Psychology of Gollum: A Two-Agent Bargaining Model of the Self</title>
+  <dc:creator>Elrond Half-elven</dc:creator>
+  <link>https://cynicalcyanide.github.io/leapblog-mock/posts/psychology-of-gollum/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>The clinical literature treats Gollum as a cautionary tale about addiction. This is correct but incomplete. What the record actually documents — in unusual detail, thanks to two attentive hobbit observers — is a <em>bargaining game between two selves sharing one body</em>, and it rewards formal treatment.</p>
+<section id="the-setup" class="level2">
+<h2 class="anchored" data-anchor-id="the-setup">The setup</h2>
+<p>Model the individual as two agents. <strong>Sméagol</strong> has conventional preferences: food, memory of sunlight, the approval of others. <strong>Gollum</strong> has a single dominant preference with an infinite reservation price. The two alternate control of the body — the observable “arguments” are, in this reading, negotiation rounds over the allocation of future control.</p>
+<p>The Ring functions as an <em>asymmetric commitment device</em>: every period it strengthens Gollum’s bargaining position and erodes Sméagol’s outside option. After five hundred years, Sméagol’s threat point is approximately zero. That he negotiates anything at all is remarkable.</p>
+</section>
+<section id="the-frodo-intervention" class="level2">
+<h2 class="anchored" data-anchor-id="the-frodo-intervention">The Frodo intervention</h2>
+<p>The most interesting event in the dataset is exogenous: Frodo extends trust, addresses Sméagol by name, and — critically — creates <em>external</em> value for the Sméagol identity. For a period, the equilibrium visibly shifts: service is rendered, promises are kept, the Gollum agent is suppressed in daylight hours.</p>
+<p>The mechanism matters for policy. Frodo did not strengthen Sméagol’s willpower (an intra-personal resource); he changed the <em>payoff structure</em> by making cooperation externally rewarded. Recovery, in this model, is not a triumph of will but a renegotiation under improved outside options.</p>
+</section>
+<section id="the-relapse-and-the-stairs-of-cirith-ungol" class="level2">
+<h2 class="anchored" data-anchor-id="the-relapse-and-the-stairs-of-cirith-ungol">The relapse, and the stairs of Cirith Ungol</h2>
+<p>The equilibrium collapses on contact with a third party who assigns the Sméagol identity zero value. One act of misrecognition — Sam’s accusation over the innocent matter of the rabbits — reprices Sméagol’s cooperative strategy to worthless, and Gollum resumes control permanently. Practitioners will recognise the pattern: the relapse is triggered not by the addictive good but by the withdrawal of the identity that made abstention worthwhile.</p>
+</section>
+<section id="implication" class="level2">
+<h2 class="anchored" data-anchor-id="implication">Implication</h2>
+<p>If the self is a coalition, treatment is coalition management. Punishing the whole individual strengthens precisely the agent you wish to weaken — a result this author has verified, at length, in committee.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{half-elven2026,
+  author = {Half-elven, Elrond},
+  title = {The {Psychology} of {Gollum:} {A} {Two-Agent} {Bargaining}
+    {Model} of the {Self}},
+  date = {2026-07-22},
+  url = {https://cynicalcyanide.github.io/leapblog-mock/posts/psychology-of-gollum/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-half-elven2026" class="csl-entry quarto-appendix-citeas">
+Half-elven, Elrond. 2026. <span>“The Psychology of Gollum: A Two-Agent
+Bargaining Model of the Self.”</span> July 22, 2026. <a href="https://cynicalcyanide.github.io/leapblog-mock/posts/psychology-of-gollum/">https://cynicalcyanide.github.io/leapblog-mock/posts/psychology-of-gollum/</a>.
+</div></div></section></div> ]]></description>
+  <category>psychology</category>
+  <category>behavioural economics</category>
+  <guid>https://cynicalcyanide.github.io/leapblog-mock/posts/psychology-of-gollum/</guid>
+  <pubDate>Tue, 21 Jul 2026 18:30:00 GMT</pubDate>
+  <media:content url="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/gollum.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>Shieldmaidens and the Rohirrim Labour Market</title>
+  <dc:creator>Éowyn of Rohan</dc:creator>
+  <link>https://cynicalcyanide.github.io/leapblog-mock/posts/shieldmaidens-labour-market/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Rohan’s principal export is cavalry. Its principal labour-market institution is a hard occupational bar excluding half the adult population from the cavalry. This column examines how that worked out.</p>
+<section id="the-steady-state-cost" class="level2">
+<h2 class="anchored" data-anchor-id="the-steady-state-cost">The steady-state cost</h2>
+<p>The static loss is the familiar one: talent misallocation. The kingdom’s defence output was produced from an artificially restricted labour pool, with predictable effects on quality at the margin. The shadow price of the restriction was invisible in peacetime — restrictions usually are — because the counterfactual soldier is a statistic and the norm is a tradition with songs.</p>
+</section>
+<section id="the-stress-test" class="level2">
+<h2 class="anchored" data-anchor-id="the-stress-test">The stress test</h2>
+<p>The Pelennor Fields provided the out-of-sample test. Two observations:</p>
+<ol type="1">
+<li><strong>The binding constraint bit at the extreme tail.</strong> The single most consequential combat action of the battle — the destruction of the Witch-king — was performed by an excluded worker, operating outside the licensing regime, who had entered the sector through what economists call <em>irregular channels</em> and what Rohan calls <em>disguise</em>.</li>
+<li><strong>The prophecy was a market signal everyone misread.</strong> “Not by the hand of man shall he fall” was, in retrospect, a standing arbitrage opportunity: an adversary invulnerable only to the excluded category. A rational personnel office would have recruited against it. Tradition priced it at zero.</li>
+</ol>
+</section>
+<section id="the-general-point" class="level2">
+<h2 class="anchored" data-anchor-id="the-general-point">The general point</h2>
+<p>Occupational restrictions are usually defended on average-quality grounds and usually costed in average terms. But defence — like several other sectors — is a tail-risk business. The value of an open labour market is not the mean worker it adds; it is the specific worker you cannot predict needing. You do not know, in advance, whose hand the job requires.</p>
+<p>Rohan has since reformed its recruitment practices. The songs, it must be said, adapted immediately; the pension system is taking longer.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{of_rohan2026,
+  author = {of Rohan, Éowyn},
+  title = {Shieldmaidens and the {Rohirrim} {Labour} {Market}},
+  date = {2026-06-10},
+  url = {https://cynicalcyanide.github.io/leapblog-mock/posts/shieldmaidens-labour-market/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-of_rohan2026" class="csl-entry quarto-appendix-citeas">
+Rohan, Éowyn of. 2026. <span>“Shieldmaidens and the Rohirrim Labour
+Market.”</span> June 10, 2026. <a href="https://cynicalcyanide.github.io/leapblog-mock/posts/shieldmaidens-labour-market/">https://cynicalcyanide.github.io/leapblog-mock/posts/shieldmaidens-labour-market/</a>.
+</div></div></section></div> ]]></description>
+  <category>labour</category>
+  <category>economics</category>
+  <category>policy</category>
+  <guid>https://cynicalcyanide.github.io/leapblog-mock/posts/shieldmaidens-labour-market/</guid>
+  <pubDate>Tue, 09 Jun 2026 18:30:00 GMT</pubDate>
+  <media:content url="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/shieldmaiden.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>Eagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere</title>
+  <dc:creator>Gandalf the Grey</dc:creator>
+  <link>https://cynicalcyanide.github.io/leapblog-mock/posts/eagles-transport-infrastructure/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>No question is put to this author more often, at conferences and in taverns, than the Eagle Question: <em>why didn’t you simply fly?</em> The question is understandable and the answer is institutional, so naturally nobody stays for it. Here it is in writing.</p>
+<section id="infrastructure-with-sovereignty" class="level2">
+<h2 class="anchored" data-anchor-id="infrastructure-with-sovereignty">Infrastructure with sovereignty</h2>
+<p>The Great Eagles present as transport capacity: heavy-lift, all-weather, unmatched speed over hostile terrain. The error is to model them as <em>infrastructure</em>, when they are in fact a <em>sovereign provider</em> — a self-governing polity that occasionally, at its own discretion, performs airlift.</p>
+<p>The distinction is everything. Infrastructure has a schedule and a price. A sovereign provider has interests, risk tolerances, and the right of refusal. There is no contract, no tariff, no service-level agreement — every Eagle intervention on record is a <em>gift</em>, and gift economies do not scale into logistics networks.</p>
+</section>
+<section id="the-airspace-problem" class="level2">
+<h2 class="anchored" data-anchor-id="the-airspace-problem">The airspace problem</h2>
+<p>Even granting goodwill, the corridor analysis is grim. A direct flight to the objective traverses continuously surveilled airspace defended by interceptors specifically bred for the role. Strategic transport that must survive contested airspace is not transport; it is an air campaign, with an air campaign’s probability of success and an air campaign’s tendency to announce itself.</p>
+<p>The historical uses of Eagle capacity — extraction of stranded persons from towers, pinnacles, and volcanoes — share a profile: short duration, low predictability, terminal urgency. This is search-and-rescue, and search-and-rescue is precisely the mission gift-economy capacity is good for.</p>
+</section>
+<section id="the-policy-failure-worth-naming" class="level2">
+<h2 class="anchored" data-anchor-id="the-policy-failure-worth-naming">The policy failure worth naming</h2>
+<p>The real lesson is that Middle-earth’s Free Peoples never built the boring alternative: roads. Reliable, dull, contract-governed surface logistics would have changed more outcomes than any eagle. Civilisations are tempted to solve infrastructure gaps with heroic capacity — the sovereign provider that shows up at the last moment — because heroes are cheaper than maintenance budgets, right up until they decline the mission.</p>
+<p>Build the roads. Thank the Eagles. Do not confuse the two.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{the_grey2026,
+  author = {the Grey, Gandalf},
+  title = {Eagles as {Critical} {Transport} {Infrastructure:} {Why} {We}
+    {Can’t} {Just} {Fly} {Everywhere}},
+  date = {2026-05-05},
+  url = {https://cynicalcyanide.github.io/leapblog-mock/posts/eagles-transport-infrastructure/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-the_grey2026" class="csl-entry quarto-appendix-citeas">
+Grey, Gandalf the. 2026. <span>“Eagles as Critical Transport
+Infrastructure: Why We Can’t Just Fly Everywhere.”</span> May 5, 2026.
+<a href="https://cynicalcyanide.github.io/leapblog-mock/posts/eagles-transport-infrastructure/">https://cynicalcyanide.github.io/leapblog-mock/posts/eagles-transport-infrastructure/</a>.
+</div></div></section></div> ]]></description>
+  <category>infrastructure</category>
+  <category>economics</category>
+  <category>governance</category>
+  <guid>https://cynicalcyanide.github.io/leapblog-mock/posts/eagles-transport-infrastructure/</guid>
+  <pubDate>Mon, 04 May 2026 18:30:00 GMT</pubDate>
+  <media:content url="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/eagles.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>Dragon Hoards as Monetary Policy: Smaug and the Deflationary Trap</title>
+  <dc:creator>Bilbo Baggins</dc:creator>
+  <link>https://cynicalcyanide.github.io/leapblog-mock/posts/dragon-hoards-monetary-policy/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>The standard histories treat the sack of Erebor as a security event. This is an accounting error. What Smaug executed in T.A. 2770 was the largest monetary contraction in recorded history: the withdrawal of an entire region’s specie stock from circulation, consolidated under a single balance sheet, held at zero velocity for 171 years <span class="citation" data-cites="oakenshield3018">(Reconstruction Economics 3018)</span>.</p>
+<section id="the-mechanics-of-a-dragon-induced-deflation" class="level2">
+<h2 class="anchored" data-anchor-id="the-mechanics-of-a-dragon-induced-deflation">The mechanics of a dragon-induced deflation</h2>
+<p>Dale and Erebor ran a metallic standard. When the gold left circulation — all of it, in one afternoon — the price level had nowhere to go but down, and the regional economy contracted along exactly the path the older literature on specie drains would predict <span class="citation" data-cites="grubb2941">(Grubb and Burrowes 2941)</span>. Wages fell, then employment, then the towns themselves. Lake-town’s subsequent two centuries of stagnation are usually blamed on geography. Geography did not eat the money supply.</p>
+<p>What makes the case theoretically clean is the dragon’s demand function. Smaug held gold for neither transaction nor investment purposes; the hoard generated no lending, no seigniorage, nothing. His famous remark about knowing every coin in the pile <span class="citation" data-cites="baggins2941">(Baggins 2941)</span> describes, in effect, a central banker running a full-reserve policy with a personal grudge. The literature on liquidity traps assumes the zero lower bound is a floor made of arithmetic; in Erebor it was a floor made of dragon.</p>
+</section>
+<section id="the-reflation-of-2941" class="level2">
+<h2 class="anchored" data-anchor-id="the-reflation-of-2941">The reflation of 2941</h2>
+<p>The Battle of the Five Armies is conventionally studied as a military engagement. Monetarily, it was a disorderly quantitative easing: the entire consolidated hoard re-entered circulation within a decade, distributed across dwarven reconstruction, Dale’s rebuilding, and a modest fourteenth share carried west in two small chests <span class="citation" data-cites="baggins2942">(Baggins 2942)</span>. The regional recovery that followed was rapid, broad, and — as <span class="citation" data-cites="gamgee3020">Gamgee (3020)</span> notes in his study of post-war agricultural prices — mildly inflationary for exactly the reasons one would hope.</p>
+<p>The episode thus provides both halves of the experiment: contraction by hoard, reflation by burglary. Few monetary interventions have been so thoroughly documented by their own instrument.</p>
+</section>
+<section id="what-the-auditor-saw" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-auditor-saw">What the auditor saw</h2>
+<p>This author’s field observation of the hoard remains, so far as he knows, the only physical inspection of a dragon-held reserve portfolio <span class="citation" data-cites="baggins2941">(Baggins 2941)</span>. Two findings deserve emphasis. First, mark-to-market valuation of a hoard is meaningless when the market comprises one dragon and no bids. Second — and practitioners underestimate this — the custody arrangements were impeccable. Nothing was missing. It is the <em>velocity</em>, not the security, of a nation’s money that keeps it alive.</p>
+<p>There is a lesson here for modern reserve managers, but this author is a respectable hobbit and will let the reader draw it.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0">
+<div id="ref-baggins2941" class="csl-entry">
+Baggins, Bilbo. 2941. <em>There and Back Again: A Hobbit’s Holiday, with Annexes on Asset Verification</em>. Hobbiton, The Shire: Bag End Press.
+</div>
+<div id="ref-baggins2942" class="csl-entry">
+———. 2942. <span>“Final Settlement of the Fourteenth Share: Notes Toward a Burglar’s Balance Sheet.”</span> TC-14. Thorin; Company (in liquidation).
+</div>
+<div id="ref-gamgee3020" class="csl-entry">
+Gamgee, Samwise. 3020. <span>“Taters After the War: Agricultural Prices and the Great Reflation, 2941–2951.”</span> <em>Shire Journal of Applied Gardening</em> 4 (1): 1–22.
+</div>
+<div id="ref-grubb2941" class="csl-entry">
+Grubb, Grubb, and Burrowes. 2941. <span>“On the Disposal of Estates Presumed Dragon-Adjacent: Deflation and Distress Auctions in the Long Lake Region.”</span> <em>Michel Delving Review of Law and Ponies</em> 12 (4): 33–58.
+</div>
+<div id="ref-oakenshield3018" class="csl-entry">
+Reconstruction Economics, Oakenshield Institute for. 3018. <span>“The Erebor Contraction: Specie Withdrawal and Regional Decline, t.a. 2770–2941.”</span> <em>Journal of Dale Economic History</em> 77 (2): 141–77.
+</div>
+</div>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{baggins2026,
+  author = {Baggins, Bilbo},
+  title = {Dragon {Hoards} as {Monetary} {Policy:} {Smaug} and the
+    {Deflationary} {Trap}},
+  date = {2026-04-14},
+  url = {https://cynicalcyanide.github.io/leapblog-mock/posts/dragon-hoards-monetary-policy/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-baggins2026" class="csl-entry quarto-appendix-citeas">
+Baggins, Bilbo. 2026. <span>“Dragon Hoards as Monetary Policy: Smaug and
+the Deflationary Trap.”</span> April 14, 2026. <a href="https://cynicalcyanide.github.io/leapblog-mock/posts/dragon-hoards-monetary-policy/">https://cynicalcyanide.github.io/leapblog-mock/posts/dragon-hoards-monetary-policy/</a>.
+</div></div></section></div> ]]></description>
+  <category>monetary policy</category>
+  <category>economics</category>
+  <category>history</category>
+  <guid>https://cynicalcyanide.github.io/leapblog-mock/posts/dragon-hoards-monetary-policy/</guid>
+  <pubDate>Mon, 13 Apr 2026 18:30:00 GMT</pubDate>
+  <media:content url="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/smaug.svg" medium="image" type="image/svg+xml"/>
+</item>
+</channel>
+</rss>

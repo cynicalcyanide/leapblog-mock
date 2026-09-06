@@ -1,0 +1,63 @@
+[
+  {
+    "listing": "/announcements/index.html",
+    "items": [
+      "/announcements/events/council-of-elrond-3025.html",
+      "/announcements/events/entmoot-3026.html",
+      "/announcements/events/mordor-industrial-policy-summit.html",
+      "/announcements/events/pipeweed-futures-workshop.html"
+    ]
+  },
+  {
+    "listing": "/authors/samwise.html",
+    "items": [
+      "/posts/supply-chains-of-middle-earth/index.html"
+    ]
+  },
+  {
+    "listing": "/authors/eowyn.html",
+    "items": [
+      "/posts/shieldmaidens-labour-market/index.html"
+    ]
+  },
+  {
+    "listing": "/authors/bilbo.html",
+    "items": [
+      "/posts/dragon-hoards-monetary-policy/index.html"
+    ]
+  },
+  {
+    "listing": "/authors/index.html",
+    "items": [
+      "/authors/bilbo.html",
+      "/authors/elrond.html",
+      "/authors/gandalf.html",
+      "/authors/samwise.html",
+      "/authors/eowyn.html"
+    ]
+  },
+  {
+    "listing": "/authors/elrond.html",
+    "items": [
+      "/posts/psychology-of-gollum/index.html"
+    ]
+  },
+  {
+    "listing": "/authors/gandalf.html",
+    "items": [
+      "/posts/ecology-of-middle-earth/index.html",
+      "/posts/eagles-transport-infrastructure/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/supply-chains-of-middle-earth/index.html",
+      "/posts/ecology-of-middle-earth/index.html",
+      "/posts/psychology-of-gollum/index.html",
+      "/posts/shieldmaidens-labour-market/index.html",
+      "/posts/eagles-transport-infrastructure/index.html",
+      "/posts/dragon-hoards-monetary-policy/index.html"
+    ]
+  }
+]
