@@ -222,7 +222,7 @@ Theory of Power.”</span> June 25. <a href="https://cynicalcyanide.github.io/le
 </div></div></section></div></main> <!-- /main -->
 <div id="leap-comments" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #e4e0d5;">
   <h2>Comments</h2>
-  <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="CUSDIS_APP_ID_PLACEHOLDER" data-page-id="" data-page-url="" data-page-title="">
+  <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="0747d503-a99b-4997-82f1-bf8650cdbf2b" data-page-id="" data-page-url="" data-page-title="">
   </div>
 </div>
 <script>
@@ -252,8 +252,10 @@ Theory of Power.”</span> June 25. <a href="https://cynicalcyanide.github.io/le
   <a id="ls-cp" href="#">Copy link</a>
 </div>
 <div id="leap-quote-pop" class="leap-quote-pop" hidden="">
-  <a id="lq-x" target="_blank" rel="noopener">Post quote on X</a>
-  <a id="lq-cp" href="#">Copy quote</a>
+  <a id="lq-cp" href="#">Copy</a>
+  <a id="lq-x" target="_blank" rel="noopener">X</a>
+  <a id="lq-li" target="_blank" rel="noopener">LinkedIn</a>
+  <a id="lq-native" href="#" hidden="">Share…</a>
 </div>
 <script>
 (function () {
@@ -278,31 +280,70 @@ Theory of Power.”</span> June 25. <a href="https://cynicalcyanide.github.io/le
     });
   });
 
-  // Medium-style: select any passage to share it as a quote
+  // ----- Select any passage -> quote widget -----
   var pop = document.getElementById("leap-quote-pop");
   var main = document.getElementById("quarto-document-content");
   if (!main) return;
-  document.addEventListener("mouseup", function () {
-    setTimeout(function () {
-      var sel = window.getSelection();
-      var text = sel ? sel.toString().trim() : "";
-      if (text.length > 3 && text.length < 700 && sel.anchorNode && main.contains(sel.anchorNode)) {
-        var r = sel.getRangeAt(0).getBoundingClientRect();
-        var quote = "“" + text + "”";
-        document.getElementById("lq-x").href =
-          "https://x.com/intent/post?text=" + encodeURIComponent(quote) + "&url=" + encodeURIComponent(url);
-        document.getElementById("lq-cp").onclick = function (e) {
-          e.preventDefault();
-          navigator.clipboard.writeText(quote + " — " + url);
-          pop.hidden = true;
-        };
-        pop.hidden = false;
-        pop.style.top = (window.scrollY + r.top - pop.offsetHeight - 8) + "px";
-        pop.style.left = Math.max(8, window.scrollX + r.left + r.width / 2 - pop.offsetWidth / 2) + "px";
-      } else {
-        pop.hidden = true;
-      }
-    }, 10);
+  var nativeBtn = document.getElementById("lq-native");
+  if (navigator.share) nativeBtn.hidden = false;
+
+  var currentQuote = "";
+
+  function positionAndShow(rect) {
+    pop.hidden = false;
+    var top = window.scrollY + rect.top - pop.offsetHeight - 10;
+    if (top < window.scrollY + 8) top = window.scrollY + rect.bottom + 10;
+    pop.style.top = top + "px";
+    pop.style.left = Math.max(
+      8,
+      Math.min(
+        window.scrollX + rect.left + rect.width / 2 - pop.offsetWidth / 2,
+        window.scrollX + window.innerWidth - pop.offsetWidth - 8
+      )
+    ) + "px";
+  }
+
+  function refresh() {
+    var sel = window.getSelection();
+    var text = sel ? sel.toString().trim() : "";
+    if (text.length > 3 && text.length < 700 && sel.anchorNode && main.contains(sel.anchorNode)) {
+      currentQuote = "“" + text + "”";
+      var blurb = currentQuote + " — " + title;
+      document.getElementById("lq-x").href =
+        "https://x.com/intent/post?text=" + encodeURIComponent(blurb) + "&url=" + encodeURIComponent(url);
+      // LinkedIn's prefill only reliably accepts the URL; the quote is
+      // copied to the clipboard on click so it can be pasted into the post.
+      document.getElementById("lq-li").href =
+        "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+      positionAndShow(sel.getRangeAt(0).getBoundingClientRect());
+    } else {
+      pop.hidden = true;
+    }
+  }
+
+  document.addEventListener("mouseup", function () { setTimeout(refresh, 10); });
+  document.addEventListener("touchend", function () { setTimeout(refresh, 150); });
+  document.addEventListener("selectionchange", function () {
+    if (window.getSelection().toString().trim() === "") pop.hidden = true;
+  });
+  document.addEventListener("scroll", function () { pop.hidden = true; }, {passive: true});
+
+  document.getElementById("lq-cp").addEventListener("click", function (e) {
+    e.preventDefault();
+    var el = e.target;
+    navigator.clipboard.writeText(currentQuote + " — " + title + " " + url).then(function () {
+      el.textContent = "Copied!";
+      setTimeout(function () { el.textContent = "Copy"; pop.hidden = true; }, 900);
+    });
+  });
+  document.getElementById("lq-li").addEventListener("click", function () {
+    // stash the quote for pasting into LinkedIn's composer
+    navigator.clipboard.writeText(currentQuote + " — " + title + " " + url);
+  });
+  nativeBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    navigator.share({title: title, text: currentQuote, url: url}).catch(function () {});
+    pop.hidden = true;
   });
 })();
 </script>
