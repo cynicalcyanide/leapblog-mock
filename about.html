@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -82,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -126,7 +161,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-to-poke-at" id="toc-what-to-poke-at" class="nav-link active" data-scroll-target="#what-to-poke-at">What to poke at</a></li>
+  <li><a href="#how-to-publish-on-this-site" id="toc-how-to-publish-on-this-site" class="nav-link" data-scroll-target="#how-to-publish-on-this-site">How to publish on this site</a>
+  <ul class="collapse">
+  <li><a href="#one-time-setup" id="toc-one-time-setup" class="nav-link" data-scroll-target="#one-time-setup">One-time setup</a></li>
+  <li><a href="#writing-an-article" id="toc-writing-an-article" class="nav-link" data-scroll-target="#writing-an-article">Writing an article</a></li>
+  <li><a href="#images" id="toc-images" class="nav-link" data-scroll-target="#images">Images</a></li>
+  <li><a href="#graphs" id="toc-graphs" class="nav-link" data-scroll-target="#graphs">Graphs</a></li>
+  <li><a href="#the-pdf" id="toc-the-pdf" class="nav-link" data-scroll-target="#the-pdf">The PDF</a></li>
+  <li><a href="#citations-optional" id="toc-citations-optional" class="nav-link" data-scroll-target="#citations-optional">Citations (optional)</a></li>
+  <li><a href="#previewing" id="toc-previewing" class="nav-link" data-scroll-target="#previewing">Previewing</a></li>
+  <li><a href="#publishing" id="toc-publishing" class="nav-link" data-scroll-target="#publishing">Publishing</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -161,8 +215,77 @@ ul.task-list li input[type="checkbox"] {
 <li>The <a href="./posts/supply-chains-of-middle-earth/index.html">supply chains article</a> has an <strong>interactive chart</strong> — hover over it.</li>
 <li>The <a href="./posts/dragon-hoards-monetary-policy/index.html">dragon hoards article</a> has real <strong>inline citations and a bibliography</strong>.</li>
 </ul>
+</section>
+<section id="how-to-publish-on-this-site" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-publish-on-this-site">How to publish on this site</h2>
+<p>Publishing here is: write a text file, push it to GitHub. There is no CMS, no dashboard, no server. This section is the whole workflow.</p>
+<section id="one-time-setup" class="level3">
+<h3 class="anchored" data-anchor-id="one-time-setup">One-time setup</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:cynicalcyanide/leapblog-mock.git</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> leapblog-mock</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3.13</span> <span class="at">-m</span> venv .venv <span class="kw">&amp;&amp;</span> <span class="ex">./.venv/bin/pip</span> install jupyter plotly pandas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You need <a href="https://quarto.org/docs/get-started/">Quarto</a> installed. The Python step is only needed if your article runs code (charts); prose-only authors can skip it.</p>
+</section>
+<section id="writing-an-article" class="level3">
+<h3 class="anchored" data-anchor-id="writing-an-article">Writing an article</h3>
+<p>Every article is one folder under <code>posts/</code>, holding one file called <code>index.qmd</code> plus any images:</p>
+<pre><code>posts/
+  my-new-article/
+    index.qmd
+    figure-1.png</code></pre>
+<p>An <code>index.qmd</code> is ordinary Markdown with a small metadata header:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My New Article"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "One sentence shown in listings and search results."</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: Samwise Gamgee</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">    url: ../../authors/samwise.html</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2026-09-10</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [economics, supply chains]</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> figure-1.png</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>Write normally. **Bold**, *italics*, <span class="co">[</span><span class="ot">links</span><span class="co">](https://example.com)</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## headings, &gt; quotes — it's just Markdown.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>That header is the single source of truth: it feeds the listings, the topic filters, the author page, search, the citation block, and the PDF — you never configure those per-article.</p>
+</section>
+<section id="images" class="level3">
+<h3 class="anchored" data-anchor-id="images">Images</h3>
+<p>Drop image files into your article’s folder and reference them by filename:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Lembas output collapsed after 3018.](figure-1.png)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The text in brackets becomes the caption. Images travel with the article’s folder, so nothing ever breaks when things move.</p>
+</section>
+<section id="graphs" class="level3">
+<h3 class="anchored" data-anchor-id="graphs">Graphs</h3>
+<p>Two options:</p>
+<ol type="1">
+<li><strong>Static image</strong> — make the chart anywhere, export a PNG, include it like any image (above).</li>
+<li><strong>Executable chart</strong> — put the actual Python/R code in the article. The code runs when the site builds; readers get an interactive figure (hover values, zoom). See the <a href="./posts/supply-chains-of-middle-earth/index.html">supply chains article</a> and click “Show the code” for a complete working example to copy. If you do this, run the article once locally before pushing (see <em>Previewing</em>, below) so the result is cached for the build.</li>
+</ol>
+</section>
+<section id="the-pdf" class="level3">
+<h3 class="anchored" data-anchor-id="the-pdf">The PDF</h3>
+<p>You do nothing. Every article is automatically typeset into a downloadable PDF at build time — the <strong>Download PDF</strong> button appears on its own. The same goes for the citation block, the comment section, search indexing, and the listings.</p>
+</section>
+<section id="citations-optional" class="level3">
+<h3 class="anchored" data-anchor-id="citations-optional">Citations (optional)</h3>
+<p>To cite formally, add a <code>references.bib</code> file to your article folder, declare it in the header (<code>bibliography: references.bib</code>), and cite in the text with <code>@key</code>. The bibliography formats itself at the end of the article. The <a href="./posts/dragon-hoards-monetary-policy/index.html">dragon hoards article</a> is a working example.</p>
+</section>
+<section id="previewing" class="level3">
+<h3 class="anchored" data-anchor-id="previewing">Previewing</h3>
+<p>From the repository folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">QUARTO_PYTHON</span><span class="op">=</span>.venv/bin/python <span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Your browser opens a live version of the site; it refreshes as you save. (Prose-only articles can drop the <code>QUARTO_PYTHON=</code> prefix.)</p>
+</section>
+<section id="publishing" class="level3">
+<h3 class="anchored" data-anchor-id="publishing">Publishing</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add posts/my-new-article</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"New article: My New Article"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>That’s it. GitHub rebuilds the site automatically and your article is live — listings, PDF, citation block and all — in about two minutes. No one needs to press anything else.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
