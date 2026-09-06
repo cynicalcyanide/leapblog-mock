@@ -10,29 +10,29 @@
     "objectID": "posts/psychology-of-gollum/index.html#the-setup",
     "href": "posts/psychology-of-gollum/index.html#the-setup",
     "title": "The Psychology of Gollum: A Two-Agent Bargaining Model of the Self",
-    "section": "The setup",
-    "text": "The setup\nModel the individual as two agents. Sméagol has conventional preferences: food, memory of sunlight, the approval of others. Gollum has a single dominant preference with an infinite reservation price. The two alternate control of the body — the observable “arguments” are, in this reading, negotiation rounds over the allocation of future control.\nThe Ring functions as an asymmetric commitment device: every period it strengthens Gollum’s bargaining position and erodes Sméagol’s outside option. After five hundred years, Sméagol’s threat point is approximately zero. That he negotiates anything at all is remarkable."
+    "section": "1 The setup",
+    "text": "1 The setup\nModel the individual as two agents. Sméagol has conventional preferences: food, memory of sunlight, the approval of others. Gollum has a single dominant preference with an infinite reservation price. The two alternate control of the body — the observable “arguments” are, in this reading, negotiation rounds over the allocation of future control.\nThe Ring functions as an asymmetric commitment device: every period it strengthens Gollum’s bargaining position and erodes Sméagol’s outside option. After five hundred years, Sméagol’s threat point is approximately zero. That he negotiates anything at all is remarkable."
   },
   {
     "objectID": "posts/psychology-of-gollum/index.html#the-frodo-intervention",
     "href": "posts/psychology-of-gollum/index.html#the-frodo-intervention",
     "title": "The Psychology of Gollum: A Two-Agent Bargaining Model of the Self",
-    "section": "The Frodo intervention",
-    "text": "The Frodo intervention\nThe most interesting event in the dataset is exogenous: Frodo extends trust, addresses Sméagol by name, and — critically — creates external value for the Sméagol identity. For a period, the equilibrium visibly shifts: service is rendered, promises are kept, the Gollum agent is suppressed in daylight hours.\nThe mechanism matters for policy. Frodo did not strengthen Sméagol’s willpower (an intra-personal resource); he changed the payoff structure by making cooperation externally rewarded. Recovery, in this model, is not a triumph of will but a renegotiation under improved outside options."
+    "section": "2 The Frodo intervention",
+    "text": "2 The Frodo intervention\nThe most interesting event in the dataset is exogenous: Frodo extends trust, addresses Sméagol by name, and — critically — creates external value for the Sméagol identity. For a period, the equilibrium visibly shifts: service is rendered, promises are kept, the Gollum agent is suppressed in daylight hours.\nThe mechanism matters for policy. Frodo did not strengthen Sméagol’s willpower (an intra-personal resource); he changed the payoff structure by making cooperation externally rewarded. Recovery, in this model, is not a triumph of will but a renegotiation under improved outside options."
   },
   {
     "objectID": "posts/psychology-of-gollum/index.html#the-relapse-and-the-stairs-of-cirith-ungol",
     "href": "posts/psychology-of-gollum/index.html#the-relapse-and-the-stairs-of-cirith-ungol",
     "title": "The Psychology of Gollum: A Two-Agent Bargaining Model of the Self",
-    "section": "The relapse, and the stairs of Cirith Ungol",
-    "text": "The relapse, and the stairs of Cirith Ungol\nThe equilibrium collapses on contact with a third party who assigns the Sméagol identity zero value. One act of misrecognition — Sam’s accusation over the innocent matter of the rabbits — reprices Sméagol’s cooperative strategy to worthless, and Gollum resumes control permanently. Practitioners will recognise the pattern: the relapse is triggered not by the addictive good but by the withdrawal of the identity that made abstention worthwhile."
+    "section": "3 The relapse, and the stairs of Cirith Ungol",
+    "text": "3 The relapse, and the stairs of Cirith Ungol\nThe equilibrium collapses on contact with a third party who assigns the Sméagol identity zero value. One act of misrecognition — Sam’s accusation over the innocent matter of the rabbits — reprices Sméagol’s cooperative strategy to worthless, and Gollum resumes control permanently. Practitioners will recognise the pattern: the relapse is triggered not by the addictive good but by the withdrawal of the identity that made abstention worthwhile."
   },
   {
     "objectID": "posts/psychology-of-gollum/index.html#implication",
     "href": "posts/psychology-of-gollum/index.html#implication",
     "title": "The Psychology of Gollum: A Two-Agent Bargaining Model of the Self",
-    "section": "Implication",
-    "text": "Implication\nIf the self is a coalition, treatment is coalition management. Punishing the whole individual strengthens precisely the agent you wish to weaken — a result this author has verified, at length, in committee."
+    "section": "4 Implication",
+    "text": "4 Implication\nIf the self is a coalition, treatment is coalition management. Punishing the whole individual strengthens precisely the agent you wish to weaken — a result this author has verified, at length, in committee."
   },
   {
     "objectID": "posts/dragon-hoards-monetary-policy/index.html",
@@ -45,29 +45,29 @@
     "objectID": "posts/dragon-hoards-monetary-policy/index.html#the-mechanics-of-a-dragon-induced-deflation",
     "href": "posts/dragon-hoards-monetary-policy/index.html#the-mechanics-of-a-dragon-induced-deflation",
     "title": "Dragon Hoards as Monetary Policy: Smaug and the Deflationary Trap",
-    "section": "The mechanics of a dragon-induced deflation",
-    "text": "The mechanics of a dragon-induced deflation\nDale and Erebor ran a metallic standard. When the gold left circulation — all of it, in one afternoon — the price level had nowhere to go but down, and the regional economy contracted along exactly the path the older literature on specie drains would predict (Grubb and Burrowes 2941). Wages fell, then employment, then the towns themselves. Lake-town’s subsequent two centuries of stagnation are usually blamed on geography. Geography did not eat the money supply.\nWhat makes the case theoretically clean is the dragon’s demand function. Smaug held gold for neither transaction nor investment purposes; the hoard generated no lending, no seigniorage, nothing. His famous remark about knowing every coin in the pile (Baggins 2941) describes, in effect, a central banker running a full-reserve policy with a personal grudge. The literature on liquidity traps assumes the zero lower bound is a floor made of arithmetic; in Erebor it was a floor made of dragon."
+    "section": "1 The mechanics of a dragon-induced deflation",
+    "text": "1 The mechanics of a dragon-induced deflation\nDale and Erebor ran a metallic standard. When the gold left circulation — all of it, in one afternoon — the price level had nowhere to go but down, and the regional economy contracted along exactly the path the older literature on specie drains would predict (Grubb and Burrowes 2941). Wages fell, then employment, then the towns themselves. Lake-town’s subsequent two centuries of stagnation are usually blamed on geography. Geography did not eat the money supply.\nWhat makes the case theoretically clean is the dragon’s demand function. Smaug held gold for neither transaction nor investment purposes; the hoard generated no lending, no seigniorage, nothing. His famous remark about knowing every coin in the pile (Baggins 2941) describes, in effect, a central banker running a full-reserve policy with a personal grudge. The literature on liquidity traps assumes the zero lower bound is a floor made of arithmetic; in Erebor it was a floor made of dragon."
   },
   {
     "objectID": "posts/dragon-hoards-monetary-policy/index.html#the-reflation-of-2941",
     "href": "posts/dragon-hoards-monetary-policy/index.html#the-reflation-of-2941",
     "title": "Dragon Hoards as Monetary Policy: Smaug and the Deflationary Trap",
-    "section": "The reflation of 2941",
-    "text": "The reflation of 2941\nThe Battle of the Five Armies is conventionally studied as a military engagement. Monetarily, it was a disorderly quantitative easing: the entire consolidated hoard re-entered circulation within a decade, distributed across dwarven reconstruction, Dale’s rebuilding, and a modest fourteenth share carried west in two small chests (Baggins 2942). The regional recovery that followed was rapid, broad, and — as Gamgee (3020) notes in his study of post-war agricultural prices — mildly inflationary for exactly the reasons one would hope.\nThe episode thus provides both halves of the experiment: contraction by hoard, reflation by burglary. Few monetary interventions have been so thoroughly documented by their own instrument."
+    "section": "2 The reflation of 2941",
+    "text": "2 The reflation of 2941\nThe Battle of the Five Armies is conventionally studied as a military engagement. Monetarily, it was a disorderly quantitative easing: the entire consolidated hoard re-entered circulation within a decade, distributed across dwarven reconstruction, Dale’s rebuilding, and a modest fourteenth share carried west in two small chests (Baggins 2942). The regional recovery that followed was rapid, broad, and — as Gamgee (3020) notes in his study of post-war agricultural prices — mildly inflationary for exactly the reasons one would hope.\nThe episode thus provides both halves of the experiment: contraction by hoard, reflation by burglary. Few monetary interventions have been so thoroughly documented by their own instrument."
   },
   {
     "objectID": "posts/dragon-hoards-monetary-policy/index.html#what-the-auditor-saw",
     "href": "posts/dragon-hoards-monetary-policy/index.html#what-the-auditor-saw",
     "title": "Dragon Hoards as Monetary Policy: Smaug and the Deflationary Trap",
-    "section": "What the auditor saw",
-    "text": "What the auditor saw\nThis author’s field observation of the hoard remains, so far as he knows, the only physical inspection of a dragon-held reserve portfolio (Baggins 2941). Two findings deserve emphasis. First, mark-to-market valuation of a hoard is meaningless when the market comprises one dragon and no bids. Second — and practitioners underestimate this — the custody arrangements were impeccable. Nothing was missing. It is the velocity, not the security, of a nation’s money that keeps it alive.\nThere is a lesson here for modern reserve managers, but this author is a respectable hobbit and will let the reader draw it."
+    "section": "3 What the auditor saw",
+    "text": "3 What the auditor saw\nThis author’s field observation of the hoard remains, so far as he knows, the only physical inspection of a dragon-held reserve portfolio (Baggins 2941). Two findings deserve emphasis. First, mark-to-market valuation of a hoard is meaningless when the market comprises one dragon and no bids. Second — and practitioners underestimate this — the custody arrangements were impeccable. Nothing was missing. It is the velocity, not the security, of a nation’s money that keeps it alive.\nThere is a lesson here for modern reserve managers, but this author is a respectable hobbit and will let the reader draw it."
   },
   {
     "objectID": "posts/dragon-hoards-monetary-policy/index.html#references",
     "href": "posts/dragon-hoards-monetary-policy/index.html#references",
     "title": "Dragon Hoards as Monetary Policy: Smaug and the Deflationary Trap",
-    "section": "References",
-    "text": "References\n\n\nBaggins, Bilbo. 2941. There and Back Again: A Hobbit’s Holiday, with Annexes on Asset Verification. Bag End Press.\n\n\nBaggins, Bilbo. 2942. Final Settlement of the Fourteenth Share: Notes Toward a Burglar’s Balance Sheet. TC-14. Thorin; Company (in liquidation).\n\n\nGamgee, Samwise. 3020. “Taters After the War: Agricultural Prices and the Great Reflation, 2941–2951.” Shire Journal of Applied Gardening 4 (1): 1–22.\n\n\nGrubb, Grubb, and Burrowes. 2941. “On the Disposal of Estates Presumed Dragon-Adjacent: Deflation and Distress Auctions in the Long Lake Region.” Michel Delving Review of Law and Ponies 12 (4): 33–58.\n\n\nReconstruction Economics, Oakenshield Institute for. 3018. “The Erebor Contraction: Specie Withdrawal and Regional Decline, t.a. 2770–2941.” Journal of Dale Economic History 77 (2): 141–77."
+    "section": "4 References",
+    "text": "4 References\n\n\nBaggins, Bilbo. 2941. There and Back Again: A Hobbit’s Holiday, with Annexes on Asset Verification. Bag End Press.\n\n\nBaggins, Bilbo. 2942. Final Settlement of the Fourteenth Share: Notes Toward a Burglar’s Balance Sheet. TC-14. Thorin; Company (in liquidation).\n\n\nGamgee, Samwise. 3020. “Taters After the War: Agricultural Prices and the Great Reflation, 2941–2951.” Shire Journal of Applied Gardening 4 (1): 1–22.\n\n\nGrubb, Grubb, and Burrowes. 2941. “On the Disposal of Estates Presumed Dragon-Adjacent: Deflation and Distress Auctions in the Long Lake Region.” Michel Delving Review of Law and Ponies 12 (4): 33–58.\n\n\nReconstruction Economics, Oakenshield Institute for. 3018. “The Erebor Contraction: Specie Withdrawal and Regional Decline, t.a. 2770–2941.” Journal of Dale Economic History 77 (2): 141–77."
   },
   {
     "objectID": "posts/supply-chains-of-middle-earth/index.html",
@@ -80,22 +80,22 @@
     "objectID": "posts/supply-chains-of-middle-earth/index.html#the-lembas-anomaly",
     "href": "posts/supply-chains-of-middle-earth/index.html#the-lembas-anomaly",
     "title": "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse",
-    "section": "The lembas anomaly",
-    "text": "The lembas anomaly\nLembas is, on the numbers, absurd. One cake sustains a working adult for a day; it keeps for months wrapped in a leaf; it weighs almost nothing. In supply-chain terms, elvish waybread collapses the tooth-to-tail ratio of any expedition to nearly zero. An army provisioned on lembas needs no baggage train, which means no roads, which means no predictable routes to ambush. It is a strategic technology.\nYet output never scaled. The chart below assembles the (entirely invented) production series this correspondent compiled from regional records. Hover over it: you’ll get crosshairs, exact values for every region at that date, and you can zoom into any period. Click a region in the legend to hide it.\n\n\nShow the code behind this chart\nimport pandas as pd\nimport plotly.express as px\n\nyears = list(range(3001, 3022))\ndata = []\nfor region, base, trend, shock_year, shock in [\n    (\"Lothlórien\",  84, 0.5, 3018, -30),\n    (\"Rivendell\",   41, 0.3, 3018, -12),\n    (\"Mirkwood\",    23, -0.8, 3010, -6),\n    (\"Grey Havens\", 12, 0.9, None, 0),\n]:\n    level = base\n    for y in years:\n        level += trend\n        if shock_year and y &gt;= shock_year:\n            level += shock / 3\n        data.append({\"year\": y, \"region\": region,\n                     \"output\": round(max(level, 1), 1)})\n\ndf = pd.DataFrame(data)\n\nfig = px.line(\n    df, x=\"year\", y=\"output\", color=\"region\",\n    labels={\"year\": \"Third Age year\", \"output\": \"Output ('000 cakes)\",\n            \"region\": \"Region\"},\n    color_discrete_sequence=[\"#2e5d43\", \"#8a6d3b\", \"#5b6b62\", \"#a63d40\"],\n)\nfig.update_xaxes(showspikes=True, spikemode=\"across\", spikedash=\"dot\",\n                 spikethickness=1)\nfig.update_yaxes(showspikes=True, spikemode=\"across\", spikedash=\"dot\",\n                 spikethickness=1, gridcolor=\"#e4e0d5\")\nfig.update_layout(\n    hovermode=\"x unified\",\n    plot_bgcolor=\"white\",\n    font=dict(family=\"Source Sans 3, sans-serif\"),\n    legend=dict(orientation=\"h\", yanchor=\"bottom\", y=1.02),\n    margin=dict(l=10, r=10, t=30, b=10),\n)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 1: Waybread output by region, Third Age 3001–3021 (thousand cakes/year). Entirely fictional data; hover for values.\n\n\n\n\nNote the structural break at 3018: the War disrupted Lothlórien’s output — and the industry never recovered its peak, because the workforce emigrated. Which brings us to the real constraint."
+    "section": "1 The lembas anomaly",
+    "text": "1 The lembas anomaly\nLembas is, on the numbers, absurd. One cake sustains a working adult for a day; it keeps for months wrapped in a leaf; it weighs almost nothing. In supply-chain terms, elvish waybread collapses the tooth-to-tail ratio of any expedition to nearly zero. An army provisioned on lembas needs no baggage train, which means no roads, which means no predictable routes to ambush. It is a strategic technology.\nYet output never scaled. The chart below assembles the (entirely invented) production series this correspondent compiled from regional records. Hover over it: you’ll get crosshairs, exact values for every region at that date, and you can zoom into any period. Click a region in the legend to hide it.\n\n\nShow the code behind this chart\nimport pandas as pd\nimport plotly.express as px\n\nyears = list(range(3001, 3022))\ndata = []\nfor region, base, trend, shock_year, shock in [\n    (\"Lothlórien\",  84, 0.5, 3018, -30),\n    (\"Rivendell\",   41, 0.3, 3018, -12),\n    (\"Mirkwood\",    23, -0.8, 3010, -6),\n    (\"Grey Havens\", 12, 0.9, None, 0),\n]:\n    level = base\n    for y in years:\n        level += trend\n        if shock_year and y &gt;= shock_year:\n            level += shock / 3\n        data.append({\"year\": y, \"region\": region,\n                     \"output\": round(max(level, 1), 1)})\n\ndf = pd.DataFrame(data)\n\nfig = px.line(\n    df, x=\"year\", y=\"output\", color=\"region\",\n    labels={\"year\": \"Third Age year\", \"output\": \"Output ('000 cakes)\",\n            \"region\": \"Region\"},\n    color_discrete_sequence=[\"#2e5d43\", \"#8a6d3b\", \"#5b6b62\", \"#a63d40\"],\n)\nfig.update_xaxes(showspikes=True, spikemode=\"across\", spikedash=\"dot\",\n                 spikethickness=1)\nfig.update_yaxes(showspikes=True, spikemode=\"across\", spikedash=\"dot\",\n                 spikethickness=1, gridcolor=\"#e4e0d5\")\nfig.update_layout(\n    hovermode=\"x unified\",\n    plot_bgcolor=\"white\",\n    font=dict(family=\"Source Sans 3, sans-serif\"),\n    legend=dict(orientation=\"h\", yanchor=\"bottom\", y=1.02),\n    margin=dict(l=10, r=10, t=30, b=10),\n)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 1: Waybread output by region, Third Age 3001–3021 (thousand cakes/year). Entirely fictional data; hover for values.\n\n\n\n\nNote the structural break at 3018: the War disrupted Lothlórien’s output — and the industry never recovered its peak, because the workforce emigrated. Which brings us to the real constraint."
   },
   {
     "objectID": "posts/supply-chains-of-middle-earth/index.html#why-the-technology-never-diffused",
     "href": "posts/supply-chains-of-middle-earth/index.html#why-the-technology-never-diffused",
     "title": "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse",
-    "section": "Why the technology never diffused",
-    "text": "Why the technology never diffused\nThree hypotheses circulate in the literature, of unequal quality:\n\nRecipe secrecy (weak). Trade secrets leak over ten thousand years. Something else binds.\nNon-transferable inputs (stronger). If production requires inputs that exist only where Elves and their particular ecology persist — a terroir theory of waybread — then the technology is land-linked and cannot be licensed out.\nThe gift-good hypothesis (strongest). Lembas was never a commodity. It moves only as a gift, between parties in specific relationships. The Elves were not running an industry below capacity; they were refusing, on principle, to have an industry at all. As with the Eagles, the constraint is institutional, not technical."
+    "section": "2 Why the technology never diffused",
+    "text": "2 Why the technology never diffused\nThree hypotheses circulate in the literature, of unequal quality:\n\nRecipe secrecy (weak). Trade secrets leak over ten thousand years. Something else binds.\nNon-transferable inputs (stronger). If production requires inputs that exist only where Elves and their particular ecology persist — a terroir theory of waybread — then the technology is land-linked and cannot be licensed out.\nThe gift-good hypothesis (strongest). Lembas was never a commodity. It moves only as a gift, between parties in specific relationships. The Elves were not running an industry below capacity; they were refusing, on principle, to have an industry at all. As with the Eagles, the constraint is institutional, not technical."
   },
   {
     "objectID": "posts/supply-chains-of-middle-earth/index.html#the-practitioners-postscript",
     "href": "posts/supply-chains-of-middle-earth/index.html#the-practitioners-postscript",
     "title": "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse",
-    "section": "The practitioner’s postscript",
-    "text": "The practitioner’s postscript\nFor actual expedition provisioning, this correspondent’s advice is unchanged: take the lembas gratefully, count on nothing you cannot grow or carry, and remember that the finest logistics innovation of the Third Age remains the humble coney, stewed, with taters. PO-TA-TOES."
+    "section": "3 The practitioner’s postscript",
+    "text": "3 The practitioner’s postscript\nFor actual expedition provisioning, this correspondent’s advice is unchanged: take the lembas gratefully, count on nothing you cannot grow or carry, and remember that the finest logistics innovation of the Third Age remains the humble coney, stewed, with taters. PO-TA-TOES."
   },
   {
     "objectID": "about.html",
@@ -262,22 +262,22 @@
     "objectID": "posts/shieldmaidens-labour-market/index.html#the-steady-state-cost",
     "href": "posts/shieldmaidens-labour-market/index.html#the-steady-state-cost",
     "title": "Shieldmaidens and the Rohirrim Labour Market",
-    "section": "The steady-state cost",
-    "text": "The steady-state cost\nThe static loss is the familiar one: talent misallocation. The kingdom’s defence output was produced from an artificially restricted labour pool, with predictable effects on quality at the margin. The shadow price of the restriction was invisible in peacetime — restrictions usually are — because the counterfactual soldier is a statistic and the norm is a tradition with songs."
+    "section": "1 The steady-state cost",
+    "text": "1 The steady-state cost\nThe static loss is the familiar one: talent misallocation. The kingdom’s defence output was produced from an artificially restricted labour pool, with predictable effects on quality at the margin. The shadow price of the restriction was invisible in peacetime — restrictions usually are — because the counterfactual soldier is a statistic and the norm is a tradition with songs."
   },
   {
     "objectID": "posts/shieldmaidens-labour-market/index.html#the-stress-test",
     "href": "posts/shieldmaidens-labour-market/index.html#the-stress-test",
     "title": "Shieldmaidens and the Rohirrim Labour Market",
-    "section": "The stress test",
-    "text": "The stress test\nThe Pelennor Fields provided the out-of-sample test. Two observations:\n\nThe binding constraint bit at the extreme tail. The single most consequential combat action of the battle — the destruction of the Witch-king — was performed by an excluded worker, operating outside the licensing regime, who had entered the sector through what economists call irregular channels and what Rohan calls disguise.\nThe prophecy was a market signal everyone misread. “Not by the hand of man shall he fall” was, in retrospect, a standing arbitrage opportunity: an adversary invulnerable only to the excluded category. A rational personnel office would have recruited against it. Tradition priced it at zero."
+    "section": "2 The stress test",
+    "text": "2 The stress test\nThe Pelennor Fields provided the out-of-sample test. Two observations:\n\nThe binding constraint bit at the extreme tail. The single most consequential combat action of the battle — the destruction of the Witch-king — was performed by an excluded worker, operating outside the licensing regime, who had entered the sector through what economists call irregular channels and what Rohan calls disguise.\nThe prophecy was a market signal everyone misread. “Not by the hand of man shall he fall” was, in retrospect, a standing arbitrage opportunity: an adversary invulnerable only to the excluded category. A rational personnel office would have recruited against it. Tradition priced it at zero."
   },
   {
     "objectID": "posts/shieldmaidens-labour-market/index.html#the-general-point",
     "href": "posts/shieldmaidens-labour-market/index.html#the-general-point",
     "title": "Shieldmaidens and the Rohirrim Labour Market",
-    "section": "The general point",
-    "text": "The general point\nOccupational restrictions are usually defended on average-quality grounds and usually costed in average terms. But defence — like several other sectors — is a tail-risk business. The value of an open labour market is not the mean worker it adds; it is the specific worker you cannot predict needing. You do not know, in advance, whose hand the job requires.\nRohan has since reformed its recruitment practices. The songs, it must be said, adapted immediately; the pension system is taking longer."
+    "section": "3 The general point",
+    "text": "3 The general point\nOccupational restrictions are usually defended on average-quality grounds and usually costed in average terms. But defence — like several other sectors — is a tail-risk business. The value of an open labour market is not the mean worker it adds; it is the specific worker you cannot predict needing. You do not know, in advance, whose hand the job requires.\nRohan has since reformed its recruitment practices. The songs, it must be said, adapted immediately; the pension system is taking longer."
   },
   {
     "objectID": "posts/ecology-of-middle-earth/index.html",
@@ -290,22 +290,22 @@
     "objectID": "posts/ecology-of-middle-earth/index.html#fangorn-common-pool-resources-with-shepherds",
     "href": "posts/ecology-of-middle-earth/index.html#fangorn-common-pool-resources-with-shepherds",
     "title": "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood",
-    "section": "Fangorn: common-pool resources with shepherds",
-    "text": "Fangorn: common-pool resources with shepherds\nFangorn is the canonical case of a common-pool resource managed by resident stewards with effectively infinite time horizons. The Ents do not discount the future in any measurable way; when your deliberative assembly takes a month to agree on the agenda, quarterly thinking is not a risk.\nThree institutional features stand out:\n\nMonitoring is continuous and ambulatory. The shepherds walk the resource. Enforcement is personal, proportionate, and occasionally involves throwing rocks at industrial facilities.\nMembership is closed but succession is a crisis. The absence of Entwives is, in economic terms, a catastrophic failure of demographic replacement that no governance structure can indefinitely survive. Institutions require heirs.\nExit from passivity is discontinuous. Fangorn tolerated marginal encroachment for centuries, then internalised an entire externality in one afternoon by demolishing Isengard. Regulators everywhere should note the shape of that response function: flat, flat, flat, vertical."
+    "section": "1 Fangorn: common-pool resources with shepherds",
+    "text": "1 Fangorn: common-pool resources with shepherds\nFangorn is the canonical case of a common-pool resource managed by resident stewards with effectively infinite time horizons. The Ents do not discount the future in any measurable way; when your deliberative assembly takes a month to agree on the agenda, quarterly thinking is not a risk.\nThree institutional features stand out:\n\nMonitoring is continuous and ambulatory. The shepherds walk the resource. Enforcement is personal, proportionate, and occasionally involves throwing rocks at industrial facilities.\nMembership is closed but succession is a crisis. The absence of Entwives is, in economic terms, a catastrophic failure of demographic replacement that no governance structure can indefinitely survive. Institutions require heirs.\nExit from passivity is discontinuous. Fangorn tolerated marginal encroachment for centuries, then internalised an entire externality in one afternoon by demolishing Isengard. Regulators everywhere should note the shape of that response function: flat, flat, flat, vertical."
   },
   {
     "objectID": "posts/ecology-of-middle-earth/index.html#mirkwood-what-happens-under-absentee-pressure",
     "href": "posts/ecology-of-middle-earth/index.html#mirkwood-what-happens-under-absentee-pressure",
     "title": "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood",
-    "section": "Mirkwood: what happens under absentee pressure",
-    "text": "Mirkwood: what happens under absentee pressure\nGreenwood the Great became Mirkwood not through harvesting but through a hostile change in effective ownership. A single unaccountable actor established residence at Dol Guldur, and the ecosystem repriced immediately: species composition shifted toward spiders of unusual size, path networks decayed, and the river acquired properties best described as non-standard.\nThe elven response — retreat northward, fortify, tax passing traffic — is recognisably the strategy of a minority stakeholder who cannot dislodge the majority polluter and settles for enclave quality. It works, for the enclave. The rest of the forest carries the cost."
+    "section": "2 Mirkwood: what happens under absentee pressure",
+    "text": "2 Mirkwood: what happens under absentee pressure\nGreenwood the Great became Mirkwood not through harvesting but through a hostile change in effective ownership. A single unaccountable actor established residence at Dol Guldur, and the ecosystem repriced immediately: species composition shifted toward spiders of unusual size, path networks decayed, and the river acquired properties best described as non-standard.\nThe elven response — retreat northward, fortify, tax passing traffic — is recognisably the strategy of a minority stakeholder who cannot dislodge the majority polluter and settles for enclave quality. It works, for the enclave. The rest of the forest carries the cost."
   },
   {
     "objectID": "posts/ecology-of-middle-earth/index.html#what-travels",
     "href": "posts/ecology-of-middle-earth/index.html#what-travels",
     "title": "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood",
-    "section": "What travels",
-    "text": "What travels\nStrip the wizards out and the lesson is portable: forest outcomes track the time horizon of whoever holds effective control. Patient residents with enforcement power produce old growth. Absentee extraction produces spiders. The policy instrument that matters is not the harvesting quota but the identity, tenure, and patience of the controlling party.\nFurther fieldwork is planned, pending the availability of the author, who is expected back around the turn of the age."
+    "section": "3 What travels",
+    "text": "3 What travels\nStrip the wizards out and the lesson is portable: forest outcomes track the time horizon of whoever holds effective control. Patient residents with enforcement power produce old growth. Absentee extraction produces spiders. The policy instrument that matters is not the harvesting quota but the identity, tenure, and patience of the controlling party.\nFurther fieldwork is planned, pending the availability of the author, who is expected back around the turn of the age."
   },
   {
     "objectID": "posts/eagles-transport-infrastructure/index.html",
@@ -318,21 +318,21 @@
     "objectID": "posts/eagles-transport-infrastructure/index.html#infrastructure-with-sovereignty",
     "href": "posts/eagles-transport-infrastructure/index.html#infrastructure-with-sovereignty",
     "title": "Eagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere",
-    "section": "Infrastructure with sovereignty",
-    "text": "Infrastructure with sovereignty\nThe Great Eagles present as transport capacity: heavy-lift, all-weather, unmatched speed over hostile terrain. The error is to model them as infrastructure, when they are in fact a sovereign provider — a self-governing polity that occasionally, at its own discretion, performs airlift.\nThe distinction is everything. Infrastructure has a schedule and a price. A sovereign provider has interests, risk tolerances, and the right of refusal. There is no contract, no tariff, no service-level agreement — every Eagle intervention on record is a gift, and gift economies do not scale into logistics networks."
+    "section": "1 Infrastructure with sovereignty",
+    "text": "1 Infrastructure with sovereignty\nThe Great Eagles present as transport capacity: heavy-lift, all-weather, unmatched speed over hostile terrain. The error is to model them as infrastructure, when they are in fact a sovereign provider — a self-governing polity that occasionally, at its own discretion, performs airlift.\nThe distinction is everything. Infrastructure has a schedule and a price. A sovereign provider has interests, risk tolerances, and the right of refusal. There is no contract, no tariff, no service-level agreement — every Eagle intervention on record is a gift, and gift economies do not scale into logistics networks."
   },
   {
     "objectID": "posts/eagles-transport-infrastructure/index.html#the-airspace-problem",
     "href": "posts/eagles-transport-infrastructure/index.html#the-airspace-problem",
     "title": "Eagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere",
-    "section": "The airspace problem",
-    "text": "The airspace problem\nEven granting goodwill, the corridor analysis is grim. A direct flight to the objective traverses continuously surveilled airspace defended by interceptors specifically bred for the role. Strategic transport that must survive contested airspace is not transport; it is an air campaign, with an air campaign’s probability of success and an air campaign’s tendency to announce itself.\nThe historical uses of Eagle capacity — extraction of stranded persons from towers, pinnacles, and volcanoes — share a profile: short duration, low predictability, terminal urgency. This is search-and-rescue, and search-and-rescue is precisely the mission gift-economy capacity is good for."
+    "section": "2 The airspace problem",
+    "text": "2 The airspace problem\nEven granting goodwill, the corridor analysis is grim. A direct flight to the objective traverses continuously surveilled airspace defended by interceptors specifically bred for the role. Strategic transport that must survive contested airspace is not transport; it is an air campaign, with an air campaign’s probability of success and an air campaign’s tendency to announce itself.\nThe historical uses of Eagle capacity — extraction of stranded persons from towers, pinnacles, and volcanoes — share a profile: short duration, low predictability, terminal urgency. This is search-and-rescue, and search-and-rescue is precisely the mission gift-economy capacity is good for."
   },
   {
     "objectID": "posts/eagles-transport-infrastructure/index.html#the-policy-failure-worth-naming",
     "href": "posts/eagles-transport-infrastructure/index.html#the-policy-failure-worth-naming",
     "title": "Eagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere",
-    "section": "The policy failure worth naming",
-    "text": "The policy failure worth naming\nThe real lesson is that Middle-earth’s Free Peoples never built the boring alternative: roads. Reliable, dull, contract-governed surface logistics would have changed more outcomes than any eagle. Civilisations are tempted to solve infrastructure gaps with heroic capacity — the sovereign provider that shows up at the last moment — because heroes are cheaper than maintenance budgets, right up until they decline the mission.\nBuild the roads. Thank the Eagles. Do not confuse the two."
+    "section": "3 The policy failure worth naming",
+    "text": "3 The policy failure worth naming\nThe real lesson is that Middle-earth’s Free Peoples never built the boring alternative: roads. Reliable, dull, contract-governed surface logistics would have changed more outcomes than any eagle. Civilisations are tempted to solve infrastructure gaps with heroic capacity — the sovereign provider that shows up at the last moment — because heroes are cheaper than maintenance budgets, right up until they decline the mission.\nBuild the roads. Thank the Eagles. Do not confuse the two."
   }
 ]
