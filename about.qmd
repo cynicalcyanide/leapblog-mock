@@ -1,6 +1,6 @@
 ---
 title: "About"
-toc: false
+toc: true
 ---
 
 **This is a mock site** — a full-featured rehearsal for the migration of The Leap Blog from Blogger to Quarto. Everything here exercises a real planned feature: listings, announcements, author pages, comments, copyable citations, PDF downloads, search, topic filters, and executable charts.
@@ -15,3 +15,93 @@ The content is deliberately fictional. The Leap Blog does not, to our knowledge,
 - On any article: the **Download PDF** button, the **Cite this article** block (copy the BibTeX with one click), and the **comment section** at the bottom.
 - The [supply chains article](posts/supply-chains-of-middle-earth/index.qmd) has an **interactive chart** — hover over it.
 - The [dragon hoards article](posts/dragon-hoards-monetary-policy/index.qmd) has real **inline citations and a bibliography**.
+
+## How to publish on this site
+
+Publishing here is: write a text file, push it to GitHub. There is no CMS, no dashboard, no server. This section is the whole workflow.
+
+### One-time setup
+
+```sh
+git clone git@github.com:cynicalcyanide/leapblog-mock.git
+cd leapblog-mock
+python3.13 -m venv .venv && ./.venv/bin/pip install jupyter plotly pandas
+```
+
+You need [Quarto](https://quarto.org/docs/get-started/) installed. The Python step is only needed if your article runs code (charts); prose-only authors can skip it.
+
+### Writing an article
+
+Every article is one folder under `posts/`, holding one file called `index.qmd` plus any images:
+
+```
+posts/
+  my-new-article/
+    index.qmd
+    figure-1.png
+```
+
+An `index.qmd` is ordinary Markdown with a small metadata header:
+
+```markdown
+---
+title: "My New Article"
+description: "One sentence shown in listings and search results."
+author:
+  - name: Samwise Gamgee
+    url: ../../authors/samwise.html
+date: 2026-09-10
+categories: [economics, supply chains]
+image: figure-1.png
+---
+
+Write normally. **Bold**, *italics*, [links](https://example.com),
+## headings, > quotes — it's just Markdown.
+```
+
+That header is the single source of truth: it feeds the listings, the topic filters, the author page, search, the citation block, and the PDF — you never configure those per-article.
+
+### Images
+
+Drop image files into your article's folder and reference them by filename:
+
+```markdown
+![Lembas output collapsed after 3018.](figure-1.png)
+```
+
+The text in brackets becomes the caption. Images travel with the article's folder, so nothing ever breaks when things move.
+
+### Graphs
+
+Two options:
+
+1. **Static image** — make the chart anywhere, export a PNG, include it like any image (above).
+2. **Executable chart** — put the actual Python/R code in the article. The code runs when the site builds; readers get an interactive figure (hover values, zoom). See the [supply chains article](posts/supply-chains-of-middle-earth/index.qmd) and click "Show the code" for a complete working example to copy. If you do this, run the article once locally before pushing (see *Previewing*, below) so the result is cached for the build.
+
+### The PDF
+
+You do nothing. Every article is automatically typeset into a downloadable PDF at build time — the **Download PDF** button appears on its own. The same goes for the citation block, the comment section, search indexing, and the listings.
+
+### Citations (optional)
+
+To cite formally, add a `references.bib` file to your article folder, declare it in the header (`bibliography: references.bib`), and cite in the text with `@key`. The bibliography formats itself at the end of the article. The [dragon hoards article](posts/dragon-hoards-monetary-policy/index.qmd) is a working example.
+
+### Previewing
+
+From the repository folder:
+
+```sh
+QUARTO_PYTHON=.venv/bin/python quarto preview
+```
+
+Your browser opens a live version of the site; it refreshes as you save. (Prose-only articles can drop the `QUARTO_PYTHON=` prefix.)
+
+### Publishing
+
+```sh
+git add posts/my-new-article
+git commit -m "New article: My New Article"
+git push
+```
+
+That's it. GitHub rebuilds the site automatically and your article is live — listings, PDF, citation block and all — in about two minutes. No one needs to press anything else.
