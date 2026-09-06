@@ -19,6 +19,9 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true  # article PDFs are typeset with LaTeX
+        env:
+          # authenticates the TinyTeX release lookup (avoids rate-limit flakes)
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Executed code (the Plotly chart) is cached via `freeze: auto`,
       # so CI needs no Python — it renders from the committed _freeze dir.
