@@ -2,13 +2,13 @@ project:
   type: website
 
 website:
-  title: "The Leap Blog"
-  description: "A mock rehearsal of the new Leap Blog — economics, ecology and policy from Middle-earth."
+  title: "The Leap Journal"
+  description: "A mock rehearsal of the new Leap Journal — economics, ecology and policy from Middle-earth."
   site-url: https://cynicalcyanide.github.io/leapblog-mock
   repo-url: https://github.com/cynicalcyanide/leapblog-mock
   favicon: assets/favicon.svg
   navbar:
-    title: "The Leap Blog"
+    title: "The Leap Journal"
     pinned: true
     left:
       - href: index.qmd
@@ -24,7 +24,7 @@ website:
     type: overlay
   page-footer:
     center: >
-      The Leap Blog — a mock site built with Quarto.
+      The Leap Journal — a mock site built with Quarto.
       All hobbits fictional; all economics questionable.
   open-graph: true
   twitter-card: true

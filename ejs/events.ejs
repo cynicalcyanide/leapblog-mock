@@ -1,0 +1,11 @@
+<% if (items.length) { %>
+<div class="leap-events"><a class="leap-event-main" href="<%- items[0].path %>">
+<div class="leap-kicker">Announcement</div>
+<h3><%= items[0].title %></h3>
+<p><%= items[0].description %></p>
+<div class="leap-readmore">Details &rarr;</div></a>
+<% if (items.length > 1) { %>
+<div class="leap-event-rest"><% items.slice(1).forEach(function (it) { %><a class="leap-event-item" href="<%- it.path %>"><span><%= it.title %></span><span>&rarr;</span></a><% }); %></div>
+<% } %>
+</div>
+<% } %>

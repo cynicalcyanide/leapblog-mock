@@ -1,6 +1,6 @@
-# The Leap Blog — mock rehearsal site
+# The Leap Journal — mock rehearsal site
 
-A full-featured mock of the planned Leap Blog migration to Quarto (Middle-earth edition).
+A full-featured mock of the planned Leap Journal migration to Quarto (Middle-earth edition).
 Live at: https://cynicalcyanide.github.io/leapblog-mock/
 
 Exercises: listings, announcements, author tile pages, Giscus comments, copyable

@@ -1,16 +1,56 @@
 ---
-title: "Articles"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  filter-ui: [title, author, categories]
-  sort-ui: [date, title, author]
-  fields: [image, date, title, author, description, categories, reading-time]
-  feed: true
-  image-placeholder: assets/thumbs/default.svg
+pagetitle: "The Leap Journal"
 page-layout: full
-title-block-banner: false
 toc: false
+title-block-banner: false
+listing:
+  - id: hero
+    contents: posts
+    sort: "date desc"
+    template: ejs/hero.ejs
+  - id: events
+    contents: announcements/events
+    sort: "date desc"
+    template: ejs/events.ejs
+  - id: article-grid
+    contents: posts
+    sort: "date desc"
+    template: ejs/grid.ejs
 ---
+
+::: {#hero}
+:::
+
+## Announcements {.leap-section-heading}
+
+::: {.leap-mid-row}
+
+::: {#events}
+:::
+
+```{=html}
+<!-- Subscribe box: front-end only for now. When the newsletter phase lands
+     (listmonk), point the form action at its /subscription endpoint. -->
+<div class="leap-subscribe">
+  <h3>Get new articles by owl&hellip; or email</h3>
+  <p>Every new article, straight to your inbox. No spam, no forwarding to Mordor.</p>
+  <form id="leap-subscribe-form">
+    <input type="email" name="email" placeholder="you@bagend.me" required
+           aria-label="Email address">
+    <button type="submit">Subscribe</button>
+  </form>
+  <script>
+    document.getElementById("leap-subscribe-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      this.innerHTML = '<div class="leap-subscribe-done">Thanks! Subscriptions go live when the newsletter launches &mdash; this mock just says hello.</div>';
+    });
+  </script>
+</div>
+```
+
+:::
+
+## All articles {.leap-section-heading}
+
+::: {#article-grid}
+:::

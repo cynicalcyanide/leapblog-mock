@@ -3,9 +3,9 @@ title: "About"
 toc: true
 ---
 
-**This is a mock site** — a full-featured rehearsal for the migration of The Leap Blog from Blogger to Quarto. Everything here exercises a real planned feature: listings, announcements, author pages, comments, copyable citations, PDF downloads, search, topic filters, and executable charts.
+**This is a mock site** — a full-featured rehearsal for the migration of The Leap Journal from Blogger to Quarto. Everything here exercises a real planned feature: listings, announcements, author pages, comments, copyable citations, PDF downloads, search, topic filters, and executable charts.
 
-The content is deliberately fictional. The Leap Blog does not, to our knowledge, employ any wizards.
+The content is deliberately fictional. The Leap Journal does not, to our knowledge, employ any wizards.
 
 ## What to poke at
 

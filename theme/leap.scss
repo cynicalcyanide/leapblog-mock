@@ -1,25 +1,25 @@
 /*-- scss:defaults --*/
 
 // ============================================================
-// DESIGN TOKENS — mock palette approximating the reference
-// screenshots. Swap these values for the Figma tokens later;
-// nothing below the token block should need to change.
+// DESIGN TOKENS — flat "2D" system: hard borders, square
+// corners, discrete boxes (Works in Progress-style reference).
+// Swap these values for the Figma tokens later.
 // ============================================================
 
 // Color tokens
-$leap-ink: #1f2a24;          // primary text
+$leap-ink: #1f2a24;          // primary text + borders
 $leap-ink-soft: #5b6b62;     // secondary text
 $leap-paper: #faf8f3;        // page background
-$leap-surface: #ffffff;      // cards
-$leap-accent: #2e5d43;       // deep forest green — links, buttons
+$leap-surface: #ffffff;      // box interiors
+$leap-accent: #2e5d43;       // deep forest green — hero block, buttons
 $leap-accent-dark: #21452f;
-$leap-rule: #e4e0d5;         // hairlines / borders
-$leap-highlight: #f3ecd9;    // category chips, code bg
+$leap-highlight: #f3ecd9;    // announcement box, code bg
+$leap-rule: $leap-ink;       // ALL box borders are ink — discrete boxes
 
 // Type tokens
 $leap-font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
 $leap-font-body: "Source Sans 3", -apple-system, "Helvetica Neue", Arial, sans-serif;
-$leap-font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, monospace;
+$leap-font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, monospace;
 
 // Bootstrap variable mapping
 $body-bg: $leap-paper;
@@ -29,7 +29,7 @@ $link-hover-color: $leap-accent-dark;
 $font-family-sans-serif: $leap-font-body;
 $font-family-monospace: $leap-font-mono;
 $headings-font-family: $leap-font-display;
-$headings-font-weight: 600;
+$headings-font-weight: 700;
 $headings-color: $leap-ink;
 $navbar-bg: $leap-paper;
 $navbar-fg: $leap-ink;
@@ -39,106 +39,329 @@ $code-bg: $leap-highlight;
 $code-color: $leap-accent-dark;
 $toc-color: $leap-ink-soft;
 
+// Sharp edges everywhere
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$border-radius-xl: 0;
+$border-radius-xxl: 0;
+$btn-border-radius: 0;
+
 /*-- scss:rules --*/
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+* { border-radius: 0 !important; }
 
 // ---------- Navbar ----------
 .navbar {
-  border-bottom: 1px solid $leap-rule;
+  border-bottom: 2px solid $leap-ink;
   .navbar-brand {
     font-family: $leap-font-display;
     font-weight: 700;
     font-size: 1.35rem;
-    letter-spacing: 0.01em;
   }
   .nav-link {
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-family: $leap-font-mono;
+    font-size: 0.85rem;
   }
 }
+
+// ---------- Shared homepage atoms ----------
+.leap-kicker {
+  font-family: $leap-font-mono;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $leap-ink-soft;
+  margin-bottom: 0.6rem;
+}
+
+.leap-byline {
+  font-family: $leap-font-mono;
+  font-size: 0.8rem;
+  color: $leap-ink;
+  strong { font-weight: 600; }
+}
+
+.leap-readmore {
+  font-family: $leap-font-mono;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: right;
+  margin-top: auto;
+  padding-top: 0.8rem;
+}
+
+.leap-cat {
+  display: inline-block;
+  font-family: $leap-font-mono;
+  font-size: 0.7rem;
+  text-transform: capitalize;
+  border-right: 1px solid $leap-ink;
+  padding: 0.3rem 0.8rem;
+}
+
+.leap-card-footer {
+  border-top: 1px solid $leap-ink;
+  min-height: 1.9rem;
+}
+
+.leap-section-heading {
+  font-family: $leap-font-mono !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 2px solid $leap-ink;
+  padding-bottom: 0.4rem;
+  margin: 3rem 0 1.25rem 0;
+}
+
+// ---------- Hero (latest article) ----------
+.leap-hero-link, .leap-hero-link:hover { text-decoration: none; color: inherit; }
+.leap-hero {
+  border: 2px solid $leap-ink;
+  background: $leap-surface;
+  display: flex;
+  flex-direction: column;
+}
+.leap-hero-image {
+  min-height: 260px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 2px solid $leap-ink;
+}
+.leap-hero-body {
+  background: $leap-accent;
+  color: $leap-paper;
+  padding: 2rem 2.25rem 1.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  .leap-kicker { color: rgba(250, 248, 243, 0.75); }
+  .leap-byline { color: $leap-paper; }
+  .leap-readmore { color: $leap-paper; }
+}
+.leap-hero-title {
+  font-family: $leap-font-display;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.05;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.leap-hero-desc {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  border-top: 1px solid rgba(250, 248, 243, 0.5);
+  padding-top: 1rem;
+  margin-bottom: 0;
+}
+.leap-hero .leap-card-footer {
+  border-top: 2px solid $leap-ink;
+  background: $leap-surface;
+  .leap-cat { border-right: 1px solid $leap-ink; }
+}
+
+// ---------- Announcements row (+ subscribe box on the right) ----------
+.leap-mid-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
+
+.leap-events { display: flex; flex-direction: column; height: 100%; }
+.leap-event-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 2px solid $leap-ink;
+  background: $leap-highlight;
+  padding: 1.75rem 2rem 1.25rem 2rem;
+  text-decoration: none;
+  color: $leap-ink;
+  h3 {
+    font-family: $leap-font-display;
+    font-size: 1.9rem;
+    line-height: 1.15;
+    margin: 0 0 0.9rem 0;
+  }
+  p { font-size: 1.02rem; margin-bottom: 0; }
+  &:hover { outline: 2px solid $leap-ink; }
+}
+.leap-event-rest {
+  border: 2px solid $leap-ink;
+  border-top: 0;
+  background: $leap-surface;
+  display: flex;
+  flex-direction: column;
+}
+.leap-event-item {
+  font-family: $leap-font-mono;
+  font-size: 0.82rem;
+  color: $leap-ink;
+  text-decoration: none;
+  padding: 0.55rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  &:not(:last-child) { border-bottom: 1px solid $leap-ink; }
+  &:hover { background: $leap-highlight; }
+}
+
+// Subscribe box
+.leap-subscribe {
+  border: 2px solid $leap-ink;
+  background: $leap-surface;
+  padding: 1.5rem 1.5rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-family: $leap-font-display;
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem 0;
+  }
+  p { font-size: 0.9rem; color: $leap-ink-soft; }
+  input[type="email"] {
+    font-family: $leap-font-mono;
+    font-size: 0.85rem;
+    border: 1px solid $leap-ink;
+    background: $leap-paper;
+    padding: 0.55rem 0.75rem;
+    width: 100%;
+    margin-bottom: 0.6rem;
+    &:focus { outline: 2px solid $leap-accent; }
+  }
+  button {
+    font-family: $leap-font-mono;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: $leap-ink;
+    color: $leap-paper;
+    border: 2px solid $leap-ink;
+    padding: 0.55rem 0.75rem;
+    width: 100%;
+    cursor: pointer;
+    &:hover { background: $leap-accent; }
+  }
+  .leap-subscribe-done {
+    font-family: $leap-font-mono;
+    font-size: 0.85rem;
+    border: 1px solid $leap-ink;
+    background: $leap-highlight;
+    padding: 0.75rem;
+  }
+}
+
+// ---------- Article grid ----------
+.leap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.leap-card {
+  border: 2px solid $leap-ink;
+  background: $leap-surface;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: $leap-ink;
+  &:hover { box-shadow: 5px 5px 0 $leap-ink; color: $leap-ink; }
+}
+.leap-card-head {
+  padding: 1.25rem 1.4rem 1rem 1.4rem;
+  border-bottom: 1px solid $leap-ink;
+  h3 {
+    font-family: $leap-font-display;
+    font-size: 1.45rem;
+    line-height: 1.2;
+    margin: 0 0 0.7rem 0;
+  }
+}
+.leap-card-body {
+  padding: 1rem 1.4rem 0 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  p { font-size: 0.98rem; line-height: 1.5; margin-bottom: 0; }
+}
+.leap-card .leap-readmore { padding: 0.8rem 1.4rem 1rem 0; color: $leap-ink; }
 
 // ---------- Article pages ----------
 .quarto-title h1.title {
-  font-size: 2.4rem;
-  line-height: 1.15;
+  font-size: 2.6rem;
+  line-height: 1.1;
 }
-
 .quarto-title-meta-heading {
+  font-family: $leap-font-mono;
   color: $leap-ink-soft;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
 }
-
 #title-block-header {
   margin-bottom: 2rem;
-  border-bottom: 1px solid $leap-rule;
+  border-bottom: 2px solid $leap-ink;
   padding-bottom: 1.25rem;
 }
+main p { font-size: 1.06rem; line-height: 1.7; }
 
-main p {
-  font-size: 1.06rem;
-  line-height: 1.7;
-}
-
-// Category chips
+// Category chips: square, bordered
 .quarto-category, .quarto-title .quarto-categories .quarto-category {
-  background: $leap-highlight;
-  color: $leap-accent-dark;
-  border: none;
-  border-radius: 999px;
-  padding: 0.2em 0.8em;
-  font-size: 0.72rem;
+  background: $leap-paper;
+  color: $leap-ink;
+  border: 1px solid $leap-ink;
+  padding: 0.2em 0.7em;
+  font-family: $leap-font-mono;
+  font-size: 0.7rem;
   opacity: 1;
 }
 
-// ---------- Listings ----------
+// ---------- Non-homepage listings (announcements page, author pages) ----------
 div.quarto-post {
-  border-bottom: 1px solid $leap-rule;
-  padding-bottom: 1.4rem;
+  border: 2px solid $leap-ink;
+  background: $leap-surface;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
   .listing-title {
     font-family: $leap-font-display;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.3rem;
     a { color: $leap-ink; }
     a:hover { color: $leap-accent; }
   }
   .listing-description { color: $leap-ink-soft; }
 }
-
 .quarto-grid-item {
   background: $leap-surface;
-  border: 1px solid $leap-rule;
-  border-radius: 10px;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(31, 42, 36, 0.08);
-  }
-  .card-title {
-    font-family: $leap-font-display;
-    font-weight: 600;
-  }
+  border: 2px solid $leap-ink !important;
+  transition: none;
+  &:hover { box-shadow: 5px 5px 0 $leap-ink; }
+  .card-title { font-family: $leap-font-display; font-weight: 700; }
 }
 
-// ---------- "Other Formats" (PDF) link styled as a button ----------
+// ---------- Download PDF button ----------
 .quarto-alternate-formats, .quarto-other-links {
   a {
     display: inline-block;
-    background: $leap-accent;
-    color: #fff !important;
-    border-radius: 6px;
+    background: $leap-ink;
+    color: $leap-paper !important;
+    border: 2px solid $leap-ink;
     padding: 0.35rem 0.9rem;
+    font-family: $leap-font-mono;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-decoration: none;
-    &:hover { background: $leap-accent-dark; }
+    &:hover { background: $leap-accent; }
   }
   h2 {
-    font-size: 0.72rem;
+    font-family: $leap-font-mono;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     color: $leap-ink-soft;
     border-bottom: none;
   }
@@ -147,21 +370,18 @@ div.quarto-post {
 // ---------- Citation appendix ----------
 #quarto-appendix {
   background: $leap-surface;
-  border-top: 1px solid $leap-rule;
-  #quarto-citation .quarto-appendix-secondary-label,
-  .quarto-appendix-heading {
-    font-family: $leap-font-display;
-  }
+  border-top: 2px solid $leap-ink;
+  .quarto-appendix-heading { font-family: $leap-font-display; }
   pre.sourceCode, div.sourceCode {
     background: $leap-highlight;
-    border: 1px solid $leap-rule;
-    border-radius: 8px;
+    border: 1px solid $leap-ink;
   }
 }
 
 // ---------- Footer ----------
 .nav-footer {
-  border-top: 1px solid $leap-rule;
+  border-top: 2px solid $leap-ink;
   color: $leap-ink-soft;
-  font-size: 0.85rem;
+  font-family: $leap-font-mono;
+  font-size: 0.78rem;
 }
