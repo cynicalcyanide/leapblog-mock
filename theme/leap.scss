@@ -301,6 +301,11 @@ $btn-border-radius: 0;
   @media (max-width: 991px) { grid-template-columns: repeat(2, 1fr); }
   @media (max-width: 640px) { grid-template-columns: 1fr; }
 }
+// Quarto's anchorJS injects #fragment icon links into headings; inside
+// listing cards they intercept clicks and break navigation. Never show them.
+.leap-card .anchorjs-link, .leap-hero .anchorjs-link,
+.leap-event-main .anchorjs-link { display: none !important; }
+
 .leap-card {
   position: relative;  // anchor for the stretched title link
   border: 2px solid $leap-ink;
