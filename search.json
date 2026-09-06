@@ -70,186 +70,88 @@
     "text": "4 References\n\n\nBaggins, Bilbo. 2941. There and Back Again: A Hobbit’s Holiday, with Annexes on Asset Verification. Bag End Press.\n\n\nBaggins, Bilbo. 2942. Final Settlement of the Fourteenth Share: Notes Toward a Burglar’s Balance Sheet. TC-14. Thorin; Company (in liquidation).\n\n\nGamgee, Samwise. 3020. “Taters After the War: Agricultural Prices and the Great Reflation, 2941–2951.” Shire Journal of Applied Gardening 4 (1): 1–22.\n\n\nGrubb, Grubb, and Burrowes. 2941. “On the Disposal of Estates Presumed Dragon-Adjacent: Deflation and Distress Auctions in the Long Lake Region.” Michel Delving Review of Law and Ponies 12 (4): 33–58.\n\n\nReconstruction Economics, Oakenshield Institute for. 3018. “The Erebor Contraction: Specie Withdrawal and Regional Decline, t.a. 2770–2941.” Journal of Dale Economic History 77 (2): 141–77."
   },
   {
-    "objectID": "posts/supply-chains-of-middle-earth/index.html",
-    "href": "posts/supply-chains-of-middle-earth/index.html",
-    "title": "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse",
+    "objectID": "posts/ecology-of-middle-earth/index.html",
+    "href": "posts/ecology-of-middle-earth/index.html",
+    "title": "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood",
     "section": "",
-    "text": "Every economy in Middle-earth solved provisioning differently: the Shire solved it with surplus and cellars, Rohan with mobility, Gondor with fortified granaries, and the Elves with a technology so far ahead of everyone else’s that it should have restructured the continent’s logistics — and didn’t."
+    "text": "Middle-earth offers ecologists something modern datasets rarely do: forests with continuous institutional records running to tens of thousands of years, and stakeholders old enough to remember every policy intervention personally. The comparison between Fangorn and Mirkwood is, in effect, a natural experiment in woodland governance."
   },
   {
-    "objectID": "posts/supply-chains-of-middle-earth/index.html#the-lembas-anomaly",
-    "href": "posts/supply-chains-of-middle-earth/index.html#the-lembas-anomaly",
-    "title": "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse",
-    "section": "1 The lembas anomaly",
-    "text": "1 The lembas anomaly\nLembas is, on the numbers, absurd. One cake sustains a working adult for a day; it keeps for months wrapped in a leaf; it weighs almost nothing. In supply-chain terms, elvish waybread collapses the tooth-to-tail ratio of any expedition to nearly zero. An army provisioned on lembas needs no baggage train, which means no roads, which means no predictable routes to ambush. It is a strategic technology.\nYet output never scaled. The chart below assembles the (entirely invented) production series this correspondent compiled from regional records. Hover over it: you’ll get crosshairs, exact values for every region at that date, and you can zoom into any period. Click a region in the legend to hide it.\n\n\nShow the code behind this chart\nimport pandas as pd\nimport plotly.express as px\n\nyears = list(range(3001, 3022))\ndata = []\nfor region, base, trend, shock_year, shock in [\n    (\"Lothlórien\",  84, 0.5, 3018, -30),\n    (\"Rivendell\",   41, 0.3, 3018, -12),\n    (\"Mirkwood\",    23, -0.8, 3010, -6),\n    (\"Grey Havens\", 12, 0.9, None, 0),\n]:\n    level = base\n    for y in years:\n        level += trend\n        if shock_year and y &gt;= shock_year:\n            level += shock / 3\n        data.append({\"year\": y, \"region\": region,\n                     \"output\": round(max(level, 1), 1)})\n\ndf = pd.DataFrame(data)\n\nfig = px.line(\n    df, x=\"year\", y=\"output\", color=\"region\",\n    labels={\"year\": \"Third Age year\", \"output\": \"Output ('000 cakes)\",\n            \"region\": \"Region\"},\n    color_discrete_sequence=[\"#2e5d43\", \"#8a6d3b\", \"#5b6b62\", \"#a63d40\"],\n)\nfig.update_xaxes(showspikes=True, spikemode=\"across\", spikedash=\"dot\",\n                 spikethickness=1)\nfig.update_yaxes(showspikes=True, spikemode=\"across\", spikedash=\"dot\",\n                 spikethickness=1, gridcolor=\"#e4e0d5\")\nfig.update_layout(\n    hovermode=\"x unified\",\n    plot_bgcolor=\"white\",\n    font=dict(family=\"Source Sans 3, sans-serif\"),\n    legend=dict(orientation=\"h\", yanchor=\"bottom\", y=1.02),\n    margin=dict(l=10, r=10, t=30, b=10),\n)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 1: Waybread output by region, Third Age 3001–3021 (thousand cakes/year). Entirely fictional data; hover for values.\n\n\n\n\nNote the structural break at 3018: the War disrupted Lothlórien’s output — and the industry never recovered its peak, because the workforce emigrated. Which brings us to the real constraint."
+    "objectID": "posts/ecology-of-middle-earth/index.html#fangorn-common-pool-resources-with-shepherds",
+    "href": "posts/ecology-of-middle-earth/index.html#fangorn-common-pool-resources-with-shepherds",
+    "title": "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood",
+    "section": "1 Fangorn: common-pool resources with shepherds",
+    "text": "1 Fangorn: common-pool resources with shepherds\nFangorn is the canonical case of a common-pool resource managed by resident stewards with effectively infinite time horizons. The Ents do not discount the future in any measurable way; when your deliberative assembly takes a month to agree on the agenda, quarterly thinking is not a risk.\nThree institutional features stand out:\n\nMonitoring is continuous and ambulatory. The shepherds walk the resource. Enforcement is personal, proportionate, and occasionally involves throwing rocks at industrial facilities.\nMembership is closed but succession is a crisis. The absence of Entwives is, in economic terms, a catastrophic failure of demographic replacement that no governance structure can indefinitely survive. Institutions require heirs.\nExit from passivity is discontinuous. Fangorn tolerated marginal encroachment for centuries, then internalised an entire externality in one afternoon by demolishing Isengard. Regulators everywhere should note the shape of that response function: flat, flat, flat, vertical."
   },
   {
-    "objectID": "posts/supply-chains-of-middle-earth/index.html#why-the-technology-never-diffused",
-    "href": "posts/supply-chains-of-middle-earth/index.html#why-the-technology-never-diffused",
-    "title": "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse",
-    "section": "2 Why the technology never diffused",
-    "text": "2 Why the technology never diffused\nThree hypotheses circulate in the literature, of unequal quality:\n\nRecipe secrecy (weak). Trade secrets leak over ten thousand years. Something else binds.\nNon-transferable inputs (stronger). If production requires inputs that exist only where Elves and their particular ecology persist — a terroir theory of waybread — then the technology is land-linked and cannot be licensed out.\nThe gift-good hypothesis (strongest). Lembas was never a commodity. It moves only as a gift, between parties in specific relationships. The Elves were not running an industry below capacity; they were refusing, on principle, to have an industry at all. As with the Eagles, the constraint is institutional, not technical."
+    "objectID": "posts/ecology-of-middle-earth/index.html#mirkwood-what-happens-under-absentee-pressure",
+    "href": "posts/ecology-of-middle-earth/index.html#mirkwood-what-happens-under-absentee-pressure",
+    "title": "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood",
+    "section": "2 Mirkwood: what happens under absentee pressure",
+    "text": "2 Mirkwood: what happens under absentee pressure\nGreenwood the Great became Mirkwood not through harvesting but through a hostile change in effective ownership. A single unaccountable actor established residence at Dol Guldur, and the ecosystem repriced immediately: species composition shifted toward spiders of unusual size, path networks decayed, and the river acquired properties best described as non-standard.\nThe elven response — retreat northward, fortify, tax passing traffic — is recognisably the strategy of a minority stakeholder who cannot dislodge the majority polluter and settles for enclave quality. It works, for the enclave. The rest of the forest carries the cost."
   },
   {
-    "objectID": "posts/supply-chains-of-middle-earth/index.html#the-practitioners-postscript",
-    "href": "posts/supply-chains-of-middle-earth/index.html#the-practitioners-postscript",
-    "title": "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse",
-    "section": "3 The practitioner’s postscript",
-    "text": "3 The practitioner’s postscript\nFor actual expedition provisioning, this correspondent’s advice is unchanged: take the lembas gratefully, count on nothing you cannot grow or carry, and remember that the finest logistics innovation of the Third Age remains the humble coney, stewed, with taters. PO-TA-TOES."
+    "objectID": "posts/ecology-of-middle-earth/index.html#what-travels",
+    "href": "posts/ecology-of-middle-earth/index.html#what-travels",
+    "title": "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood",
+    "section": "3 What travels",
+    "text": "3 What travels\nStrip the wizards out and the lesson is portable: forest outcomes track the time horizon of whoever holds effective control. Patient residents with enforcement power produce old growth. Absentee extraction produces spiders. The policy instrument that matters is not the harvesting quota but the identity, tenure, and patience of the controlling party.\nFurther fieldwork is planned, pending the availability of the author, who is expected back around the turn of the age."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts/second-breakfast-political-economy/index.html",
+    "href": "posts/second-breakfast-political-economy/index.html",
+    "title": "The Political Economy of Second Breakfast",
     "section": "",
-    "text": "This is a mock site — a full-featured rehearsal for the migration of The Leap Journal from Blogger to Quarto. Everything here exercises a real planned feature: listings, announcements, author pages, comments, copyable citations, PDF downloads, search, topic filters, and executable charts.\nThe content is deliberately fictional. The Leap Journal does not, to our knowledge, employ any wizards."
+    "text": "Visitors to the Shire reliably make the same two observations: the food is excellent, and nobody seems to work. The first is true. The second is a measurement error, and the error is instructive."
   },
   {
-    "objectID": "about.html#what-to-poke-at",
-    "href": "about.html#what-to-poke-at",
-    "title": "About",
-    "section": "What to poke at",
-    "text": "What to poke at\n\nSearch (magnifying glass in the navbar) — full text of every article.\nTopic filters on the Articles page — click a category, or type in the filter box.\nAuthors — tiles for each contributor, each with their own page.\nOn any article: the Download PDF button, the Cite this article block (copy the BibTeX with one click), and the comment section at the bottom.\nThe supply chains article has an interactive chart — hover over it.\nThe dragon hoards article has real inline citations and a bibliography."
+    "objectID": "posts/second-breakfast-political-economy/index.html#six-meals-as-infrastructure",
+    "href": "posts/second-breakfast-political-economy/index.html#six-meals-as-infrastructure",
+    "title": "The Political Economy of Second Breakfast",
+    "section": "1 Six meals as infrastructure",
+    "text": "1 Six meals as infrastructure\nThe hobbit meal schedule — breakfast, second breakfast, elevenses, luncheon, afternoon tea, dinner, and supper where obtainable — is usually treated as appetite. It is better understood as institutional infrastructure. Each meal is a standing, scheduled occasion for information exchange: crop prices at elevenses, labour-sharing arrangements over luncheon, credit (in the form of remembered favours) extended across the tea table.\nThe Shire has no banks, no courts worth mentioning, and no police beyond a dozen Shirriffs concerned chiefly with stray livestock. What it has instead is contract enforcement by reputation, cleared six times daily. As I argued in my study of wartime provisioning, the region’s logistics run on trust; second breakfast is where the trust is manufactured."
   },
   {
-    "objectID": "about.html#how-to-publish-on-this-site",
-    "href": "about.html#how-to-publish-on-this-site",
-    "title": "About",
-    "section": "How to publish on this site",
-    "text": "How to publish on this site\nPublishing here is: write a text file, push it to GitHub. There is no CMS, no dashboard, no server. This section is the whole workflow.\n\nOne-time setup\ngit clone git@github.com:cynicalcyanide/leapblog-mock.git\ncd leapblog-mock\npython3.13 -m venv .venv && ./.venv/bin/pip install jupyter plotly pandas\nYou need Quarto installed. The Python step is only needed if your article runs code (charts); prose-only authors can skip it.\n\n\nWriting an article\nEvery article is one folder under posts/, holding one file called index.qmd plus any images:\nposts/\n  my-new-article/\n    index.qmd\n    figure-1.png\nAn index.qmd is ordinary Markdown with a small metadata header:\n---\ntitle: \"My New Article\"\ndescription: \"One sentence shown in listings and search results.\"\nauthor:\n  - name: Samwise Gamgee\n    url: ../../authors/samwise.html\ndate: 2026-09-10\ncategories: [economics, supply chains]\nimage: figure-1.png\n---\n\nWrite normally. **Bold**, *italics*, [links](https://example.com),\n## headings, &gt; quotes — it's just Markdown.\nThat header is the single source of truth: it feeds the listings, the topic filters, the author page, search, the citation block, and the PDF — you never configure those per-article.\n\n\nImages\nDrop image files into your article’s folder and reference them by filename:\n![Lembas output collapsed after 3018.](figure-1.png)\nThe text in brackets becomes the caption. Images travel with the article’s folder, so nothing ever breaks when things move.\n\n\nGraphs\nTwo options:\n\nStatic image — make the chart anywhere, export a PNG, include it like any image (above).\nExecutable chart — put the actual Python/R code in the article. The code runs when the site builds; readers get an interactive figure (hover values, zoom). See the supply chains article and click “Show the code” for a complete working example to copy. If you do this, run the article once locally before pushing (see Previewing, below) so the result is cached for the build.\n\n\n\nThe PDF\nYou do nothing. Every article is automatically typeset into a downloadable PDF at build time — the Download PDF button appears on its own. The same goes for the citation block, the comment section, search indexing, and the listings.\n\n\nCitations (optional)\nTo cite formally, add a references.bib file to your article folder, declare it in the header (bibliography: references.bib), and cite in the text with @key. The bibliography formats itself at the end of the article. The dragon hoards article is a working example.\n\n\nPreviewing\nFrom the repository folder:\nQUARTO_PYTHON=.venv/bin/python quarto preview\nYour browser opens a live version of the site; it refreshes as you save. (Prose-only articles can drop the QUARTO_PYTHON= prefix.)\n\n\nPublishing\ngit add posts/my-new-article\ngit commit -m \"New article: My New Article\"\ngit push\nThat’s it. GitHub rebuilds the site automatically and your article is live — listings, PDF, citation block and all — in about two minutes. No one needs to press anything else."
+    "objectID": "posts/second-breakfast-political-economy/index.html#the-measurement-problem",
+    "href": "posts/second-breakfast-political-economy/index.html#the-measurement-problem",
+    "title": "The Political Economy of Second Breakfast",
+    "section": "2 The measurement problem",
+    "text": "2 The measurement problem\nStandard labour accounting counts hours at visible work. It therefore records the Shire as a low-effort economy, which would puzzle anyone who has seen the harvest brought in — or seen the Rohirrim wrestle with the opposite problem, a society that counts martial labour meticulously and wastes half its supply.\nThe general lesson: institutions that look like leisure may be doing the work your formal institutions aren’t. Audit what the long lunch produces before you abolish it."
   },
   {
-    "objectID": "announcements/events/mordor-industrial-policy-summit.html",
-    "href": "announcements/events/mordor-industrial-policy-summit.html",
-    "title": "Mordor Industrial Policy Summit — venue changed",
+    "objectID": "posts/second-breakfast-political-economy/index.html#a-note-on-exits",
+    "href": "posts/second-breakfast-political-economy/index.html#a-note-on-exits",
+    "title": "The Political Economy of Second Breakfast",
+    "section": "3 A note on exits",
+    "text": "3 A note on exits\nIt is sometimes objected that the system only works because nobody leaves. This is broadly right, and what happens when the talented do leave is taken up in Elrond’s account of the westward migration — a rather larger version of the same problem."
+  },
+  {
+    "objectID": "posts/grey-havens-exit/index.html",
+    "href": "posts/grey-havens-exit/index.html",
+    "title": "The Grey Havens Exit: Brain Drain and the Elven Diaspora",
     "section": "",
-    "text": "Due to the Barad-dûr Convention Centre becoming unavailable for structural reasons (the structure is no longer available), the Third Mordor Industrial Policy Summit will now be held in Minas Tirith.\nProgramme changes:\n\nThe panel “Scaling Heavy Industry with a Single Charismatic Founder” proceeds as scheduled, with a revised risk-management discussant.\n“Winning Hearts and Minds Through Mass Surveillance: An Eye-Level View” is cancelled.\nA new session has been added: “Post-conflict Reconstruction and the Repricing of Volcanic Real Estate.”\n\nRefunds for delegates who registered under duress will be processed within one Age."
+    "text": "Every labour economist eventually confronts the Grey Havens problem: what happens to an economy when its most skilled cohort holds a standing, irrevocable visa to a strictly superior jurisdiction — and the visa never expires, but the workers slowly choose to use it."
   },
   {
-    "objectID": "announcements/events/entmoot-3026.html",
-    "href": "announcements/events/entmoot-3026.html",
-    "title": "EntMoot 3026 — registration open",
-    "section": "",
-    "text": "Registration is open for EntMoot 3026, the premier gathering on slow institutions.\nPractical information:\n\nThe opening plenary — establishing that everyone present is, in fact, present — takes four days.\nThe keynote, “Deliberative Democracy at Geological Timescales,” runs approximately three weeks. Attendees are advised to arrange sabbaticals rather than leave.\nCoffee breaks are not offered. Water is available in unlimited quantities if you stand in the river.\nA “hasty track” for mortal attendees compresses the full programme into a single month.\n\nDon’t be hasty. Register when you feel ready. There is no deadline, on principle."
+    "objectID": "posts/grey-havens-exit/index.html#the-worlds-politest-brain-drain",
+    "href": "posts/grey-havens-exit/index.html#the-worlds-politest-brain-drain",
+    "title": "The Grey Havens Exit: Brain Drain and the Elven Diaspora",
+    "section": "1 The world’s politest brain drain",
+    "text": "1 The world’s politest brain drain\nThe elven emigration ran for two Ages. It took the smiths first-rate, the loremasters, the healers — precisely the workers whose skills had the largest spillovers. No war drove them out (mostly); no policy could hold them. The West simply dominated on every margin an immortal values, and the exit option repriced every domestic decision. Why invest in Eregion’s institutions when the fallback is Valinor?\nThe lesson for mortal jurisdictions is uncomfortable but familiar: you do not compete with a superior jurisdiction by lecturing your talent about loyalty. You compete on the margins you control — mastery, meaning, and whether staying feels like building or like waiting. Rohan learned a version of this the hard way with its own excluded workers: the shieldmaiden problem and the Havens problem are the same problem, misallocation by exit and misallocation by bar."
   },
   {
-    "objectID": "authors/bilbo.html",
-    "href": "authors/bilbo.html",
-    "title": "Bilbo Baggins",
-    "section": "",
-    "text": "Bilbo conducted the only known physical audit of a dragon-held reserve portfolio and lived to write the annexes. He is interested in liquidity (specifically its absence), the valuation of unique assets, and contract design for expeditions. He remains, he wishes to stress, entirely respectable."
+    "objectID": "posts/grey-havens-exit/index.html#what-the-leavers-leave",
+    "href": "posts/grey-havens-exit/index.html#what-the-leavers-leave",
+    "title": "The Grey Havens Exit: Brain Drain and the Elven Diaspora",
+    "section": "2 What the leavers leave",
+    "text": "2 What the leavers leave\nThe interesting economics is in the residue. Elven emigration was staggered over millennia, which meant each departing cohort trained its replacements — the great spillover exception to the usual brain-drain story. Imladris functioned for an Age as, in effect, a teaching hospital run by people with confirmed outbound bookings. Compare the Shire’s approach to knowledge circulation, which achieves the same transmission through lunch.\nThe ecological analogue is exact, as Gandalf’s forest comparison shows: what matters is not whether the controlling cohort leaves, but the time horizon over which control is handed on."
   },
   {
-    "objectID": "authors/bilbo.html#articles-by-bilbo",
-    "href": "authors/bilbo.html#articles-by-bilbo",
-    "title": "Bilbo Baggins",
-    "section": "Articles by Bilbo",
-    "text": "Articles by Bilbo\n\n\n\n\n\nDragon Hoards as Monetary Policy: Smaug and the Deflationary Trap\n\n\n\nmonetary policy\n\neconomics\n\nhistory\n\n\n\nWhen a single actor withdraws a region’s entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography.\n\n\n\n\n\nApr 14, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "authors/gandalf.html",
-    "href": "authors/gandalf.html",
-    "title": "Gandalf the Grey",
-    "section": "",
-    "text": "Gandalf has spent several thousand years doing fieldwork, mostly on foot. His research programme concerns why good institutions fail slowly and then all at once. He is a fellow of no institution, on principle, and is frequently late — though he would note that a researcher is never late; he publishes precisely when he means to."
-  },
-  {
-    "objectID": "authors/gandalf.html#articles-by-gandalf",
-    "href": "authors/gandalf.html#articles-by-gandalf",
-    "title": "Gandalf the Grey",
-    "section": "Articles by Gandalf",
-    "text": "Articles by Gandalf\n\n\n\n\n\nThe Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood\n\n\n\necology\n\ngovernance\n\ninstitutions\n\n\n\nForests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.\n\n\n\n\n\nAug 18, 2026\n\n\n\n\n\n\n\nEagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere\n\n\n\ninfrastructure\n\neconomics\n\ngovernance\n\n\n\nThe Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.\n\n\n\n\n\nMay 5, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "authors/samwise.html",
-    "href": "authors/samwise.html",
-    "title": "Samwise Gamgee",
-    "section": "",
-    "text": "Sam came to economics through gardening, which he maintains is the same discipline with better weather. His work focuses on smallholder agriculture and supply chains that must function when everything has gone wrong. He is the only author on this blog to have carried his co-author up a volcano."
-  },
-  {
-    "objectID": "authors/samwise.html#articles-by-samwise",
-    "href": "authors/samwise.html#articles-by-samwise",
-    "title": "Samwise Gamgee",
-    "section": "Articles by Samwise",
-    "text": "Articles by Samwise\n\n\n\n\n\nSupply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse\n\n\n\nsupply chains\n\neconomics\n\ndata\n\n\n\nOne bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output.\n\n\n\n\n\nSep 1, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "The Leap Journal",
-    "section": "",
-    "text": "Latest article\n\n\n\nWords by Samwise Gamgee\n\n\nOne bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output.\n\n\nRead more →\n\n\n\nsupply chainseconomicsdata\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#announcements",
-    "href": "index.html#announcements",
-    "title": "The Leap Journal",
-    "section": "Announcements",
-    "text": "Announcements\n\n\n\n\n\nAnnouncement\n\n\nCall for papers: Council of Elrond 3025 — Annual Conference on Ring Disposal Policy\n\n\nRivendell, 25 October. Theme: ‘Credible commitment mechanisms for the destruction of systemically important assets.’ Nine discussant slots; walking shoes required.\n\n\nDetails →\n\n\n\nEntMoot 3026 — registration open→Mordor Industrial Policy Summit — venue changed→Workshop: Pipe-weed Futures and Commodity Markets in the Southfarthing→\n\n\nNo matching items\n\n\n\n  Get new articles by owl… or email\n  Every new article, straight to your inbox. No spam, no forwarding to Mordor.\n  \n    \n    Subscribe"
-  },
-  {
-    "objectID": "index.html#all-articles",
-    "href": "index.html#all-articles",
-    "title": "The Leap Journal",
-    "section": "All articles",
-    "text": "All articles\n\n\n\n\n\nThe Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood\n\n\nWords by Gandalf the Grey\n\n\n\n\nForests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.\n\n\n\nRead more →\n\n\necologygovernance\n\n\n\n\n\nThe Psychology of Gollum: A Two-Agent Bargaining Model of the Self\n\n\nWords by Elrond Half-elven\n\n\n\n\nSméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium.\n\n\n\nRead more →\n\n\npsychologybehavioural economics\n\n\n\n\n\nShieldmaidens and the Rohirrim Labour Market\n\n\nWords by Éowyn of Rohan\n\n\n\n\nRohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks.\n\n\n\nRead more →\n\n\nlaboureconomics\n\n\n\n\n\nEagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere\n\n\nWords by Gandalf the Grey\n\n\n\n\nThe Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.\n\n\n\nRead more →\n\n\ninfrastructureeconomics\n\n\n\n\n\nDragon Hoards as Monetary Policy: Smaug and the Deflationary Trap\n\n\nWords by Bilbo Baggins\n\n\n\n\nWhen a single actor withdraws a region’s entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography.\n\n\n\nRead more →\n\n\nmonetary policyeconomics\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "authors/index.html",
-    "href": "authors/index.html",
-    "title": "Authors",
-    "section": "",
-    "text": "Bilbo Baggins\n\n\nMemoirist and burglar-turned-auditor. Writes on monetary economics, asset valuation, and the accounting treatment of dragon hoards.\n\n\n\n\n\n\n\n\n\n\n\n\nElrond Half-elven\n\n\nLong-horizon policy. Works on intergenerational discounting, committee design, and the political economy of very long meetings.\n\n\n\n\n\n\n\n\n\n\n\n\nGandalf the Grey\n\n\nWandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.\n\n\n\n\n\n\n\n\n\n\n\n\nSamwise Gamgee\n\n\nAgrarian economist. Works on Shire land-use policy, potato yield gaps, and logistics under adversarial conditions.\n\n\n\n\n\n\n\n\n\n\n\n\nÉowyn of Rohan\n\n\nDefence economist. Studies labour-market participation, occupational licensing of shieldmaidens, and succession risk.\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "authors/elrond.html",
-    "href": "authors/elrond.html",
-    "title": "Elrond Half-elven",
-    "section": "",
-    "text": "Elrond has chaired exactly one committee meeting of consequence and has been apologising for its outcomes for three thousand years. His current work applies behavioural models to individuals with unusually severe time-inconsistency problems. He discounts the future at approximately zero, which his referees find implausible."
-  },
-  {
-    "objectID": "authors/elrond.html#articles-by-elrond",
-    "href": "authors/elrond.html#articles-by-elrond",
-    "title": "Elrond Half-elven",
-    "section": "Articles by Elrond",
-    "text": "Articles by Elrond\n\n\n\n\n\nThe Psychology of Gollum: A Two-Agent Bargaining Model of the Self\n\n\n\npsychology\n\nbehavioural economics\n\n\n\nSméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium.\n\n\n\n\n\nJul 22, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "authors/eowyn.html",
-    "href": "authors/eowyn.html",
-    "title": "Éowyn of Rohan",
-    "section": "",
-    "text": "Éowyn’s research examines who is allowed to work, at what, and what it costs a society to waste half its talent. Her methodological stance is that identification problems, like certain kings of the Nazgûl, are rarely as insurmountable as advertised."
-  },
-  {
-    "objectID": "authors/eowyn.html#articles-by-éowyn",
-    "href": "authors/eowyn.html#articles-by-éowyn",
-    "title": "Éowyn of Rohan",
-    "section": "Articles by Éowyn",
-    "text": "Articles by Éowyn\n\n\n\n\n\nShieldmaidens and the Rohirrim Labour Market\n\n\n\nlabour\n\neconomics\n\npolicy\n\n\n\nRohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks.\n\n\n\n\n\nJun 10, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "announcements/index.html",
-    "href": "announcements/index.html",
-    "title": "Announcements",
-    "section": "",
-    "text": "Conference calls, workshops, and events. Submissions from all Free Peoples welcome; orcs must supply an ethics statement.\n\n\n\n\n\n\n\n\n\nCall for papers: Council of Elrond 3025 — Annual Conference on Ring Disposal Policy\n\n\nRivendell, 25 October. Theme: ‘Credible commitment mechanisms for the destruction of systemically important assets.’ Nine discussant slots; walking shoes required.\n\n\n\n\n\nAug 1, 2026\n\n\n\n\n\n\n\nEntMoot 3026 — registration open\n\n\nFangorn Forest, all of March (at minimum). Keynote: ‘Deliberative Democracy at Geological Timescales.’ The keynote alone runs three weeks; plan accordingly.\n\n\n\n\n\nJul 15, 2026\n\n\n\n\n\n\n\nMordor Industrial Policy Summit — venue changed\n\n\nBarad-dûr Convention Centre unavailable for structural reasons. The Summit relocates to Minas Tirith; the session ‘Winning Hearts and Minds Through Mass Surveillance’ is cancelled.\n\n\n\n\n\nJun 20, 2026\n\n\n\n\n\n\n\nWorkshop: Pipe-weed Futures and Commodity Markets in the Southfarthing\n\n\nHobbiton, 22 September (second breakfast onwards). A hands-on workshop on hedging, storage, and why Longbottom Leaf forward contracts keep settling in kind.\n\n\n\n\n\nMay 30, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "announcements/events/pipeweed-futures-workshop.html",
-    "href": "announcements/events/pipeweed-futures-workshop.html",
-    "title": "Workshop: Pipe-weed Futures and Commodity Markets in the Southfarthing",
-    "section": "",
-    "text": "A one-day workshop for practitioners and academics on the Shire’s most liquid commodity market.\nSessions include:\n\nBasis risk between Longbottom Leaf and Old Toby: is it quality or marketing?\nWarehouse receipts you can trust: lessons from the Lockholes.\nWhy forward contracts keep settling in kind, and why nobody minds.\nPanel: Should second breakfast be a trading halt?\n\nLunch, elevenses, luncheon, and afternoon tea provided. Registration closes when the food runs out, which historical data suggests is early."
-  },
-  {
-    "objectID": "announcements/events/council-of-elrond-3025.html",
-    "href": "announcements/events/council-of-elrond-3025.html",
-    "title": "Call for papers: Council of Elrond 3025 — Annual Conference on Ring Disposal Policy",
-    "section": "",
-    "text": "The 3,024th Annual Council invites papers on the disposal of systemically important magical assets. This year’s theme is credible commitment: how does a coalition bind itself to destroying an asset that makes its holder progressively less willing to destroy it?\nSubmission notes:\n\nExtended abstracts (max 2 pages) by 30 September to the Last Homely House, attention: reception desk.\nThe programme committee regrets that “just give it to the eagles” papers will be desk-rejected. Again.\nTravel grants available for parties of nine or fewer.\nAccommodation is provided; the catering is elvish, so eat before you come if you like chips."
+    "objectID": "posts/grey-havens-exit/index.html#policy-conclusion",
+    "href": "posts/grey-havens-exit/index.html#policy-conclusion",
+    "title": "The Grey Havens Exit: Brain Drain and the Elven Diaspora",
+    "section": "3 Policy conclusion",
+    "text": "3 Policy conclusion\nIf your best people hold an exit visa, your only durable policy is to make the years before departure productive and the handover long. The Elves, to their credit, took three thousand years to leave and swept the workshop on the way out. Most departing talent gets two weeks’ notice. Choose which regime you’d rather manage."
   },
   {
     "objectID": "posts/shieldmaidens-labour-market/index.html",
@@ -280,32 +182,284 @@
     "text": "3 The general point\nOccupational restrictions are usually defended on average-quality grounds and usually costed in average terms. But defence — like several other sectors — is a tail-risk business. The value of an open labour market is not the mean worker it adds; it is the specific worker you cannot predict needing. You do not know, in advance, whose hand the job requires.\nRohan has since reformed its recruitment practices. The songs, it must be said, adapted immediately; the pension system is taking longer."
   },
   {
-    "objectID": "posts/ecology-of-middle-earth/index.html",
-    "href": "posts/ecology-of-middle-earth/index.html",
-    "title": "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood",
+    "objectID": "announcements/events/council-of-elrond-3025.html",
+    "href": "announcements/events/council-of-elrond-3025.html",
+    "title": "Call for papers: Council of Elrond 3025 — Annual Conference on Ring Disposal Policy",
     "section": "",
-    "text": "Middle-earth offers ecologists something modern datasets rarely do: forests with continuous institutional records running to tens of thousands of years, and stakeholders old enough to remember every policy intervention personally. The comparison between Fangorn and Mirkwood is, in effect, a natural experiment in woodland governance."
+    "text": "The 3,024th Annual Council invites papers on the disposal of systemically important magical assets. This year’s theme is credible commitment: how does a coalition bind itself to destroying an asset that makes its holder progressively less willing to destroy it?\nSubmission notes:\n\nExtended abstracts (max 2 pages) by 30 September to the Last Homely House, attention: reception desk.\nThe programme committee regrets that “just give it to the eagles” papers will be desk-rejected. Again.\nTravel grants available for parties of nine or fewer.\nAccommodation is provided; the catering is elvish, so eat before you come if you like chips."
   },
   {
-    "objectID": "posts/ecology-of-middle-earth/index.html#fangorn-common-pool-resources-with-shepherds",
-    "href": "posts/ecology-of-middle-earth/index.html#fangorn-common-pool-resources-with-shepherds",
-    "title": "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood",
-    "section": "1 Fangorn: common-pool resources with shepherds",
-    "text": "1 Fangorn: common-pool resources with shepherds\nFangorn is the canonical case of a common-pool resource managed by resident stewards with effectively infinite time horizons. The Ents do not discount the future in any measurable way; when your deliberative assembly takes a month to agree on the agenda, quarterly thinking is not a risk.\nThree institutional features stand out:\n\nMonitoring is continuous and ambulatory. The shepherds walk the resource. Enforcement is personal, proportionate, and occasionally involves throwing rocks at industrial facilities.\nMembership is closed but succession is a crisis. The absence of Entwives is, in economic terms, a catastrophic failure of demographic replacement that no governance structure can indefinitely survive. Institutions require heirs.\nExit from passivity is discontinuous. Fangorn tolerated marginal encroachment for centuries, then internalised an entire externality in one afternoon by demolishing Isengard. Regulators everywhere should note the shape of that response function: flat, flat, flat, vertical."
+    "objectID": "announcements/events/pipeweed-futures-workshop.html",
+    "href": "announcements/events/pipeweed-futures-workshop.html",
+    "title": "Workshop: Pipe-weed Futures and Commodity Markets in the Southfarthing",
+    "section": "",
+    "text": "A one-day workshop for practitioners and academics on the Shire’s most liquid commodity market.\nSessions include:\n\nBasis risk between Longbottom Leaf and Old Toby: is it quality or marketing?\nWarehouse receipts you can trust: lessons from the Lockholes.\nWhy forward contracts keep settling in kind, and why nobody minds.\nPanel: Should second breakfast be a trading halt?\n\nLunch, elevenses, luncheon, and afternoon tea provided. Registration closes when the food runs out, which historical data suggests is early."
   },
   {
-    "objectID": "posts/ecology-of-middle-earth/index.html#mirkwood-what-happens-under-absentee-pressure",
-    "href": "posts/ecology-of-middle-earth/index.html#mirkwood-what-happens-under-absentee-pressure",
-    "title": "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood",
-    "section": "2 Mirkwood: what happens under absentee pressure",
-    "text": "2 Mirkwood: what happens under absentee pressure\nGreenwood the Great became Mirkwood not through harvesting but through a hostile change in effective ownership. A single unaccountable actor established residence at Dol Guldur, and the ecosystem repriced immediately: species composition shifted toward spiders of unusual size, path networks decayed, and the river acquired properties best described as non-standard.\nThe elven response — retreat northward, fortify, tax passing traffic — is recognisably the strategy of a minority stakeholder who cannot dislodge the majority polluter and settles for enclave quality. It works, for the enclave. The rest of the forest carries the cost."
+    "objectID": "announcements/index.html",
+    "href": "announcements/index.html",
+    "title": "Announcements",
+    "section": "",
+    "text": "Conference calls, workshops, and events. Submissions from all Free Peoples welcome; orcs must supply an ethics statement.\n\n\n\n\n\n\n\n\n\nCall for papers: Council of Elrond 3025 — Annual Conference on Ring Disposal Policy\n\n\nRivendell, 25 October. Theme: ‘Credible commitment mechanisms for the destruction of systemically important assets.’ Nine discussant slots; walking shoes required.\n\n\n\n\n\nAug 1, 2026\n\n\n\n\n\n\n\nEntMoot 3026 — registration open\n\n\nFangorn Forest, all of March (at minimum). Keynote: ‘Deliberative Democracy at Geological Timescales.’ The keynote alone runs three weeks; plan accordingly.\n\n\n\n\n\nJul 15, 2026\n\n\n\n\n\n\n\nMordor Industrial Policy Summit — venue changed\n\n\nBarad-dûr Convention Centre unavailable for structural reasons. The Summit relocates to Minas Tirith; the session ‘Winning Hearts and Minds Through Mass Surveillance’ is cancelled.\n\n\n\n\n\nJun 20, 2026\n\n\n\n\n\n\n\nWorkshop: Pipe-weed Futures and Commodity Markets in the Southfarthing\n\n\nHobbiton, 22 September (second breakfast onwards). A hands-on workshop on hedging, storage, and why Longbottom Leaf forward contracts keep settling in kind.\n\n\n\n\n\nMay 30, 2026\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/ecology-of-middle-earth/index.html#what-travels",
-    "href": "posts/ecology-of-middle-earth/index.html#what-travels",
-    "title": "The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood",
-    "section": "3 What travels",
-    "text": "3 What travels\nStrip the wizards out and the lesson is portable: forest outcomes track the time horizon of whoever holds effective control. Patient residents with enforcement power produce old growth. Absentee extraction produces spiders. The policy instrument that matters is not the harvesting quota but the identity, tenure, and patience of the controlling party.\nFurther fieldwork is planned, pending the availability of the author, who is expected back around the turn of the age."
+    "objectID": "authors/eowyn.html",
+    "href": "authors/eowyn.html",
+    "title": "Éowyn of Rohan",
+    "section": "",
+    "text": "Éowyn’s research examines who is allowed to work, at what, and what it costs a society to waste half its talent. Her methodological stance is that identification problems, like certain kings of the Nazgûl, are rarely as insurmountable as advertised."
+  },
+  {
+    "objectID": "authors/eowyn.html#articles-by-éowyn",
+    "href": "authors/eowyn.html#articles-by-éowyn",
+    "title": "Éowyn of Rohan",
+    "section": "Articles by Éowyn",
+    "text": "Articles by Éowyn\n\n\n\n\n\nShieldmaidens and the Rohirrim Labour Market\n\n\n\nlabour\n\neconomics\n\npolicy\n\n\n\nRohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks.\n\n\n\n\n\nJun 10, 2026\n\n\n\n\n\n\n\nThe Grey Havens Exit: Brain Drain and the Elven Diaspora\n\n\n\nlabour\n\neconomics\n\npolicy\n\n\n\nWhen your most skilled workers can emigrate to a strictly better jurisdiction, retention policy is everything. Middle-earth’s slowest and most total brain drain, examined.\n\n\n\n\n\nMay 20, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "authors/elrond.html",
+    "href": "authors/elrond.html",
+    "title": "Elrond Half-elven",
+    "section": "",
+    "text": "Elrond has chaired exactly one committee meeting of consequence and has been apologising for its outcomes for three thousand years. His current work applies behavioural models to individuals with unusually severe time-inconsistency problems. He discounts the future at approximately zero, which his referees find implausible."
+  },
+  {
+    "objectID": "authors/elrond.html#articles-by-elrond",
+    "href": "authors/elrond.html#articles-by-elrond",
+    "title": "Elrond Half-elven",
+    "section": "Articles by Elrond",
+    "text": "Articles by Elrond\n\n\n\n\n\nThe Psychology of Gollum: A Two-Agent Bargaining Model of the Self\n\n\n\npsychology\n\nbehavioural economics\n\n\n\nSméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium.\n\n\n\n\n\nJul 22, 2026\n\n\n\n\n\n\n\nRings as Reserve Assets: A Portfolio Theory of Power\n\n\n\nmonetary policy\n\neconomics\n\ngovernance\n\n\n\nThree were held and never used; nine were leveraged to insolvency; one was systemically important. What the Rings of Power teach about reserve management and counterparty risk.\n\n\n\n\n\nJun 25, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "authors/index.html",
+    "href": "authors/index.html",
+    "title": "Authors",
+    "section": "",
+    "text": "Bilbo Baggins\n\n\nMemoirist and burglar-turned-auditor. Writes on monetary economics, asset valuation, and the accounting treatment of dragon hoards.\n\n\n\n\n\n\n\n\n\n\n\n\nElrond Half-elven\n\n\nLong-horizon policy. Works on intergenerational discounting, committee design, and the political economy of very long meetings.\n\n\n\n\n\n\n\n\n\n\n\n\nGandalf the Grey\n\n\nWandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.\n\n\n\n\n\n\n\n\n\n\n\n\nSamwise Gamgee\n\n\nAgrarian economist. Works on Shire land-use policy, potato yield gaps, and logistics under adversarial conditions.\n\n\n\n\n\n\n\n\n\n\n\n\nÉowyn of Rohan\n\n\nDefence economist. Studies labour-market participation, occupational licensing of shieldmaidens, and succession risk.\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The Leap Journal",
+    "section": "",
+    "text": "Latest article\n\n\n\nWords by Samwise Gamgee\n\n\nOne bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output.\n\n\nRead more →\n\n\n\nsupply chainseconomicsdata\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#announcements",
+    "href": "index.html#announcements",
+    "title": "The Leap Journal",
+    "section": "Announcements",
+    "text": "Announcements\n\n\n\n\n\nAnnouncement\n\n\nCall for papers: Council of Elrond 3025 — Annual Conference on Ring Disposal Policy\n\n\nRivendell, 25 October. Theme: ‘Credible commitment mechanisms for the destruction of systemically important assets.’ Nine discussant slots; walking shoes required.\n\n\nDetails →\n\n\n\nEntMoot 3026 — registration open→Mordor Industrial Policy Summit — venue changed→Workshop: Pipe-weed Futures and Commodity Markets in the Southfarthing→\n\n\nNo matching items\n\n\n\n  Get new articles by owl… or email\n  Every new article, straight to your inbox. No spam, no forwarding to Mordor.\n  \n    \n    Subscribe"
+  },
+  {
+    "objectID": "index.html#all-articles",
+    "href": "index.html#all-articles",
+    "title": "The Leap Journal",
+    "section": "All articles",
+    "text": "All articles\n\n\n\n\n\nThe Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood\n\n\nWords by Gandalf the Grey\n\n\n\n\nForests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.\n\n\n\nRead more →\n\n\necologygovernance\n\n\n\n\n\nThe Political Economy of Second Breakfast\n\n\nWords by Samwise Gamgee\n\n\n\n\nThe Shire’s six-meal day looks like idleness and functions as social insurance. On meal-timing institutions and why productivity statistics miss them.\n\n\n\nRead more →\n\n\neconomicsinstitutions\n\n\n\n\n\nThe Psychology of Gollum: A Two-Agent Bargaining Model of the Self\n\n\nWords by Elrond Half-elven\n\n\n\n\nSméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium.\n\n\n\nRead more →\n\n\npsychologybehavioural economics\n\n\n\n\n\nPalantír Networks: Information Asymmetry on the Seeing-Stone Market\n\n\nWords by Gandalf the Grey\n\n\n\n\nSeven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.\n\n\n\nRead more →\n\n\ninfrastructuregovernance\n\n\n\n\n\nRings as Reserve Assets: A Portfolio Theory of Power\n\n\nWords by Elrond Half-elven\n\n\n\n\nThree were held and never used; nine were leveraged to insolvency; one was systemically important. What the Rings of Power teach about reserve management and counterparty risk.\n\n\n\nRead more →\n\n\nmonetary policyeconomics\n\n\n\n\n\nShieldmaidens and the Rohirrim Labour Market\n\n\nWords by Éowyn of Rohan\n\n\n\n\nRohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks.\n\n\n\nRead more →\n\n\nlaboureconomics\n\n\n\n\n\nThe Grey Havens Exit: Brain Drain and the Elven Diaspora\n\n\nWords by Éowyn of Rohan\n\n\n\n\nWhen your most skilled workers can emigrate to a strictly better jurisdiction, retention policy is everything. Middle-earth’s slowest and most total brain drain, examined.\n\n\n\nRead more →\n\n\nlaboureconomics\n\n\n\n\n\nEagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere\n\n\nWords by Gandalf the Grey\n\n\n\n\nThe Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.\n\n\n\nRead more →\n\n\ninfrastructureeconomics\n\n\n\n\n\nBarrow-wight Estates: The Property Rights of the Dead\n\n\nWords by Bilbo Baggins\n\n\n\n\nThe Barrow-downs are Middle-earth’s oldest probate dispute: assets held in perpetuity by claimants with no heirs, no liquidity, and a strong security posture. An auditor’s view.\n\n\n\nRead more →\n\n\neconomicsinstitutions\n\n\n\n\n\nDragon Hoards as Monetary Policy: Smaug and the Deflationary Trap\n\n\nWords by Bilbo Baggins\n\n\n\n\nWhen a single actor withdraws a region’s entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography.\n\n\n\nRead more →\n\n\nmonetary policyeconomics\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "articles.html",
+    "href": "articles.html",
+    "title": "The Leap Journal",
+    "section": "",
+    "text": "Words by Samwise Gamgee\n\n\n\n\nOne bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output.\n\n\n\nRead more →\n\n\nsupply chainseconomics\n\n\n\n\n\n\nWords by Gandalf the Grey\n\n\n\n\nForests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.\n\n\n\nRead more →\n\n\necologygovernance\n\n\n\n\n\n\nWords by Samwise Gamgee\n\n\n\n\nThe Shire’s six-meal day looks like idleness and functions as social insurance. On meal-timing institutions and why productivity statistics miss them.\n\n\n\nRead more →\n\n\neconomicsinstitutions\n\n\n\n\n\n\nWords by Elrond Half-elven\n\n\n\n\nSméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium.\n\n\n\nRead more →\n\n\npsychologybehavioural economics\n\n\n\n\n\n\nWords by Gandalf the Grey\n\n\n\n\nSeven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.\n\n\n\nRead more →\n\n\ninfrastructuregovernance\n\n\n\n\n\n\nWords by Elrond Half-elven\n\n\n\n\nThree were held and never used; nine were leveraged to insolvency; one was systemically important. What the Rings of Power teach about reserve management and counterparty risk.\n\n\n\nRead more →\n\n\nmonetary policyeconomics\n\n\n\n\n\n\nWords by Éowyn of Rohan\n\n\n\n\nRohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks.\n\n\n\nRead more →\n\n\nlaboureconomics\n\n\n\n\n\n\nWords by Éowyn of Rohan\n\n\n\n\nWhen your most skilled workers can emigrate to a strictly better jurisdiction, retention policy is everything. Middle-earth’s slowest and most total brain drain, examined.\n\n\n\nRead more →\n\n\nlaboureconomics\n\n\n\n\n\n\nWords by Gandalf the Grey\n\n\n\n\nThe Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.\n\n\n\nRead more →\n\n\ninfrastructureeconomics\n\n\n\n\n\n\nWords by Bilbo Baggins\n\n\n\n\nThe Barrow-downs are Middle-earth’s oldest probate dispute: assets held in perpetuity by claimants with no heirs, no liquidity, and a strong security posture. An auditor’s view.\n\n\n\nRead more →\n\n\neconomicsinstitutions\n\n\n\n\n\n\nWords by Bilbo Baggins\n\n\n\n\nWhen a single actor withdraws a region’s entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography.\n\n\n\nRead more →\n\n\nmonetary policyeconomics\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "articles.html#all-articles",
+    "href": "articles.html#all-articles",
+    "title": "The Leap Journal",
+    "section": "",
+    "text": "Words by Samwise Gamgee\n\n\n\n\nOne bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output.\n\n\n\nRead more →\n\n\nsupply chainseconomics\n\n\n\n\n\n\nWords by Gandalf the Grey\n\n\n\n\nForests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.\n\n\n\nRead more →\n\n\necologygovernance\n\n\n\n\n\n\nWords by Samwise Gamgee\n\n\n\n\nThe Shire’s six-meal day looks like idleness and functions as social insurance. On meal-timing institutions and why productivity statistics miss them.\n\n\n\nRead more →\n\n\neconomicsinstitutions\n\n\n\n\n\n\nWords by Elrond Half-elven\n\n\n\n\nSméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium.\n\n\n\nRead more →\n\n\npsychologybehavioural economics\n\n\n\n\n\n\nWords by Gandalf the Grey\n\n\n\n\nSeven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.\n\n\n\nRead more →\n\n\ninfrastructuregovernance\n\n\n\n\n\n\nWords by Elrond Half-elven\n\n\n\n\nThree were held and never used; nine were leveraged to insolvency; one was systemically important. What the Rings of Power teach about reserve management and counterparty risk.\n\n\n\nRead more →\n\n\nmonetary policyeconomics\n\n\n\n\n\n\nWords by Éowyn of Rohan\n\n\n\n\nRohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks.\n\n\n\nRead more →\n\n\nlaboureconomics\n\n\n\n\n\n\nWords by Éowyn of Rohan\n\n\n\n\nWhen your most skilled workers can emigrate to a strictly better jurisdiction, retention policy is everything. Middle-earth’s slowest and most total brain drain, examined.\n\n\n\nRead more →\n\n\nlaboureconomics\n\n\n\n\n\n\nWords by Gandalf the Grey\n\n\n\n\nThe Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.\n\n\n\nRead more →\n\n\ninfrastructureeconomics\n\n\n\n\n\n\nWords by Bilbo Baggins\n\n\n\n\nThe Barrow-downs are Middle-earth’s oldest probate dispute: assets held in perpetuity by claimants with no heirs, no liquidity, and a strong security posture. An auditor’s view.\n\n\n\nRead more →\n\n\neconomicsinstitutions\n\n\n\n\n\n\nWords by Bilbo Baggins\n\n\n\n\nWhen a single actor withdraws a region’s entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography.\n\n\n\nRead more →\n\n\nmonetary policyeconomics\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "authors/samwise.html",
+    "href": "authors/samwise.html",
+    "title": "Samwise Gamgee",
+    "section": "",
+    "text": "Sam came to economics through gardening, which he maintains is the same discipline with better weather. His work focuses on smallholder agriculture and supply chains that must function when everything has gone wrong. He is the only author on this blog to have carried his co-author up a volcano."
+  },
+  {
+    "objectID": "authors/samwise.html#articles-by-samwise",
+    "href": "authors/samwise.html#articles-by-samwise",
+    "title": "Samwise Gamgee",
+    "section": "Articles by Samwise",
+    "text": "Articles by Samwise\n\n\n\n\n\nSupply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse\n\n\n\nsupply chains\n\neconomics\n\ndata\n\n\n\nOne bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output.\n\n\n\n\n\nSep 1, 2026\n\n\n\n\n\n\n\nThe Political Economy of Second Breakfast\n\n\n\neconomics\n\ninstitutions\n\nlabour\n\n\n\nThe Shire’s six-meal day looks like idleness and functions as social insurance. On meal-timing institutions and why productivity statistics miss them.\n\n\n\n\n\nAug 5, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "authors/gandalf.html",
+    "href": "authors/gandalf.html",
+    "title": "Gandalf the Grey",
+    "section": "",
+    "text": "Gandalf has spent several thousand years doing fieldwork, mostly on foot. His research programme concerns why good institutions fail slowly and then all at once. He is a fellow of no institution, on principle, and is frequently late — though he would note that a researcher is never late; he publishes precisely when he means to."
+  },
+  {
+    "objectID": "authors/gandalf.html#articles-by-gandalf",
+    "href": "authors/gandalf.html#articles-by-gandalf",
+    "title": "Gandalf the Grey",
+    "section": "Articles by Gandalf",
+    "text": "Articles by Gandalf\n\n\n\n\n\nThe Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood\n\n\n\necology\n\ngovernance\n\ninstitutions\n\n\n\nForests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.\n\n\n\n\n\nAug 18, 2026\n\n\n\n\n\n\n\nPalantír Networks: Information Asymmetry on the Seeing-Stone Market\n\n\n\ninfrastructure\n\ngovernance\n\ninformation\n\n\n\nSeven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.\n\n\n\n\n\nJul 8, 2026\n\n\n\n\n\n\n\nEagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere\n\n\n\ninfrastructure\n\neconomics\n\ngovernance\n\n\n\nThe Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.\n\n\n\n\n\nMay 5, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "authors/bilbo.html",
+    "href": "authors/bilbo.html",
+    "title": "Bilbo Baggins",
+    "section": "",
+    "text": "Bilbo conducted the only known physical audit of a dragon-held reserve portfolio and lived to write the annexes. He is interested in liquidity (specifically its absence), the valuation of unique assets, and contract design for expeditions. He remains, he wishes to stress, entirely respectable."
+  },
+  {
+    "objectID": "authors/bilbo.html#articles-by-bilbo",
+    "href": "authors/bilbo.html#articles-by-bilbo",
+    "title": "Bilbo Baggins",
+    "section": "Articles by Bilbo",
+    "text": "Articles by Bilbo\n\n\n\n\n\nBarrow-wight Estates: The Property Rights of the Dead\n\n\n\neconomics\n\ninstitutions\n\nhistory\n\n\n\nThe Barrow-downs are Middle-earth’s oldest probate dispute: assets held in perpetuity by claimants with no heirs, no liquidity, and a strong security posture. An auditor’s view.\n\n\n\n\n\nMay 2, 2026\n\n\n\n\n\n\n\nDragon Hoards as Monetary Policy: Smaug and the Deflationary Trap\n\n\n\nmonetary policy\n\neconomics\n\nhistory\n\n\n\nWhen a single actor withdraws a region’s entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography.\n\n\n\n\n\nApr 14, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "announcements/events/entmoot-3026.html",
+    "href": "announcements/events/entmoot-3026.html",
+    "title": "EntMoot 3026 — registration open",
+    "section": "",
+    "text": "Registration is open for EntMoot 3026, the premier gathering on slow institutions.\nPractical information:\n\nThe opening plenary — establishing that everyone present is, in fact, present — takes four days.\nThe keynote, “Deliberative Democracy at Geological Timescales,” runs approximately three weeks. Attendees are advised to arrange sabbaticals rather than leave.\nCoffee breaks are not offered. Water is available in unlimited quantities if you stand in the river.\nA “hasty track” for mortal attendees compresses the full programme into a single month.\n\nDon’t be hasty. Register when you feel ready. There is no deadline, on principle."
+  },
+  {
+    "objectID": "announcements/events/mordor-industrial-policy-summit.html",
+    "href": "announcements/events/mordor-industrial-policy-summit.html",
+    "title": "Mordor Industrial Policy Summit — venue changed",
+    "section": "",
+    "text": "Due to the Barad-dûr Convention Centre becoming unavailable for structural reasons (the structure is no longer available), the Third Mordor Industrial Policy Summit will now be held in Minas Tirith.\nProgramme changes:\n\nThe panel “Scaling Heavy Industry with a Single Charismatic Founder” proceeds as scheduled, with a revised risk-management discussant.\n“Winning Hearts and Minds Through Mass Surveillance: An Eye-Level View” is cancelled.\nA new session has been added: “Post-conflict Reconstruction and the Repricing of Volcanic Real Estate.”\n\nRefunds for delegates who registered under duress will be processed within one Age."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is a mock site — a full-featured rehearsal for the migration of The Leap Journal from Blogger to Quarto. Everything here exercises a real planned feature: listings, announcements, author pages, comments, copyable citations, PDF downloads, search, topic filters, and executable charts.\nThe content is deliberately fictional. The Leap Journal does not, to our knowledge, employ any wizards."
+  },
+  {
+    "objectID": "about.html#what-to-poke-at",
+    "href": "about.html#what-to-poke-at",
+    "title": "About",
+    "section": "What to poke at",
+    "text": "What to poke at\n\nSearch (magnifying glass in the navbar) — full text of every article.\nTopic filters on the Articles page — click a category, or type in the filter box.\nAuthors — tiles for each contributor, each with their own page.\nOn any article: the Download PDF button, the Cite this article block (copy the BibTeX with one click), and the comment section at the bottom.\nThe supply chains article has an interactive chart — hover over it.\nThe dragon hoards article has real inline citations and a bibliography."
+  },
+  {
+    "objectID": "about.html#how-to-publish-on-this-site",
+    "href": "about.html#how-to-publish-on-this-site",
+    "title": "About",
+    "section": "How to publish on this site",
+    "text": "How to publish on this site\nPublishing here is: write a text file, push it to GitHub. There is no CMS, no dashboard, no server. This section is the whole workflow.\n\nOne-time setup\ngit clone git@github.com:cynicalcyanide/leapblog-mock.git\ncd leapblog-mock\npython3.13 -m venv .venv && ./.venv/bin/pip install jupyter plotly pandas\nYou need Quarto installed. The Python step is only needed if your article runs code (charts); prose-only authors can skip it.\n\n\nWriting an article\nEvery article is one folder under posts/, holding one file called index.qmd plus any images:\nposts/\n  my-new-article/\n    index.qmd\n    figure-1.png\nAn index.qmd is ordinary Markdown with a small metadata header:\n---\ntitle: \"My New Article\"\ndescription: \"One sentence shown in listings and search results.\"\nauthor:\n  - name: Samwise Gamgee\n    url: ../../authors/samwise.html\ndate: 2026-09-10\ncategories: [economics, supply chains]\nimage: figure-1.png\n---\n\nWrite normally. **Bold**, *italics*, [links](https://example.com),\n## headings, &gt; quotes — it's just Markdown.\nThat header is the single source of truth: it feeds the listings, the topic filters, the author page, search, the citation block, and the PDF — you never configure those per-article.\n\n\nImages\nDrop image files into your article’s folder and reference them by filename:\n![Lembas output collapsed after 3018.](figure-1.png)\nThe text in brackets becomes the caption. Images travel with the article’s folder, so nothing ever breaks when things move.\n\n\nGraphs\nTwo options:\n\nStatic image — make the chart anywhere, export a PNG, include it like any image (above).\nExecutable chart — put the actual Python/R code in the article. The code runs when the site builds; readers get an interactive figure (hover values, zoom). See the supply chains article and click “Show the code” for a complete working example to copy. If you do this, run the article once locally before pushing (see Previewing, below) so the result is cached for the build.\n\n\n\nThe PDF\nYou do nothing. Every article is automatically typeset into a downloadable PDF at build time — the Download PDF button appears on its own. The same goes for the citation block, the comment section, search indexing, and the listings.\n\n\nCitations (optional)\nTo cite formally, add a references.bib file to your article folder, declare it in the header (bibliography: references.bib), and cite in the text with @key. The bibliography formats itself at the end of the article. The dragon hoards article is a working example.\n\n\nPreviewing\nFrom the repository folder:\nQUARTO_PYTHON=.venv/bin/python quarto preview\nYour browser opens a live version of the site; it refreshes as you save. (Prose-only articles can drop the QUARTO_PYTHON= prefix.)\n\n\nPublishing\ngit add posts/my-new-article\ngit commit -m \"New article: My New Article\"\ngit push\nThat’s it. GitHub rebuilds the site automatically and your article is live — listings, PDF, citation block and all — in about two minutes. No one needs to press anything else."
+  },
+  {
+    "objectID": "posts/barrow-wight-estates/index.html",
+    "href": "posts/barrow-wight-estates/index.html",
+    "title": "Barrow-wight Estates: The Property Rights of the Dead",
+    "section": "",
+    "text": "Having once audited a dragon’s balance sheet, I considered myself finished with hazardous asset verification. The Barrow-downs, which I passed closer to than I ever intended, present a subtler case: not one large hoard held by one large creditor, but thousands of small estates held in perpetuity by the previous owners — who are dead, disagree, and bite."
+  },
+  {
+    "objectID": "posts/barrow-wight-estates/index.html#probate-interrupted",
+    "href": "posts/barrow-wight-estates/index.html#probate-interrupted",
+    "title": "Barrow-wight Estates: The Property Rights of the Dead",
+    "section": "1 Probate, interrupted",
+    "text": "1 Probate, interrupted\nThe barrows were tombs of the men of Cardolan, furnished in the usual way: the dead interred with their gold, swords, and circlets. Sound custom, terrible succession planning. When the Witch-king seeded the downs with wights, every estate acquired a sitting tenant with an infinite time horizon, no consumption needs, and an unmatched incentive to hold. The result is the purest illiquidity in recorded history: assets untouched for two thousand years, four hundred yards from a road.\nIn portfolio terms — and here I defer to Elrond’s doctrine on counterparties who outlive you — a wight is the limiting case: a counterparty that is the collateral."
+  },
+  {
+    "objectID": "posts/barrow-wight-estates/index.html#the-liquidity-event",
+    "href": "posts/barrow-wight-estates/index.html#the-liquidity-event",
+    "title": "Barrow-wight Estates: The Property Rights of the Dead",
+    "section": "2 The liquidity event",
+    "text": "2 The liquidity event\nThe dataset contains exactly one successful probate: Tom Bombadil’s intervention, which broke a barrow open, evicted the tenant by song — a legal instrument unavailable to most practitioners — and, crucially, distributed the assets. Treasure was laid on the grass, free to all finders, and blades of Westernesse thereby re-entered circulation, one of which later performed a rather important piece of work at Pelennor.\nThe economics writes itself: two millennia of zero yield, then a single liquidity event with a social return beyond any audit’s power to state. Dead capital is not merely idle; it is waiting, and what it is waiting for is institutions capable of clearing title."
+  },
+  {
+    "objectID": "posts/barrow-wight-estates/index.html#the-auditors-note",
+    "href": "posts/barrow-wight-estates/index.html#the-auditors-note",
+    "title": "Barrow-wight Estates: The Property Rights of the Dead",
+    "section": "3 The auditor’s note",
+    "text": "3 The auditor’s note\nEvery economy holds barrow-wealth — assets locked by defunct claims, guarded by whatever we have instead of wights: lost deeds, dissolved firms, heirs unknown. The Downs merely make the problem visible and give it teeth. My recommendation is unchanged from the dragon case: value nothing you cannot exit, and be exceedingly polite to whatever is holding the ledger."
+  },
+  {
+    "objectID": "posts/supply-chains-of-middle-earth/index.html",
+    "href": "posts/supply-chains-of-middle-earth/index.html",
+    "title": "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse",
+    "section": "",
+    "text": "Every economy in Middle-earth solved provisioning differently: the Shire solved it with surplus and cellars, Rohan with mobility, Gondor with fortified granaries, and the Elves with a technology so far ahead of everyone else’s that it should have restructured the continent’s logistics — and didn’t."
+  },
+  {
+    "objectID": "posts/supply-chains-of-middle-earth/index.html#the-lembas-anomaly",
+    "href": "posts/supply-chains-of-middle-earth/index.html#the-lembas-anomaly",
+    "title": "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse",
+    "section": "1 The lembas anomaly",
+    "text": "1 The lembas anomaly\nLembas is, on the numbers, absurd. One cake sustains a working adult for a day; it keeps for months wrapped in a leaf; it weighs almost nothing. In supply-chain terms, elvish waybread collapses the tooth-to-tail ratio of any expedition to nearly zero. An army provisioned on lembas needs no baggage train, which means no roads, which means no predictable routes to ambush. It is a strategic technology.\nYet output never scaled. The chart below assembles the (entirely invented) production series this correspondent compiled from regional records. Hover over it: you’ll get crosshairs, exact values for every region at that date, and you can zoom into any period. Click a region in the legend to hide it.\n\n\nShow the code behind this chart\nimport pandas as pd\nimport plotly.express as px\n\nyears = list(range(3001, 3022))\ndata = []\nfor region, base, trend, shock_year, shock in [\n    (\"Lothlórien\",  84, 0.5, 3018, -30),\n    (\"Rivendell\",   41, 0.3, 3018, -12),\n    (\"Mirkwood\",    23, -0.8, 3010, -6),\n    (\"Grey Havens\", 12, 0.9, None, 0),\n]:\n    level = base\n    for y in years:\n        level += trend\n        if shock_year and y &gt;= shock_year:\n            level += shock / 3\n        data.append({\"year\": y, \"region\": region,\n                     \"output\": round(max(level, 1), 1)})\n\ndf = pd.DataFrame(data)\n\nfig = px.line(\n    df, x=\"year\", y=\"output\", color=\"region\",\n    labels={\"year\": \"Third Age year\", \"output\": \"Output ('000 cakes)\",\n            \"region\": \"Region\"},\n    color_discrete_sequence=[\"#2e5d43\", \"#8a6d3b\", \"#5b6b62\", \"#a63d40\"],\n)\nfig.update_xaxes(showspikes=True, spikemode=\"across\", spikedash=\"dot\",\n                 spikethickness=1)\nfig.update_yaxes(showspikes=True, spikemode=\"across\", spikedash=\"dot\",\n                 spikethickness=1, gridcolor=\"#e4e0d5\")\nfig.update_layout(\n    hovermode=\"x unified\",\n    plot_bgcolor=\"white\",\n    font=dict(family=\"Source Sans 3, sans-serif\"),\n    legend=dict(orientation=\"h\", yanchor=\"bottom\", y=1.02),\n    margin=dict(l=10, r=10, t=30, b=10),\n)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 1: Waybread output by region, Third Age 3001–3021 (thousand cakes/year). Entirely fictional data; hover for values.\n\n\n\n\nNote the structural break at 3018: the War disrupted Lothlórien’s output — and the industry never recovered its peak, because the workforce emigrated. Which brings us to the real constraint."
+  },
+  {
+    "objectID": "posts/supply-chains-of-middle-earth/index.html#why-the-technology-never-diffused",
+    "href": "posts/supply-chains-of-middle-earth/index.html#why-the-technology-never-diffused",
+    "title": "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse",
+    "section": "2 Why the technology never diffused",
+    "text": "2 Why the technology never diffused\nThree hypotheses circulate in the literature, of unequal quality:\n\nRecipe secrecy (weak). Trade secrets leak over ten thousand years. Something else binds.\nNon-transferable inputs (stronger). If production requires inputs that exist only where Elves and their particular ecology persist — a terroir theory of waybread — then the technology is land-linked and cannot be licensed out.\nThe gift-good hypothesis (strongest). Lembas was never a commodity. It moves only as a gift, between parties in specific relationships. The Elves were not running an industry below capacity; they were refusing, on principle, to have an industry at all. As with the Eagles, the constraint is institutional, not technical."
+  },
+  {
+    "objectID": "posts/supply-chains-of-middle-earth/index.html#the-practitioners-postscript",
+    "href": "posts/supply-chains-of-middle-earth/index.html#the-practitioners-postscript",
+    "title": "Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse",
+    "section": "3 The practitioner’s postscript",
+    "text": "3 The practitioner’s postscript\nFor actual expedition provisioning, this correspondent’s advice is unchanged: take the lembas gratefully, count on nothing you cannot grow or carry, and remember that the finest logistics innovation of the Third Age remains the humble coney, stewed, with taters. PO-TA-TOES."
+  },
+  {
+    "objectID": "posts/rings-as-reserve-assets/index.html",
+    "href": "posts/rings-as-reserve-assets/index.html",
+    "title": "Rings as Reserve Assets: A Portfolio Theory of Power",
+    "section": "",
+    "text": "Treat the Rings of Power as what they were: high-yield instruments issued by a single counterparty, and the Third Age becomes a case study in reserve management. I declare an interest — I held one of the assets in question for three thousand years — but long custody is, in this field, a qualification."
+  },
+  {
+    "objectID": "posts/rings-as-reserve-assets/index.html#three-portfolios",
+    "href": "posts/rings-as-reserve-assets/index.html#three-portfolios",
+    "title": "Rings as Reserve Assets: A Portfolio Theory of Power",
+    "section": "1 Three portfolios",
+    "text": "1 Three portfolios\nThe Nine were leveraged immediately and fully. Their holders drew maximum yield — dominion, longevity — and the leverage converted them, over a few centuries, into wholly-owned subsidiaries of the issuer. Total loss, with the holders themselves becoming liabilities on someone else’s balance sheet.\nThe Seven were held by parties whose native risk appetite ran to accumulation rather than dominion. The issuer recovered some and destroyed others, but note: the dwarven habit of hoarding without exercising limited the contagion. There are worse instincts in a crisis, as the Erebor case shows from the other direction — there, the hoard itself was the crisis.\nThe Three were never touched by the issuer, but their value was derivative — contingent on the One. We held them unused whenever prudence demanded, which was most of the time. An asset you cannot safely deploy is not a reserve; it is an exposure with good publicity."
+  },
+  {
+    "objectID": "posts/rings-as-reserve-assets/index.html#the-systemically-important-asset",
+    "href": "posts/rings-as-reserve-assets/index.html#the-systemically-important-asset",
+    "title": "Rings as Reserve Assets: A Portfolio Theory of Power",
+    "section": "2 The systemically important asset",
+    "text": "2 The systemically important asset\nThe One Ring was, in modern language, too connected to fail safely and too dangerous to hold. Every party that proposed to use it against its issuer — and the proposal was made in my own house, at a conference we still discuss — was proposing to become the counterparty they feared. The only stable resolution was to remove the asset from circulation entirely.\nCompare the information network built by the same issuer, analysed by Gandalf: identical structure, softer instrument. Concentrated issuance, dispersed holders, and every channel of value flowing back to one balance sheet. When a single counterparty stands behind your yield, your reserves are their leverage."
+  },
+  {
+    "objectID": "posts/rings-as-reserve-assets/index.html#doctrine",
+    "href": "posts/rings-as-reserve-assets/index.html#doctrine",
+    "title": "Rings as Reserve Assets: A Portfolio Theory of Power",
+    "section": "3 Doctrine",
+    "text": "3 Doctrine\nHold nothing whose issuer outlives you, wants you, and can wait. This rules out more portfolios than the profession likes to admit — including, for the record, certain estates held by the deceased, where the counterparty problem takes its purest form."
+  },
+  {
+    "objectID": "posts/palantir-networks/index.html",
+    "href": "posts/palantir-networks/index.html",
+    "title": "Palantír Networks: Information Asymmetry on the Seeing-Stone Market",
+    "section": "",
+    "text": "The palantíri were, by a comfortable margin, the most advanced communications infrastructure ever deployed on this continent: seven nodes, instantaneous transmission, no maintenance, no message loss. The network nonetheless destroyed two of its three most senior users. The failure mode deserves close study, because we keep rebuilding it."
+  },
+  {
+    "objectID": "posts/palantir-networks/index.html#the-protocol-had-no-integrity-layer",
+    "href": "posts/palantir-networks/index.html#the-protocol-had-no-integrity-layer",
+    "title": "Palantír Networks: Information Asymmetry on the Seeing-Stone Market",
+    "section": "1 The protocol had no integrity layer",
+    "text": "1 The protocol had no integrity layer\nA palantír transmits true images. This is precisely the danger. When the Enemy captured the Ithil-stone, he acquired something better than the ability to lie: the ability to select. Denethor saw only true things — fleets that existed, armies that marched — and was steered to despair entirely by curation. Saruman, a subtler mind, was captured the same way.\nThe design lesson generalises. A network that authenticates content but not counterparties converts every compromised node into an influence platform. This is the same structural error I documented in the Eagle transport question: critical capacity whose governance was never specified, used heavily anyway, until the day its interests diverged."
+  },
+  {
+    "objectID": "posts/palantir-networks/index.html#asymmetry-as-a-market",
+    "href": "posts/palantir-networks/index.html#asymmetry-as-a-market",
+    "title": "Palantír Networks: Information Asymmetry on the Seeing-Stone Market",
+    "section": "2 Asymmetry as a market",
+    "text": "2 Asymmetry as a market\nNote who profited. The party with the larger information budget — one node, unlimited attention, centuries of patience — extracted concessions from parties who each glanced occasionally into their stone between crises. Information asymmetry is not a state of nature; it is purchased, with attention. Denethor was outspent, not outsmarted.\nThe psychology of the individual user under such asymmetry — the conviction that one is uniquely strong enough to look — is Elrond’s territory, and his model of self-serving bargaining applies to stone-gazers with embarrassing precision. For the portfolio consequences of hoarding powerful assets one dares not use, see the reserve-asset problem."
+  },
+  {
+    "objectID": "posts/palantir-networks/index.html#recommendation",
+    "href": "posts/palantir-networks/index.html#recommendation",
+    "title": "Palantír Networks: Information Asymmetry on the Seeing-Stone Market",
+    "section": "3 Recommendation",
+    "text": "3 Recommendation\nNetworks carrying strategic information need counterparty authentication, usage norms, and an off switch. The palantíri had none of the three. We buried the surviving stones. Modern designers, take note: burial is also a governance mechanism, but it is best regarded as a last resort."
   },
   {
     "objectID": "posts/eagles-transport-infrastructure/index.html",

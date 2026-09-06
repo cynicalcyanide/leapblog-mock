@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.">
+<meta name="author" content="Gandalf the Grey">
+<meta name="dcterms.date" content="2026-07-08">
+<meta name="description" content="Seven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.">
 
-<title>Gandalf the Grey – The Leap Journal</title>
+<title>Palantír Networks: Information Asymmetry on the Seeing-Stone Market – The Leap Journal</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -30,25 +32,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-40c7b7b19bb5a407550c3ca0508abdb3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-af8960044022da654372d734e10b733d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-40c7b7b19bb5a407550c3ca0508abdb3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-af8960044022da654372d734e10b733d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,84 +75,26 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-author-posts .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-author-posts'] = new List('listing-author-posts', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Gandalf the Grey – The Leap Journal">
-<meta property="og:description" content="Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.">
-<meta property="og:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/authors/gandalf.svg">
+<meta property="og:title" content="Palantír Networks: Information Asymmetry on the Seeing-Stone Market – The Leap Journal">
+<meta property="og:description" content="Seven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.">
+<meta property="og:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/default.svg">
 <meta property="og:site_name" content="The Leap Journal">
-<meta name="twitter:title" content="Gandalf the Grey – The Leap Journal">
-<meta name="twitter:description" content="Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.">
-<meta name="twitter:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/authors/gandalf.svg">
+<meta name="twitter:title" content="Palantír Networks: Information Asymmetry on the Seeing-Stone Market – The Leap Journal">
+<meta name="twitter:description" content="Seven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.">
+<meta name="twitter:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/default.svg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">The Leap Journal</span>
     </a>
   </div>
@@ -163,23 +105,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../articles.html"> 
+    <a class="nav-link" href="../../articles.html"> 
 <span class="menu-text">Articles</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../announcements/index.html"> 
+    <a class="nav-link" href="../../announcements/index.html"> 
 <span class="menu-text">Announcements</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../authors/index.html"> 
+    <a class="nav-link" href="../../authors/index.html"> 
 <span class="menu-text">Authors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -193,25 +135,52 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-protocol-had-no-integrity-layer" id="toc-the-protocol-had-no-integrity-layer" class="nav-link active" data-scroll-target="#the-protocol-had-no-integrity-layer"><span class="header-section-number">1</span> The protocol had no integrity layer</a></li>
+  <li><a href="#asymmetry-as-a-market" id="toc-asymmetry-as-a-market" class="nav-link" data-scroll-target="#asymmetry-as-a-market"><span class="header-section-number">2</span> Asymmetry as a market</a></li>
+  <li><a href="#recommendation" id="toc-recommendation" class="nav-link" data-scroll-target="#recommendation"><span class="header-section-number">3</span> Recommendation</a></li>
+  </ul>
+<div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Gandalf the Grey</h1>
-</div>
+<h1 class="title">Palantír Networks: Information Asymmetry on the Seeing-Stone Market</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">infrastructure</div>
+    <div class="quarto-category">governance</div>
+    <div class="quarto-category">information</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.
+    Seven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><a href="../../authors/gandalf.html">Gandalf the Grey</a> </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 8, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -221,98 +190,122 @@ window.Quarto = {
 </header>
 
 
-<p>Gandalf has spent several thousand years doing fieldwork, mostly on foot. His research programme concerns why good institutions fail slowly and then all at once. He is a fellow of no institution, on principle, and is frequently late — though he would note that a researcher is never late; he publishes precisely when he means to.</p>
-<section id="articles-by-gandalf" class="level2">
-<h2 class="anchored" data-anchor-id="articles-by-gandalf">Articles by Gandalf</h2>
-<div id="listing-author-posts" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZWNvbG9neSUyQ2dvdmVybmFuY2UlMkNpbnN0aXR1dGlvbnM=" data-listing-date-sort="1787011200000" data-listing-file-modified-sort="1788732861354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="354">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../posts/ecology-of-middle-earth/index.html" class="no-external">The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbG9neQ=='); return false;">ecology</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z292ZXJuYW5jZQ=='); return false;">governance</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5zdGl0dXRpb25z'); return false;">institutions</div>
-
-</div>
-<div class="delink listing-description"><a href="../posts/ecology-of-middle-earth/index.html" class="no-external">
-<p>Forests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../posts/ecology-of-middle-earth/index.html" class="no-external">
-<div class="listing-date">
-Aug 18, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="aW5mcmFzdHJ1Y3R1cmUlMkNnb3Zlcm5hbmNlJTJDaW5mb3JtYXRpb24=" data-listing-date-sort="1783468800000" data-listing-file-modified-sort="1788732861354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="302">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../posts/palantir-networks/index.html" class="no-external">Palantír Networks: Information Asymmetry on the Seeing-Stone Market</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mcmFzdHJ1Y3R1cmU='); return false;">infrastructure</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z292ZXJuYW5jZQ=='); return false;">governance</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mb3JtYXRpb24='); return false;">information</div>
-
-</div>
-<div class="delink listing-description"><a href="../posts/palantir-networks/index.html" class="no-external">
-<p>Seven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../posts/palantir-networks/index.html" class="no-external">
-<div class="listing-date">
-Jul 8, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="aW5mcmFzdHJ1Y3R1cmUlMkNlY29ub21pY3MlMkNnb3Zlcm5hbmNl" data-listing-date-sort="1777939200000" data-listing-file-modified-sort="1788732861354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="307">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../posts/eagles-transport-infrastructure/index.html" class="no-external">Eagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mcmFzdHJ1Y3R1cmU='); return false;">infrastructure</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbm9taWNz'); return false;">economics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z292ZXJuYW5jZQ=='); return false;">governance</div>
-
-</div>
-<div class="delink listing-description"><a href="../posts/eagles-transport-infrastructure/index.html" class="no-external">
-<p>The Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../posts/eagles-transport-infrastructure/index.html" class="no-external">
-<div class="listing-date">
-May 5, 2026
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-
+<p>The palantíri were, by a comfortable margin, the most advanced communications infrastructure ever deployed on this continent: seven nodes, instantaneous transmission, no maintenance, no message loss. The network nonetheless destroyed two of its three most senior users. The failure mode deserves close study, because we keep rebuilding it.</p>
+<section id="the-protocol-had-no-integrity-layer" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="the-protocol-had-no-integrity-layer"><span class="header-section-number">1</span> The protocol had no integrity layer</h2>
+<p>A palantír transmits true images. This is precisely the danger. When the Enemy captured the Ithil-stone, he acquired something better than the ability to lie: the ability to <em>select</em>. Denethor saw only true things — fleets that existed, armies that marched — and was steered to despair entirely by curation. Saruman, a subtler mind, was captured the same way.</p>
+<p>The design lesson generalises. A network that authenticates <em>content</em> but not <em>counterparties</em> converts every compromised node into an influence platform. This is the same structural error I documented in <a href="../../posts/eagles-transport-infrastructure/index.html">the Eagle transport question</a>: critical capacity whose governance was never specified, used heavily anyway, until the day its interests diverged.</p>
+</section>
+<section id="asymmetry-as-a-market" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="asymmetry-as-a-market"><span class="header-section-number">2</span> Asymmetry as a market</h2>
+<p>Note who profited. The party with the larger information budget — one node, unlimited attention, centuries of patience — extracted concessions from parties who each glanced occasionally into their stone between crises. Information asymmetry is not a state of nature; it is <em>purchased</em>, with attention. Denethor was outspent, not outsmarted.</p>
+<p>The psychology of the individual user under such asymmetry — the conviction that one is uniquely strong enough to look — is <a href="../../posts/psychology-of-gollum/index.html">Elrond’s territory</a>, and his model of self-serving bargaining applies to stone-gazers with embarrassing precision. For the portfolio consequences of hoarding powerful assets one dares not use, see <a href="../../posts/rings-as-reserve-assets/index.html">the reserve-asset problem</a>.</p>
+</section>
+<section id="recommendation" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="recommendation"><span class="header-section-number">3</span> Recommendation</h2>
+<p>Networks carrying strategic information need counterparty authentication, usage norms, and an off switch. The palantíri had none of the three. We buried the surviving stones. Modern designers, take note: burial is also a governance mechanism, but it is best regarded as a last resort.</p>
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{the_grey2026,
+  author = {the Grey, Gandalf},
+  title = {Palantír {Networks:} {Information} {Asymmetry} on the
+    {Seeing-Stone} {Market}},
+  date = {2026-07-08},
+  url = {https://cynicalcyanide.github.io/leapblog-mock/posts/palantir-networks/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-the_grey2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Grey, Gandalf the. 2026. <span>“Palantír Networks: Information Asymmetry
+on the Seeing-Stone Market.”</span> July 8. <a href="https://cynicalcyanide.github.io/leapblog-mock/posts/palantir-networks/">https://cynicalcyanide.github.io/leapblog-mock/posts/palantir-networks/</a>.
+</div></div></section></div></main> <!-- /main -->
+<div id="leap-comments" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #e4e0d5;">
+  <h2>Comments</h2>
+  <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="CUSDIS_APP_ID_PLACEHOLDER" data-page-id="" data-page-url="" data-page-title="">
+  </div>
+</div>
+<script>
+  (function () {
+    // Move the comments block into the article body (an include-after-body
+    // lands at the end of <body>, below the footer, which is not where
+    // readers expect comments).
+    var holder = document.getElementById("leap-comments");
+    var main = document.getElementById("quarto-document-content");
+    if (main && holder) { main.appendChild(holder); }
+    var t = document.getElementById("cusdis_thread");
+    t.setAttribute("data-page-id", location.pathname);
+    t.setAttribute("data-page-url", location.href);
+    t.setAttribute("data-page-title", document.title);
+    var s = document.createElement("script");
+    s.src = "https://cusdis.com/js/cusdis.es.js";
+    s.async = true;
+    s.defer = true;
+    document.body.appendChild(s);
+  })();
+</script>
+<div id="leap-share" class="leap-share" hidden="">
+  <span class="leap-share-label">Share</span>
+  <a id="ls-x" target="_blank" rel="noopener">X</a>
+  <a id="ls-li" target="_blank" rel="noopener">LinkedIn</a>
+  <a id="ls-em">Email</a>
+  <a id="ls-cp" href="#">Copy link</a>
+</div>
+<div id="leap-quote-pop" class="leap-quote-pop" hidden="">
+  <a id="lq-x" target="_blank" rel="noopener">Post quote on X</a>
+  <a id="lq-cp" href="#">Copy quote</a>
+</div>
+<script>
+(function () {
+  var url = location.href.split("#")[0];
+  var title = document.title;
+  var bar = document.getElementById("leap-share");
+  var tb = document.getElementById("title-block-header");
+  if (tb && bar) { tb.appendChild(bar); bar.hidden = false; }
+
+  document.getElementById("ls-x").href =
+    "https://x.com/intent/post?text=" + encodeURIComponent(title) + "&url=" + encodeURIComponent(url);
+  document.getElementById("ls-li").href =
+    "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+  document.getElementById("ls-em").href =
+    "mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(url);
+  document.getElementById("ls-cp").addEventListener("click", function (e) {
+    e.preventDefault();
+    var el = e.target;
+    navigator.clipboard.writeText(url).then(function () {
+      el.textContent = "Copied!";
+      setTimeout(function () { el.textContent = "Copy link"; }, 1500);
+    });
+  });
+
+  // Medium-style: select any passage to share it as a quote
+  var pop = document.getElementById("leap-quote-pop");
+  var main = document.getElementById("quarto-document-content");
+  if (!main) return;
+  document.addEventListener("mouseup", function () {
+    setTimeout(function () {
+      var sel = window.getSelection();
+      var text = sel ? sel.toString().trim() : "";
+      if (text.length > 3 && text.length < 700 && sel.anchorNode && main.contains(sel.anchorNode)) {
+        var r = sel.getRangeAt(0).getBoundingClientRect();
+        var quote = "“" + text + "”";
+        document.getElementById("lq-x").href =
+          "https://x.com/intent/post?text=" + encodeURIComponent(quote) + "&url=" + encodeURIComponent(url);
+        document.getElementById("lq-cp").onclick = function (e) {
+          e.preventDefault();
+          navigator.clipboard.writeText(quote + " — " + url);
+          pop.hidden = true;
+        };
+        pop.hidden = false;
+        pop.style.top = (window.scrollY + r.top - pop.offsetHeight - 8) + "px";
+        pop.style.left = Math.max(8, window.scrollX + r.left + r.width / 2 - pop.offsetWidth / 2) + "px";
+      } else {
+        pop.hidden = true;
+      }
+    }, 10);
+  });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

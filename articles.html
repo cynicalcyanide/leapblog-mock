@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.">
 
-<title>Gandalf the Grey – The Leap Journal</title>
+<title>Articles — The Leap Journal – The Leap Journal</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -30,25 +29,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-40c7b7b19bb5a407550c3ca0508abdb3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-af8960044022da654372d734e10b733d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./assets/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-40c7b7b19bb5a407550c3ca0508abdb3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-af8960044022da654372d734e10b733d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,20 +77,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-author-posts .list');
+    const listingTargetEl = window.document.querySelector('#listing-all-articles .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-engines','listing-language','listing-citation','listing-number-sections','listing-title','listing-description','listing-author','listing-date','listing-categories','listing-image','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-code-fold','listing-code-summary','listing-bibliography','listing-link-citations',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-engines","listing-language","listing-citation","listing-number-sections","listing-title","listing-description","listing-author","listing-date","listing-categories","listing-image","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-code-fold","listing-code-summary","listing-bibliography","listing-link-citations"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-author-posts'] = new List('listing-author-posts', options);
+    window['quarto-listings']['listing-all-articles'] = new List('listing-all-articles', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -135,24 +134,20 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="Gandalf the Grey – The Leap Journal">
-<meta property="og:description" content="Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.">
-<meta property="og:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/authors/gandalf.svg">
+<meta property="og:title" content="Articles — The Leap Journal">
 <meta property="og:site_name" content="The Leap Journal">
-<meta name="twitter:title" content="Gandalf the Grey – The Leap Journal">
-<meta name="twitter:description" content="Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.">
-<meta name="twitter:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/authors/gandalf.svg">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Articles — The Leap Journal">
+<meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">The Leap Journal</span>
     </a>
   </div>
@@ -163,23 +158,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../articles.html"> 
+    <a class="nav-link active" href="./articles.html" aria-current="page"> 
 <span class="menu-text">Articles</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../announcements/index.html"> 
+    <a class="nav-link" href="./announcements/index.html"> 
 <span class="menu-text">Announcements</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../authors/index.html"> 
+    <a class="nav-link" href="./authors/index.html"> 
 <span class="menu-text">Authors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -190,120 +185,251 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Gandalf the Grey</h1>
-</div>
-
-<div>
-  <div class="description">
-    Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.
-  </div>
-</div>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<p>Gandalf has spent several thousand years doing fieldwork, mostly on foot. His research programme concerns why good institutions fail slowly and then all at once. He is a fellow of no institution, on principle, and is frequently late — though he would note that a researcher is never late; he publishes precisely when he means to.</p>
-<section id="articles-by-gandalf" class="level2">
-<h2 class="anchored" data-anchor-id="articles-by-gandalf">Articles by Gandalf</h2>
-<div id="listing-author-posts" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZWNvbG9neSUyQ2dvdmVybmFuY2UlMkNpbnN0aXR1dGlvbnM=" data-listing-date-sort="1787011200000" data-listing-file-modified-sort="1788732861354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="354">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../posts/ecology-of-middle-earth/index.html" class="no-external">The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood</a>
+<section id="all-articles" class="level2 leap-section-heading">
+<h2 class="leap-section-heading anchored" data-anchor-id="all-articles">All articles</h2>
+<div id="listing-all-articles" class="quarto-listing quarto-listing-container-custom">
+<div class="leap-grid">
+<a class="leap-card" href="./posts/supply-chains-of-middle-earth/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+Supply Chains of Middle-earth: Lembas, Logistics, and the Last Homely Warehouse
 </h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbG9neQ=='); return false;">ecology</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z292ZXJuYW5jZQ=='); return false;">governance</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5zdGl0dXRpb25z'); return false;">institutions</div>
-
-</div>
-<div class="delink listing-description"><a href="../posts/ecology-of-middle-earth/index.html" class="no-external">
-<p>Forests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../posts/ecology-of-middle-earth/index.html" class="no-external">
-<div class="listing-date">
-Aug 18, 2026
-</div>
-</a>
+<div class="leap-byline">
+Words by <strong>Samwise Gamgee</strong>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="aW5mcmFzdHJ1Y3R1cmUlMkNnb3Zlcm5hbmNlJTJDaW5mb3JtYXRpb24=" data-listing-date-sort="1783468800000" data-listing-file-modified-sort="1788732861354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="302">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../posts/palantir-networks/index.html" class="no-external">Palantír Networks: Information Asymmetry on the Seeing-Stone Market</a>
+<div class="leap-card-body">
+<p>
+One bite fills the stomach of a grown man — a caloric density that should have revolutionised expedition logistics. With interactive data on regional waybread output.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">supply chains</span><span class="leap-cat">economics</span>
+</div>
+</a><p><a class="leap-card" href="./posts/supply-chains-of-middle-earth/index.html"></a></p>
+<a class="leap-card" href="./posts/ecology-of-middle-earth/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood
 </h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mcmFzdHJ1Y3R1cmU='); return false;">infrastructure</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z292ZXJuYW5jZQ=='); return false;">governance</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mb3JtYXRpb24='); return false;">information</div>
-
-</div>
-<div class="delink listing-description"><a href="../posts/palantir-networks/index.html" class="no-external">
-<p>Seven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../posts/palantir-networks/index.html" class="no-external">
-<div class="listing-date">
-Jul 8, 2026
-</div>
-</a>
+<div class="leap-byline">
+Words by <strong>Gandalf the Grey</strong>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="aW5mcmFzdHJ1Y3R1cmUlMkNlY29ub21pY3MlMkNnb3Zlcm5hbmNl" data-listing-date-sort="1777939200000" data-listing-file-modified-sort="1788732861354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="307">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../posts/eagles-transport-infrastructure/index.html" class="no-external">Eagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere</a>
+<div class="leap-card-body">
+<p>
+Forests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">ecology</span><span class="leap-cat">governance</span>
+</div>
+</a><p><a class="leap-card" href="./posts/ecology-of-middle-earth/index.html"></a></p>
+<a class="leap-card" href="./posts/second-breakfast-political-economy/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+The Political Economy of Second Breakfast
 </h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mcmFzdHJ1Y3R1cmU='); return false;">infrastructure</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbm9taWNz'); return false;">economics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z292ZXJuYW5jZQ=='); return false;">governance</div>
-
-</div>
-<div class="delink listing-description"><a href="../posts/eagles-transport-infrastructure/index.html" class="no-external">
-<p>The Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../posts/eagles-transport-infrastructure/index.html" class="no-external">
-<div class="listing-date">
-May 5, 2026
-</div>
-</a>
+<div class="leap-byline">
+Words by <strong>Samwise Gamgee</strong>
 </div>
 </div>
+<div class="leap-card-body">
+<p>
+The Shire’s six-meal day looks like idleness and functions as social insurance. On meal-timing institutions and why productivity statistics miss them.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">economics</span><span class="leap-cat">institutions</span>
+</div>
+</a><p><a class="leap-card" href="./posts/second-breakfast-political-economy/index.html"></a></p>
+<a class="leap-card" href="./posts/psychology-of-gollum/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+The Psychology of Gollum: A Two-Agent Bargaining Model of the Self
+</h3>
+<div class="leap-byline">
+Words by <strong>Elrond Half-elven</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+Sméagol and Gollum as a repeated game with incomplete commitment devices. On addiction, intra-personal bargaining, and why kindness briefly shifted the equilibrium.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">psychology</span><span class="leap-cat">behavioural economics</span>
+</div>
+</a><p><a class="leap-card" href="./posts/psychology-of-gollum/index.html"></a></p>
+<a class="leap-card" href="./posts/palantir-networks/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+Palantír Networks: Information Asymmetry on the Seeing-Stone Market
+</h3>
+<div class="leap-byline">
+Words by <strong>Gandalf the Grey</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+Seven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">infrastructure</span><span class="leap-cat">governance</span>
+</div>
+</a><p><a class="leap-card" href="./posts/palantir-networks/index.html"></a></p>
+<a class="leap-card" href="./posts/rings-as-reserve-assets/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+Rings as Reserve Assets: A Portfolio Theory of Power
+</h3>
+<div class="leap-byline">
+Words by <strong>Elrond Half-elven</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+Three were held and never used; nine were leveraged to insolvency; one was systemically important. What the Rings of Power teach about reserve management and counterparty risk.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">monetary policy</span><span class="leap-cat">economics</span>
+</div>
+</a><p><a class="leap-card" href="./posts/rings-as-reserve-assets/index.html"></a></p>
+<a class="leap-card" href="./posts/shieldmaidens-labour-market/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+Shieldmaidens and the Rohirrim Labour Market
+</h3>
+<div class="leap-byline">
+Words by <strong>Éowyn of Rohan</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+Rohan barred half its population from its largest sector, then faced a labour shortage at the worst possible moment. On occupational restrictions and their tail risks.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">labour</span><span class="leap-cat">economics</span>
+</div>
+</a><p><a class="leap-card" href="./posts/shieldmaidens-labour-market/index.html"></a></p>
+<a class="leap-card" href="./posts/grey-havens-exit/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+The Grey Havens Exit: Brain Drain and the Elven Diaspora
+</h3>
+<div class="leap-byline">
+Words by <strong>Éowyn of Rohan</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+When your most skilled workers can emigrate to a strictly better jurisdiction, retention policy is everything. Middle-earth’s slowest and most total brain drain, examined.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">labour</span><span class="leap-cat">economics</span>
+</div>
+</a><p><a class="leap-card" href="./posts/grey-havens-exit/index.html"></a></p>
+<a class="leap-card" href="./posts/eagles-transport-infrastructure/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+Eagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere
+</h3>
+<div class="leap-byline">
+Words by <strong>Gandalf the Grey</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+The Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">infrastructure</span><span class="leap-cat">economics</span>
+</div>
+</a><p><a class="leap-card" href="./posts/eagles-transport-infrastructure/index.html"></a></p>
+<a class="leap-card" href="./posts/barrow-wight-estates/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+Barrow-wight Estates: The Property Rights of the Dead
+</h3>
+<div class="leap-byline">
+Words by <strong>Bilbo Baggins</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+The Barrow-downs are Middle-earth’s oldest probate dispute: assets held in perpetuity by claimants with no heirs, no liquidity, and a strong security posture. An auditor’s view.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">economics</span><span class="leap-cat">institutions</span>
+</div>
+</a><p><a class="leap-card" href="./posts/barrow-wight-estates/index.html"></a></p>
+<a class="leap-card" href="./posts/dragon-hoards-monetary-policy/index.html">
+<div class="leap-card-head">
+<h3 class="anchored">
+Dragon Hoards as Monetary Policy: Smaug and the Deflationary Trap
+</h3>
+<div class="leap-byline">
+Words by <strong>Bilbo Baggins</strong>
+</div>
+</div>
+<div class="leap-card-body">
+<p>
+When a single actor withdraws a region’s entire gold stock from circulation and sleeps on it, that is not larceny — it is contractionary policy. With citations and a proper bibliography.
+</p>
+</div>
+<div class="leap-readmore">
+Read more →
+</div>
+<div class="leap-card-footer">
+<span class="leap-cat">monetary policy</span><span class="leap-cat">economics</span>
+</div>
+</a><p><a class="leap-card" href="./posts/dragon-hoards-monetary-policy/index.html"></a></p>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>

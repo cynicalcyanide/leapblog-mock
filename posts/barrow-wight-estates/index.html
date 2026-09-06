@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.">
+<meta name="author" content="Bilbo Baggins">
+<meta name="dcterms.date" content="2026-05-02">
+<meta name="description" content="The Barrow-downs are Middle-earth’s oldest probate dispute: assets held in perpetuity by claimants with no heirs, no liquidity, and a strong security posture. An auditor’s view.">
 
-<title>Gandalf the Grey – The Leap Journal</title>
+<title>Barrow-wight Estates: The Property Rights of the Dead – The Leap Journal</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -30,25 +32,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-40c7b7b19bb5a407550c3ca0508abdb3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-af8960044022da654372d734e10b733d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-40c7b7b19bb5a407550c3ca0508abdb3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-af8960044022da654372d734e10b733d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,84 +75,26 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-author-posts .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-author-posts'] = new List('listing-author-posts', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Gandalf the Grey – The Leap Journal">
-<meta property="og:description" content="Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.">
-<meta property="og:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/authors/gandalf.svg">
+<meta property="og:title" content="Barrow-wight Estates: The Property Rights of the Dead – The Leap Journal">
+<meta property="og:description" content="The Barrow-downs are Middle-earth’s oldest probate dispute: assets held in perpetuity by claimants with no heirs, no liquidity, and a strong security posture. An auditor’s view.">
+<meta property="og:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/default.svg">
 <meta property="og:site_name" content="The Leap Journal">
-<meta name="twitter:title" content="Gandalf the Grey – The Leap Journal">
-<meta name="twitter:description" content="Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.">
-<meta name="twitter:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/authors/gandalf.svg">
+<meta name="twitter:title" content="Barrow-wight Estates: The Property Rights of the Dead – The Leap Journal">
+<meta name="twitter:description" content="The Barrow-downs are Middle-earth’s oldest probate dispute: assets held in perpetuity by claimants with no heirs, no liquidity, and a strong security posture. An auditor’s view.">
+<meta name="twitter:image" content="https://cynicalcyanide.github.io/leapblog-mock/assets/thumbs/default.svg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">The Leap Journal</span>
     </a>
   </div>
@@ -163,23 +105,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../articles.html"> 
+    <a class="nav-link" href="../../articles.html"> 
 <span class="menu-text">Articles</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../announcements/index.html"> 
+    <a class="nav-link" href="../../announcements/index.html"> 
 <span class="menu-text">Announcements</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../authors/index.html"> 
+    <a class="nav-link" href="../../authors/index.html"> 
 <span class="menu-text">Authors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -193,25 +135,52 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#probate-interrupted" id="toc-probate-interrupted" class="nav-link active" data-scroll-target="#probate-interrupted"><span class="header-section-number">1</span> Probate, interrupted</a></li>
+  <li><a href="#the-liquidity-event" id="toc-the-liquidity-event" class="nav-link" data-scroll-target="#the-liquidity-event"><span class="header-section-number">2</span> The liquidity event</a></li>
+  <li><a href="#the-auditors-note" id="toc-the-auditors-note" class="nav-link" data-scroll-target="#the-auditors-note"><span class="header-section-number">3</span> The auditor’s note</a></li>
+  </ul>
+<div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Download PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Gandalf the Grey</h1>
-</div>
+<h1 class="title">Barrow-wight Estates: The Property Rights of the Dead</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">economics</div>
+    <div class="quarto-category">institutions</div>
+    <div class="quarto-category">history</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    Wandering scholar of institutional wizardry. Interests: old-growth governance, critical infrastructure, fireworks regulation.
+    The Barrow-downs are Middle-earth’s oldest probate dispute: assets held in perpetuity by claimants with no heirs, no liquidity, and a strong security posture. An auditor’s view.
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><a href="../../authors/bilbo.html">Bilbo Baggins</a> </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 2, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -221,98 +190,122 @@ window.Quarto = {
 </header>
 
 
-<p>Gandalf has spent several thousand years doing fieldwork, mostly on foot. His research programme concerns why good institutions fail slowly and then all at once. He is a fellow of no institution, on principle, and is frequently late — though he would note that a researcher is never late; he publishes precisely when he means to.</p>
-<section id="articles-by-gandalf" class="level2">
-<h2 class="anchored" data-anchor-id="articles-by-gandalf">Articles by Gandalf</h2>
-<div id="listing-author-posts" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ZWNvbG9neSUyQ2dvdmVybmFuY2UlMkNpbnN0aXR1dGlvbnM=" data-listing-date-sort="1787011200000" data-listing-file-modified-sort="1788732861354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="354">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../posts/ecology-of-middle-earth/index.html" class="no-external">The Ecology of Middle-earth: Old-growth Governance from Fangorn to Mirkwood</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbG9neQ=='); return false;">ecology</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z292ZXJuYW5jZQ=='); return false;">governance</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5zdGl0dXRpb25z'); return false;">institutions</div>
-
-</div>
-<div class="delink listing-description"><a href="../posts/ecology-of-middle-earth/index.html" class="no-external">
-<p>Forests with strong property rights and very patient stakeholders outlast empires. A comparative institutional analysis of two woodland regimes.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../posts/ecology-of-middle-earth/index.html" class="no-external">
-<div class="listing-date">
-Aug 18, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="aW5mcmFzdHJ1Y3R1cmUlMkNnb3Zlcm5hbmNlJTJDaW5mb3JtYXRpb24=" data-listing-date-sort="1783468800000" data-listing-file-modified-sort="1788732861354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="302">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../posts/palantir-networks/index.html" class="no-external">Palantír Networks: Information Asymmetry on the Seeing-Stone Market</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mcmFzdHJ1Y3R1cmU='); return false;">infrastructure</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z292ZXJuYW5jZQ=='); return false;">governance</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mb3JtYXRpb24='); return false;">information</div>
-
-</div>
-<div class="delink listing-description"><a href="../posts/palantir-networks/index.html" class="no-external">
-<p>Seven stones, one compromised node, and the fastest information network in Middle-earth becomes a machine for selling curated despair. A cautionary tale for network designers.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../posts/palantir-networks/index.html" class="no-external">
-<div class="listing-date">
-Jul 8, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="aW5mcmFzdHJ1Y3R1cmUlMkNlY29ub21pY3MlMkNnb3Zlcm5hbmNl" data-listing-date-sort="1777939200000" data-listing-file-modified-sort="1788732861354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="307">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../posts/eagles-transport-infrastructure/index.html" class="no-external">Eagles as Critical Transport Infrastructure: Why We Can’t Just Fly Everywhere</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5mcmFzdHJ1Y3R1cmU='); return false;">infrastructure</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbm9taWNz'); return false;">economics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z292ZXJuYW5jZQ=='); return false;">governance</div>
-
-</div>
-<div class="delink listing-description"><a href="../posts/eagles-transport-infrastructure/index.html" class="no-external">
-<p>The Eagles are not a bus service. On sovereign capacity providers, unpriced airlift, and the governance problem of infrastructure that has opinions.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../posts/eagles-transport-infrastructure/index.html" class="no-external">
-<div class="listing-date">
-May 5, 2026
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-
+<p>Having once audited <a href="../../posts/dragon-hoards-monetary-policy/index.html">a dragon’s balance sheet</a>, I considered myself finished with hazardous asset verification. The Barrow-downs, which I passed closer to than I ever intended, present a subtler case: not one large hoard held by one large creditor, but thousands of small estates held in perpetuity by the <em>previous owners</em> — who are dead, disagree, and bite.</p>
+<section id="probate-interrupted" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="probate-interrupted"><span class="header-section-number">1</span> Probate, interrupted</h2>
+<p>The barrows were tombs of the men of Cardolan, furnished in the usual way: the dead interred with their gold, swords, and circlets. Sound custom, terrible succession planning. When the Witch-king seeded the downs with wights, every estate acquired a sitting tenant with an infinite time horizon, no consumption needs, and an unmatched incentive to hold. The result is the purest illiquidity in recorded history: assets untouched for two thousand years, four hundred yards from a road.</p>
+<p>In portfolio terms — and here I defer to <a href="../../posts/rings-as-reserve-assets/index.html">Elrond’s doctrine on counterparties who outlive you</a> — a wight is the limiting case: a counterparty that <em>is</em> the collateral.</p>
+</section>
+<section id="the-liquidity-event" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="the-liquidity-event"><span class="header-section-number">2</span> The liquidity event</h2>
+<p>The dataset contains exactly one successful probate: Tom Bombadil’s intervention, which broke a barrow open, evicted the tenant by song — a legal instrument unavailable to most practitioners — and, crucially, <em>distributed the assets</em>. Treasure was laid on the grass, free to all finders, and blades of Westernesse thereby re-entered circulation, one of which later performed <a href="../../posts/shieldmaidens-labour-market/index.html">a rather important piece of work at Pelennor</a>.</p>
+<p>The economics writes itself: two millennia of zero yield, then a single liquidity event with a social return beyond any audit’s power to state. Dead capital is not merely idle; it is <em>waiting</em>, and what it is waiting for is institutions capable of clearing title.</p>
+</section>
+<section id="the-auditors-note" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="the-auditors-note"><span class="header-section-number">3</span> The auditor’s note</h2>
+<p>Every economy holds barrow-wealth — assets locked by defunct claims, guarded by whatever we have instead of wights: lost deeds, dissolved firms, heirs unknown. The Downs merely make the problem visible and give it teeth. My recommendation is unchanged from the dragon case: value nothing you cannot exit, and be exceedingly polite to whatever is holding the ledger.</p>
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{baggins2026,
+  author = {Baggins, Bilbo},
+  title = {Barrow-Wight {Estates:} {The} {Property} {Rights} of the
+    {Dead}},
+  date = {2026-05-02},
+  url = {https://cynicalcyanide.github.io/leapblog-mock/posts/barrow-wight-estates/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-baggins2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Baggins, Bilbo. 2026. <span>“Barrow-Wight Estates: The Property Rights
+of the Dead.”</span> May 2. <a href="https://cynicalcyanide.github.io/leapblog-mock/posts/barrow-wight-estates/">https://cynicalcyanide.github.io/leapblog-mock/posts/barrow-wight-estates/</a>.
+</div></div></section></div></main> <!-- /main -->
+<div id="leap-comments" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #e4e0d5;">
+  <h2>Comments</h2>
+  <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="CUSDIS_APP_ID_PLACEHOLDER" data-page-id="" data-page-url="" data-page-title="">
+  </div>
+</div>
+<script>
+  (function () {
+    // Move the comments block into the article body (an include-after-body
+    // lands at the end of <body>, below the footer, which is not where
+    // readers expect comments).
+    var holder = document.getElementById("leap-comments");
+    var main = document.getElementById("quarto-document-content");
+    if (main && holder) { main.appendChild(holder); }
+    var t = document.getElementById("cusdis_thread");
+    t.setAttribute("data-page-id", location.pathname);
+    t.setAttribute("data-page-url", location.href);
+    t.setAttribute("data-page-title", document.title);
+    var s = document.createElement("script");
+    s.src = "https://cusdis.com/js/cusdis.es.js";
+    s.async = true;
+    s.defer = true;
+    document.body.appendChild(s);
+  })();
+</script>
+<div id="leap-share" class="leap-share" hidden="">
+  <span class="leap-share-label">Share</span>
+  <a id="ls-x" target="_blank" rel="noopener">X</a>
+  <a id="ls-li" target="_blank" rel="noopener">LinkedIn</a>
+  <a id="ls-em">Email</a>
+  <a id="ls-cp" href="#">Copy link</a>
+</div>
+<div id="leap-quote-pop" class="leap-quote-pop" hidden="">
+  <a id="lq-x" target="_blank" rel="noopener">Post quote on X</a>
+  <a id="lq-cp" href="#">Copy quote</a>
+</div>
+<script>
+(function () {
+  var url = location.href.split("#")[0];
+  var title = document.title;
+  var bar = document.getElementById("leap-share");
+  var tb = document.getElementById("title-block-header");
+  if (tb && bar) { tb.appendChild(bar); bar.hidden = false; }
+
+  document.getElementById("ls-x").href =
+    "https://x.com/intent/post?text=" + encodeURIComponent(title) + "&url=" + encodeURIComponent(url);
+  document.getElementById("ls-li").href =
+    "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+  document.getElementById("ls-em").href =
+    "mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(url);
+  document.getElementById("ls-cp").addEventListener("click", function (e) {
+    e.preventDefault();
+    var el = e.target;
+    navigator.clipboard.writeText(url).then(function () {
+      el.textContent = "Copied!";
+      setTimeout(function () { el.textContent = "Copy link"; }, 1500);
+    });
+  });
+
+  // Medium-style: select any passage to share it as a quote
+  var pop = document.getElementById("leap-quote-pop");
+  var main = document.getElementById("quarto-document-content");
+  if (!main) return;
+  document.addEventListener("mouseup", function () {
+    setTimeout(function () {
+      var sel = window.getSelection();
+      var text = sel ? sel.toString().trim() : "";
+      if (text.length > 3 && text.length < 700 && sel.anchorNode && main.contains(sel.anchorNode)) {
+        var r = sel.getRangeAt(0).getBoundingClientRect();
+        var quote = "“" + text + "”";
+        document.getElementById("lq-x").href =
+          "https://x.com/intent/post?text=" + encodeURIComponent(quote) + "&url=" + encodeURIComponent(url);
+        document.getElementById("lq-cp").onclick = function (e) {
+          e.preventDefault();
+          navigator.clipboard.writeText(quote + " — " + url);
+          pop.hidden = true;
+        };
+        pop.hidden = false;
+        pop.style.top = (window.scrollY + r.top - pop.offsetHeight - 8) + "px";
+        pop.style.left = Math.max(8, window.scrollX + r.left + r.width / 2 - pop.offsetWidth / 2) + "px";
+      } else {
+        pop.hidden = true;
+      }
+    }, 10);
+  });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
