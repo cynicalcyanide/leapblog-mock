@@ -71,6 +71,8 @@ Drop image files into your article's folder and reference them by filename:
 
 The text in brackets becomes the caption. Images travel with the article's folder, so nothing ever breaks when things move.
 
+**Thumbnails have a standard dimension: 16:9, supplied as 1200×675.** The listing thumbnail is set in the header (`image: my-thumb.jpg`) and named after the article's folder if it lives in `assets/thumbs/`. Any size technically works — cards center-crop to 16:9 — but supplying 1200×675 (JPEG, roughly 200–300&nbsp;KB) means what you see is exactly what readers get. A thumbnail is optional; articles without one render as clean text cards.
+
 ### Graphs
 
 Two options:

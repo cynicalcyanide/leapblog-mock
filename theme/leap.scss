@@ -316,8 +316,10 @@ $btn-border-radius: 0;
     &::after { content: ""; position: absolute; inset: 0; }
   }
 }
+// STANDARD THUMBNAIL DIMENSION: 16:9, source files 1200x675.
+// Cards enforce the ratio here; any image is center-cropped to fit.
 .leap-card-image {
-  height: 150px;
+  aspect-ratio: 16 / 9;
   background-size: cover;
   background-position: center;
   border-bottom: 1px solid $leap-ink;
