@@ -54,8 +54,9 @@ leaptheme.watermark(
     fig,
     article="Supply Chains of Middle-earth",
     citation="Gamgee (2026)",
+    title="Lembas output by region, T.A. 3001–3021",
 )
-fig.show()
+leaptheme.show(fig, filename="lembas-output-by-region")
 ```
 
 ::: {.content-visible unless-format="html"}

@@ -3,6 +3,8 @@
 citation: true
 number-sections: true
 
+toc-location: left
+
 format:
   html:
     # Comments (Cusdis) + share bar / select-to-quote. HTML-scoped so the

@@ -1,0 +1,137 @@
+---
+title: "The Auditor's Workbook: Executable Numbers at The Leap Journal"
+description: "Every figure in this journal can carry its own code. A tour of executable blocks: computations, tables, interactive charts, static plots, and a reader-adjustable model."
+author:
+  - name: Bilbo Baggins
+    url: ../../authors/bilbo.html
+date: 2026-08-28
+categories: [data, economics, methods]
+code-fold: false
+---
+
+A respectable journal shows its working. On this site, an article's numbers need not arrive as assertions: the code that produced them can sit in the article, run at publication, and leave its output on the page for any reader — or referee — to inspect. This annex demonstrates the machinery. Everything below is computed when the site builds; nothing is pasted in.
+
+## A plain computation
+
+The simplest block: Python in, numbers out. Suppose the Erebor hoard stood at 618 million gold pieces and dragon custody yields nothing, while the pre-dragon economy grew at a modest 2 percent. The cost of 171 years of zero-velocity custody:
+
+```{python}
+hoard = 618_000_000          # gold pieces, T.A. 2770
+years = 171                  # duration of dragon custody
+growth = 0.02                # counterfactual annual growth
+
+counterfactual = hoard * (1 + growth) ** years
+forgone = counterfactual - hoard
+print(f"Counterfactual value:  {counterfactual/1e9:10.2f} billion")
+print(f"Forgone output:        {forgone/1e9:10.2f} billion gold pieces")
+```
+
+Nearly nineteen billion in forgone output. The dragon, it must be said, slept well.
+
+## A computed table
+
+Data frames render as tables automatically. The regional ledger of the reflation, by recipient:
+
+```{python}
+import pandas as pd
+
+ledger = pd.DataFrame({
+    "Recipient": ["Kingdom under the Mountain", "Dale reconstruction",
+                  "Lake-town relief", "Fourteenth share (audited)",
+                  "Eagles' consideration"],
+    "Share (%)": [52.0, 22.0, 14.5, 7.1, 4.4],
+    "Disbursed by": ["Dáin II", "Bard", "Master's office", "This author", "In kind"],
+})
+ledger["Gold (millions)"] = (ledger["Share (%)"] / 100 * 618).round(1)
+ledger
+```
+
+## An interactive chart, in house style
+
+The standard journal theme applies itself: jagged lines, dots at every data point, hover crosshairs, the wordmark, and a download button that exports the graph complete with title, legend, axes and citation.
+
+```{python}
+#| label: fig-velocity
+#| fig-cap: "Monetary velocity around the reflation of 2941. Fictional data, as is traditional in this journal."
+import sys; sys.path.insert(0, "../../theme")
+import leaptheme
+import plotly.express as px
+
+years = list(range(2935, 2952))
+velocity = [0.31, 0.30, 0.31, 0.29, 0.30, 0.28, 0.62,
+            1.85, 2.41, 2.20, 1.96, 1.78, 1.66, 1.58, 1.52, 1.49, 1.47]
+fig = px.line(x=years, y=velocity,
+              labels={"x": "Third Age year", "y": "Velocity of gold (turnover/yr)"})
+leaptheme.watermark(fig, article="The Auditor's Workbook",
+                    citation="Baggins (2026)",
+                    title="The reflation of 2941: velocity of gold")
+leaptheme.show(fig, filename="velocity-of-gold-2941")
+```
+
+## A static plot
+
+Not every figure needs interactivity. Matplotlib output lands as a plain image — which also travels into the article's PDF:
+
+```{python}
+#| label: fig-meals
+#| fig-cap: "Meals per day and observed contentment across selected populations. Method: asking."
+import matplotlib.pyplot as plt
+
+pops = ["Elves", "Men", "Dwarves", "Hobbits"]
+meals = [2, 3, 4, 6.5]
+contentment = [6.1, 4.8, 5.5, 9.2]
+
+fig_m, ax = plt.subplots(figsize=(7, 4))
+ax.scatter(meals, contentment, s=90, color="#2e5d43", zorder=3)
+for p, x, y in zip(pops, meals, contentment):
+    ax.annotate(p, (x, y), textcoords="offset points", xytext=(8, 4))
+ax.set_xlabel("Meals per day")
+ax.set_ylabel("Contentment (0–10)")
+ax.grid(color="#e4e0d5", zorder=0)
+for side in ("top", "right"):
+    ax.spines[side].set_visible(False)
+plt.tight_layout()
+plt.show()
+```
+
+## A model the reader can adjust
+
+Observable JS blocks run in the reader's browser, so the reader can hold the slider. Set the dragon's counterfactual growth rate yourself and watch the forgone-output estimate move:
+
+::: {.content-visible when-format="html"}
+
+```{ojs}
+//| echo: true
+viewof g = Inputs.range([0.0, 0.05], {value: 0.02, step: 0.005,
+  label: "Counterfactual growth rate"})
+```
+
+```{ojs}
+//| echo: false
+{
+  const hoard = 618e6, years = 171;
+  const data = Array.from({length: years + 1}, (_, t) => ({
+    year: 2770 + t,
+    value: hoard * Math.pow(1 + g, t) / 1e9,
+  }));
+  return Plot.plot({
+    style: {fontFamily: "IBM Plex Mono, monospace", background: "transparent"},
+    y: {label: "Hoard value (billions, counterfactual)"},
+    x: {label: "Third Age year", tickFormat: ""},
+    marks: [
+      Plot.lineY(data, {x: "year", y: "value", stroke: "#2e5d43", strokeWidth: 2}),
+      Plot.dot(data.filter(d => d.year % 20 === 10), {x: "year", y: "value", fill: "#a63d40"}),
+    ],
+  });
+}
+```
+
+:::
+
+::: {.content-visible unless-format="html"}
+*(The adjustable model is available in the web version of this article.)*
+:::
+
+## The point
+
+None of this required special tooling from the author beyond writing the code in the article file. When the numbers are wrong, the code is wrong, visibly — and a correction is a one-line edit that republishes the article, its charts, its tables, and its PDF together. Auditing, at last, made pleasant.

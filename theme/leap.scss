@@ -82,11 +82,32 @@ $btn-border-radius: 0;
   .navbar-brand {
     font-family: $leap-font-display;
     font-weight: 700;
-    font-size: 1.35rem;
+    font-size: 1.7rem;
   }
   .nav-link {
     font-family: $leap-font-mono;
+    font-size: 1.05rem;
+  }
+}
+
+// ---------- Article TOC: left side, vertically centered, larger type ----------
+#quarto-sidebar {
+  nav#TOC {
+    position: sticky;
+    top: 30vh;
+    margin-top: 28vh;
+  }
+  #toc-title {
+    font-family: $leap-font-mono;
     font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  #TOC .nav-link {
+    font-size: 1rem;
+    line-height: 1.45;
+    color: $leap-ink-soft;
+    &.active { color: $leap-accent; font-weight: 600; }
   }
 }
 
@@ -604,3 +625,20 @@ div.quarto-post {
   font-family: $leap-font-mono;
   font-size: 0.78rem;
 }
+
+// ---------- Small screens ----------
+@media (max-width: 640px) {
+  .leap-hero-body { padding: 1.25rem 1.1rem 1rem 1.1rem; }
+  .leap-hero-desc { font-size: 1rem; }
+  .leap-event-main {
+    padding: 1.2rem 1.1rem 1rem 1.1rem;
+    h3 { font-size: 1.4rem; }
+  }
+  .leap-subscribe { padding: 1.1rem; }
+  .navbar .navbar-brand { font-size: 1.35rem; }
+  .quarto-title h1.title { font-size: 1.8rem; }
+  main p { font-size: 1rem; }
+}
+// Keep wide content scrollable inside its own box on any device
+.cell-output-display, .quarto-figure { max-width: 100%; overflow-x: auto; }
+table { max-width: 100%; }

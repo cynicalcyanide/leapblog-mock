@@ -55,9 +55,27 @@ pio.templates["leap"] = go.layout.Template(
 pio.templates.default = "leap"
 
 
-def watermark(fig, article, citation):
-    """Stamp the journal watermark: a faint diagonal wordmark across the
-    plot, and a caption line with the article name and citation below it."""
+def watermark(fig, article, citation, title=None):
+    """Finalize a figure in house style.
+
+    - lines become 'jagged' (strictly linear, no smoothing) with dot markers
+      at every data point
+    - optional graph title (part of the figure, so it survives download)
+    - faint diagonal wordmark across the plot
+    - caption line with article name and citation below the axes
+
+    Everything stamped here is part of the figure itself, so the camera
+    (download) button exports it all: title, legend, axes, citation."""
+    fig.update_traces(
+        selector=dict(type="scatter"),
+        mode="lines+markers",
+        marker=dict(size=5, line=dict(width=1, color=PAPER)),
+        line=dict(shape="linear", width=2),
+    )
+    if title:
+        fig.update_layout(
+            title=dict(text=title, font=dict(family=SERIF, size=17), x=0.5)
+        )
     fig.add_annotation(
         text="THE LEAP JOURNAL",
         xref="paper", yref="paper", x=0.5, y=0.5,
@@ -71,3 +89,18 @@ def watermark(fig, article, citation):
         font=dict(family=MONO, size=9, color="rgba(31,42,36,0.5)"),
     )
     return fig
+
+
+def show(fig, filename="leap-journal-chart"):
+    """Display with the house toolbar config: the camera button downloads a
+    2x-resolution PNG named `filename`, carrying title, legend, axes and the
+    citation line."""
+    fig.show(config={
+        "displaylogo": False,
+        "modeBarButtonsToRemove": ["lasso2d", "select2d", "autoScale2d"],
+        "toImageButtonOptions": {
+            "format": "png",
+            "scale": 2,
+            "filename": filename,
+        },
+    })
