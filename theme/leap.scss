@@ -142,12 +142,17 @@ $btn-border-radius: 0;
 }
 
 // ---------- Hero (latest article) ----------
-.leap-hero-link, .leap-hero-link:hover { text-decoration: none; color: inherit; }
 .leap-hero {
+  position: relative;
   border: 2px solid $leap-ink;
   background: $leap-surface;
   display: flex;
   flex-direction: column;
+  .leap-hero-title a {
+    color: inherit;
+    text-decoration: none;
+    &::after { content: ""; position: absolute; inset: 0; }
+  }
 }
 .leap-hero-image {
   min-height: 260px;
@@ -198,19 +203,24 @@ $btn-border-radius: 0;
 
 .leap-events { display: flex; flex-direction: column; height: 100%; }
 .leap-event-main {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 1;
   border: 2px solid $leap-ink;
   background: $leap-highlight;
   padding: 1.75rem 2rem 1.25rem 2rem;
-  text-decoration: none;
   color: $leap-ink;
   h3 {
     font-family: $leap-font-display;
     font-size: 1.9rem;
     line-height: 1.15;
     margin: 0 0 0.9rem 0;
+    a {
+      color: inherit;
+      text-decoration: none;
+      &::after { content: ""; position: absolute; inset: 0; }
+    }
   }
   p { font-size: 1.02rem; margin-bottom: 0; }
   &:hover { outline: 2px solid $leap-ink; }
@@ -292,13 +302,19 @@ $btn-border-radius: 0;
   @media (max-width: 640px) { grid-template-columns: 1fr; }
 }
 .leap-card {
+  position: relative;  // anchor for the stretched title link
   border: 2px solid $leap-ink;
   background: $leap-surface;
   display: flex;
   flex-direction: column;
-  text-decoration: none;
   color: $leap-ink;
-  &:hover { box-shadow: 5px 5px 0 $leap-ink; color: $leap-ink; }
+  &:hover { box-shadow: 5px 5px 0 $leap-ink; }
+  h3 a {
+    color: $leap-ink;
+    text-decoration: none;
+    // stretched link: the whole card is clickable
+    &::after { content: ""; position: absolute; inset: 0; }
+  }
 }
 .leap-card-image {
   height: 150px;

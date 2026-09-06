@@ -1,15 +1,5 @@
 <% const item = items[0]; %>
 <% if (item) { %>
 <% const author = Array.isArray(item.author) ? item.author.join(" & ") : (item.author || ""); %>
-<a href="<%- item.path %>" class="leap-hero-link"><div class="leap-hero">
-<% if (item.image) { %>
-<div class="leap-hero-image" style="background-image:url('<%- item.image %>')"></div>
-<% } %>
-<div class="leap-hero-body"><div class="leap-kicker">Latest article</div>
-<h2 class="leap-hero-title"><%= item.title %></h2>
-<div class="leap-byline">Words by <strong><%= author %></strong></div>
-<p class="leap-hero-desc"><%= item.description %></p>
-<div class="leap-readmore">Read more &rarr;</div></div>
-<div class="leap-card-footer"><% (item.categories || []).slice(0, 3).forEach(function (c) { %><span class="leap-cat"><%= c %></span><% }); %></div>
-</div></a>
+<div class="leap-hero"><% if (item.image) { %><div class="leap-hero-image" style="background-image:url('<%- item.image %>')"></div><% } %><div class="leap-hero-body"><div class="leap-kicker">Latest article</div><h2 class="leap-hero-title"><a href="<%- item.path %>"><%= item.title %></a></h2><div class="leap-byline">Words by <strong><%= author %></strong></div><p class="leap-hero-desc"><%= item.description %></p><div class="leap-readmore">Read more &rarr;</div></div><div class="leap-card-footer"><% (item.categories || []).slice(0, 3).forEach(function (c) { %><span class="leap-cat"><%= c %></span><% }); %></div></div>
 <% } %>
