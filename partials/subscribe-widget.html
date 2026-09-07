@@ -1,0 +1,32 @@
+<!-- Site-wide subscribe widget (fixed, right side, desktop only).
+     COLLECTION ENDPOINT: set window.LEAP_SUBSCRIBE_ENDPOINT below to a
+     form backend (Google Form formResponse URL, Formspree, or listmonk's
+     /subscription endpoint when it exists). Empty = demo mode. -->
+<script>
+  window.LEAP_SUBSCRIBE_ENDPOINT = window.LEAP_SUBSCRIBE_ENDPOINT || "";
+  window.leapSubscribe = function (form) {
+    var email = form.querySelector('input[type="email"]').value;
+    var done = function (msg) {
+      form.innerHTML = '<div class="leap-subscribe-done">' + msg + "</div>";
+    };
+    var ep = window.LEAP_SUBSCRIBE_ENDPOINT;
+    if (!ep) {
+      done("Thanks! (Demo mode — the newsletter backend isn't connected yet, so this address wasn't stored.)");
+      return false;
+    }
+    var data = new FormData();
+    data.append("email", email);
+    fetch(ep, {method: "POST", mode: "no-cors", body: data})
+      .then(function () { done("Thanks — you're on the list!"); })
+      .catch(function () { done("Something went wrong; please try again later."); });
+    return false;
+  };
+</script>
+<div id="leap-side-subscribe" class="leap-side-subscribe">
+  <div class="leap-kicker">Newsletter</div>
+  <p>New articles, straight to your inbox.</p>
+  <form onsubmit="return leapSubscribe(this);">
+    <input type="email" placeholder="you@bagend.me" required aria-label="Email address">
+    <button type="submit">Subscribe</button>
+  </form>
+</div>

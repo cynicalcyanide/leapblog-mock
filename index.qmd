@@ -24,32 +24,23 @@ listing:
 
 ## Announcements {.leap-section-heading}
 
-::: {.leap-mid-row}
-
 ::: {#events}
 :::
 
 ```{=html}
-<!-- Subscribe box: front-end only for now. When the newsletter phase lands
-     (listmonk), point the form action at its /subscription endpoint. -->
-<div class="leap-subscribe">
-  <h3>Get new articles by owl&hellip; or email</h3>
-  <p>Every new article, straight to your inbox. No spam, no forwarding to Mordor.</p>
-  <form id="leap-subscribe-form">
-    <input type="email" name="email" placeholder="you@bagend.me" required
-           aria-label="Email address">
+<!-- Full-width subscribe section; submission handled by leapSubscribe()
+     from partials/subscribe-widget.html (loaded site-wide). -->
+<div class="leap-subscribe-band">
+  <div class="leap-subscribe-band-text">
+    <h2>Get new articles by owl&hellip; or email</h2>
+    <p>Every article, straight to your inbox the morning it publishes. No spam, no forwarding to Mordor, unsubscribe whenever you like.</p>
+  </div>
+  <form class="leap-subscribe-band-form" onsubmit="return leapSubscribe(this);">
+    <input type="email" name="email" placeholder="you@bagend.me" required aria-label="Email address">
     <button type="submit">Subscribe</button>
   </form>
-  <script>
-    document.getElementById("leap-subscribe-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      this.innerHTML = '<div class="leap-subscribe-done">Thanks! Subscriptions go live when the newsletter launches &mdash; this mock just says hello.</div>';
-    });
-  </script>
 </div>
 ```
-
-:::
 
 ## All articles {.leap-section-heading}
 

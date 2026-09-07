@@ -266,6 +266,116 @@ $btn-border-radius: 0;
   &:hover { background: $leap-highlight; }
 }
 
+// Full-width subscribe band (home page)
+.leap-subscribe-band {
+  border: 2px solid $leap-ink;
+  background: $leap-accent;
+  color: $leap-paper;
+  margin: 2.5rem 0;
+  padding: 2.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  .leap-subscribe-band-text { flex: 1.4; }
+  h2 {
+    font-family: $leap-font-display;
+    color: $leap-paper;
+    font-size: 2rem;
+    margin: 0 0 0.6rem 0;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  p { margin: 0; opacity: 0.85; font-size: 1.05rem; }
+  form {
+    flex: 1;
+    display: flex;
+    gap: 0.6rem;
+    input[type="email"] {
+      flex: 1;
+      font-family: $leap-font-mono;
+      font-size: 0.9rem;
+      border: 2px solid $leap-ink;
+      background: $leap-paper;
+      color: $leap-ink;
+      padding: 0.7rem 0.9rem;
+      &:focus { outline: 2px solid $leap-paper; }
+    }
+    button {
+      font-family: $leap-font-mono;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: $leap-ink;
+      color: $leap-paper;
+      border: 2px solid $leap-ink;
+      padding: 0.7rem 1.4rem;
+      cursor: pointer;
+      &:hover { background: $leap-paper; color: $leap-ink; }
+    }
+  }
+  .leap-subscribe-done {
+    font-family: $leap-font-mono;
+    font-size: 0.9rem;
+    border: 1px solid $leap-paper;
+    padding: 0.8rem;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 1.5rem 1.25rem;
+    h2 { font-size: 1.5rem; }
+  }
+}
+
+// Site-wide side subscribe widget (fixed, right edge, desktop only)
+.leap-side-subscribe {
+  position: fixed;
+  right: 1rem;
+  top: 40vh;
+  width: 215px;
+  z-index: 900;
+  border: 2px solid $leap-ink;
+  background: $leap-surface;
+  padding: 0.9rem 1rem;
+  box-shadow: 5px 5px 0 $leap-ink;
+  p {
+    font-size: 0.85rem;
+    color: $leap-ink-soft;
+    margin: 0.2rem 0 0.6rem 0;
+  }
+  input[type="email"] {
+    font-family: $leap-font-mono;
+    font-size: 0.78rem;
+    border: 1px solid $leap-ink;
+    background: $leap-paper;
+    padding: 0.45rem 0.6rem;
+    width: 100%;
+    margin-bottom: 0.45rem;
+    &:focus { outline: 2px solid $leap-accent; }
+  }
+  button {
+    font-family: $leap-font-mono;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: $leap-ink;
+    color: $leap-paper;
+    border: none;
+    padding: 0.45rem;
+    width: 100%;
+    cursor: pointer;
+    &:hover { background: $leap-accent; }
+  }
+  .leap-subscribe-done {
+    font-family: $leap-font-mono;
+    font-size: 0.75rem;
+    border: 1px solid $leap-ink;
+    background: $leap-highlight;
+    padding: 0.5rem;
+  }
+  // Out of the way on smaller screens (the home band + footer cover mobile)
+  @media (max-width: 1250px) { display: none; }
+}
+
 // Subscribe box
 .leap-subscribe {
   border: 2px solid $leap-ink;

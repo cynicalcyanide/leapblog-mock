@@ -36,6 +36,8 @@ format:
     code-copy: true
     link-external-newwindow: true
     lang: en
+    include-after-body:
+      - partials/subscribe-widget.html
 
 execute:
   freeze: auto
