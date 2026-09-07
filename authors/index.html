@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-40c7b7b19bb5a407550c3ca0508abdb3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-800b0ee32ac6ce72cae08c5172ace3e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-953b8cd3e16ddcdadeb8e8a4d2d9570a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -215,7 +215,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1788756910286" data-listing-reading-time-sort="1" data-listing-word-count-sort="45">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1788758484756" data-listing-reading-time-sort="1" data-listing-word-count-sort="45">
 <a href="../authors/bilbo.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -231,7 +231,7 @@ Bilbo Baggins
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1788756910286" data-listing-reading-time-sort="1" data-listing-word-count-sort="46">
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1788758484757" data-listing-reading-time-sort="1" data-listing-word-count-sort="46">
 <a href="../authors/elrond.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -247,7 +247,7 @@ Elrond Half-elven
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1788756910286" data-listing-reading-time-sort="1" data-listing-word-count-sort="57">
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1788758484757" data-listing-reading-time-sort="1" data-listing-word-count-sort="57">
 <a href="../authors/gandalf.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -263,7 +263,7 @@ Gandalf the Grey
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1788756910286" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1788758484757" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
 <a href="../authors/samwise.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -279,7 +279,7 @@ Samwise Gamgee
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1788756910286" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1788758484757" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
 <a href="../authors/eowyn.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -323,6 +323,7 @@ Samwise Gamgee
   };
 </script>
 <div id="leap-side-subscribe" class="leap-side-subscribe">
+  <button id="leap-side-close" class="leap-side-close" aria-label="Close">×</button>
   <div class="leap-kicker">Newsletter</div>
   <p>New articles, straight to your inbox.</p>
   <form onsubmit="return leapSubscribe(this);">
@@ -330,6 +331,24 @@ Samwise Gamgee
     <button type="submit">Subscribe</button>
   </form>
 </div>
+<script>
+(function () {
+  var w = document.getElementById("leap-side-subscribe");
+  // Not on pages that already carry the full subscribe band (the home page),
+  // and stay closed for the session once dismissed.
+  if (document.querySelector(".leap-subscribe-band") ||
+      sessionStorage.getItem("leap-subscribe-closed") === "1") {
+    w.remove();
+    return;
+  }
+  document.body.classList.add("has-side-subscribe");
+  document.getElementById("leap-side-close").addEventListener("click", function () {
+    w.remove();
+    document.body.classList.remove("has-side-subscribe");
+    sessionStorage.setItem("leap-subscribe-closed", "1");
+  });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

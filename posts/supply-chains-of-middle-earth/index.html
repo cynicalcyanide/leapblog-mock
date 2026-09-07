@@ -83,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-40c7b7b19bb5a407550c3ca0508abdb3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-800b0ee32ac6ce72cae08c5172ace3e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-953b8cd3e16ddcdadeb8e8a4d2d9570a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -368,6 +368,7 @@ Logistics, and the Last Homely Warehouse.”</span> September 1. <a href="https:
   };
 </script>
 <div id="leap-side-subscribe" class="leap-side-subscribe">
+  <button id="leap-side-close" class="leap-side-close" aria-label="Close">×</button>
   <div class="leap-kicker">Newsletter</div>
   <p>New articles, straight to your inbox.</p>
   <form onsubmit="return leapSubscribe(this);">
@@ -375,6 +376,24 @@ Logistics, and the Last Homely Warehouse.”</span> September 1. <a href="https:
     <button type="submit">Subscribe</button>
   </form>
 </div>
+<script>
+(function () {
+  var w = document.getElementById("leap-side-subscribe");
+  // Not on pages that already carry the full subscribe band (the home page),
+  // and stay closed for the session once dismissed.
+  if (document.querySelector(".leap-subscribe-band") ||
+      sessionStorage.getItem("leap-subscribe-closed") === "1") {
+    w.remove();
+    return;
+  }
+  document.body.classList.add("has-side-subscribe");
+  document.getElementById("leap-side-close").addEventListener("click", function () {
+    w.remove();
+    document.body.classList.remove("has-side-subscribe");
+    sessionStorage.setItem("leap-subscribe-closed", "1");
+  });
+})();
+</script>
 <div id="leap-comments" style="margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid #e4e0d5;">
   <h2>Comments</h2>
   <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="0747d503-a99b-4997-82f1-bf8650cdbf2b" data-page-id="" data-page-url="" data-page-title="">
