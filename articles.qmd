@@ -13,5 +13,41 @@ listing:
 
 ## All articles {.leap-section-heading}
 
+```{=html}
+<div id="leap-filter-chip" class="leap-filter-chip" hidden>
+  Filtered by: <strong><span id="leap-filter-name"></span></strong>
+  <a href="#" id="leap-filter-clear">clear &times;</a>
+</div>
+```
+
 ::: {#all-articles}
 :::
+
+```{=html}
+<script>
+(function () {
+  function applyFilter() {
+    var m = location.hash.match(/category=([^&]+)/);
+    var cat = m ? decodeURIComponent(m[1]) : null;
+    document.querySelectorAll(".leap-grid .leap-card").forEach(function (card) {
+      var cats = (card.dataset.categories || "").split("|");
+      card.style.display = (!cat || cats.indexOf(cat) !== -1) ? "" : "none";
+    });
+    var chip = document.getElementById("leap-filter-chip");
+    if (cat) {
+      chip.hidden = false;
+      document.getElementById("leap-filter-name").textContent = cat;
+    } else {
+      chip.hidden = true;
+    }
+  }
+  document.getElementById("leap-filter-clear").addEventListener("click", function (e) {
+    e.preventDefault();
+    history.replaceState(null, "", location.pathname);
+    applyFilter();
+  });
+  window.addEventListener("hashchange", applyFilter);
+  applyFilter();
+})();
+</script>
+```

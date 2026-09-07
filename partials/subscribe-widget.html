@@ -23,6 +23,7 @@
   };
 </script>
 <div id="leap-side-subscribe" class="leap-side-subscribe">
+  <button id="leap-side-close" class="leap-side-close" aria-label="Close">&times;</button>
   <div class="leap-kicker">Newsletter</div>
   <p>New articles, straight to your inbox.</p>
   <form onsubmit="return leapSubscribe(this);">
@@ -30,3 +31,21 @@
     <button type="submit">Subscribe</button>
   </form>
 </div>
+<script>
+(function () {
+  var w = document.getElementById("leap-side-subscribe");
+  // Not on pages that already carry the full subscribe band (the home page),
+  // and stay closed for the session once dismissed.
+  if (document.querySelector(".leap-subscribe-band") ||
+      sessionStorage.getItem("leap-subscribe-closed") === "1") {
+    w.remove();
+    return;
+  }
+  document.body.classList.add("has-side-subscribe");
+  document.getElementById("leap-side-close").addEventListener("click", function () {
+    w.remove();
+    document.body.classList.remove("has-side-subscribe");
+    sessionStorage.setItem("leap-subscribe-closed", "1");
+  });
+})();
+</script>

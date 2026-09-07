@@ -144,12 +144,42 @@ $btn-border-radius: 0;
   text-transform: capitalize;
   border-right: 1px solid $leap-ink;
   padding: 0.3rem 0.8rem;
+  color: $leap-ink;
+  text-decoration: none;
+  position: relative;  // stacks above the card's stretched link
+  z-index: 2;
+  &:hover { background: $leap-ink; color: $leap-paper; }
+}
+
+// Filter chip shown on the Articles page when a label filter is active
+.leap-filter-chip {
+  font-family: $leap-font-mono;
+  font-size: 0.85rem;
+  border: 2px solid $leap-ink;
+  background: $leap-highlight;
+  display: inline-flex;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  margin-bottom: 1.25rem;
+  a { font-weight: 600; }
 }
 
 .leap-card-footer {
   border-top: 1px solid $leap-ink;
   min-height: 1.9rem;
+  margin-top: auto;  // pinned to the card bottom
 }
+
+// Card text: always left-aligned, never justified/indented (article-page
+// typography must not leak into listing cards). Only READ MORE is right.
+.leap-card-body p, .leap-hero-desc, .leap-event-main p,
+.leap-card-head h3, .leap-hero-title, .leap-event-main h3 {
+  text-align: left !important;
+  text-indent: 0 !important;
+  hyphens: none !important;
+}
+.leap-readmore { text-align: right !important; }
 
 .leap-section-heading {
   font-family: $leap-font-mono !important;
@@ -375,6 +405,23 @@ $btn-border-radius: 0;
   // Out of the way on smaller screens (the home band + footer cover mobile)
   @media (max-width: 1250px) { display: none; }
 }
+.leap-side-close {
+  position: absolute;
+  top: 0.15rem;
+  right: 0.35rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: $leap-ink-soft;
+  cursor: pointer;
+  padding: 0.2rem;
+  &:hover { color: $leap-ink; }
+}
+// Reserve space for the side widget so it never overlaps content
+@media (min-width: 1250px) {
+  body.has-side-subscribe #quarto-content { padding-right: 250px; }
+}
 
 // Subscribe box
 .leap-subscribe {
@@ -428,7 +475,7 @@ $btn-border-radius: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  align-items: start;
+  align-items: stretch;  // all cards identical height (clamps + image slot make this exact)
   @media (max-width: 991px) { grid-template-columns: repeat(2, 1fr); }
   @media (max-width: 640px) { grid-template-columns: 1fr; }
 }
@@ -454,11 +501,26 @@ $btn-border-radius: 0;
 }
 // STANDARD THUMBNAIL DIMENSION: 16:9, source files 1200x675.
 // Cards enforce the ratio here; any image is center-cropped to fit.
+// Cards WITHOUT a thumbnail get the same 16:9 slot as a placeholder,
+// so every card in the grid has identical dimensions.
 .leap-card-image {
   aspect-ratio: 16 / 9;
   background-size: cover;
   background-position: center;
   border-bottom: 1px solid $leap-ink;
+  flex-shrink: 0;
+}
+.leap-card-image--empty {
+  background: $leap-highlight;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    font-family: $leap-font-display;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: rgba(31, 42, 36, 0.25);
+  }
 }
 // Uniform card dimensions: title fixed at 2 lines, byline at 1, description
 // at 3 — so every card WITH a thumbnail is one standard size and every card
