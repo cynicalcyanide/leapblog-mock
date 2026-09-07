@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-40c7b7b19bb5a407550c3ca0508abdb3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-297d47ea64c1c7b23050bf152528b029.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-800b0ee32ac6ce72cae08c5172ace3e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -276,7 +276,6 @@ Read more →
 </div>
 <section id="announcements" class="level2 leap-section-heading">
 <h2 class="leap-section-heading" data-anchor-id="announcements">Announcements</h2>
-<div class="leap-mid-row">
 <div id="listing-events" class="quarto-listing quarto-listing-container-custom">
 <div class="leap-events">
 <div class="leap-event-main">
@@ -299,22 +298,17 @@ Details →
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
-<!-- Subscribe box: front-end only for now. When the newsletter phase lands
-     (listmonk), point the form action at its /subscription endpoint. -->
-<div class="leap-subscribe">
-  <h3>Get new articles by owl… or email</h3>
-  <p>Every new article, straight to your inbox. No spam, no forwarding to Mordor.</p>
-  <form id="leap-subscribe-form">
+<!-- Full-width subscribe section; submission handled by leapSubscribe()
+     from partials/subscribe-widget.html (loaded site-wide). -->
+<div class="leap-subscribe-band">
+  <div class="leap-subscribe-band-text">
+    <h2>Get new articles by owl… or email</h2>
+    <p>Every article, straight to your inbox the morning it publishes. No spam, no forwarding to Mordor, unsubscribe whenever you like.</p>
+  </div>
+  <form class="leap-subscribe-band-form" onsubmit="return leapSubscribe(this);">
     <input type="email" name="email" placeholder="you@bagend.me" required="" aria-label="Email address">
     <button type="submit">Subscribe</button>
   </form>
-  <script>
-    document.getElementById("leap-subscribe-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      this.innerHTML = '<div class="leap-subscribe-done">Thanks! Subscriptions go live when the newsletter launches &mdash; this mock just says hello.</div>';
-    });
-  </script>
-</div>
 </div>
 </section>
 <section id="all-articles" class="level2 leap-section-heading">
@@ -585,6 +579,38 @@ Read more →
 </section>
 
 </main> <!-- /main -->
+<!-- Site-wide subscribe widget (fixed, right side, desktop only).
+     COLLECTION ENDPOINT: set window.LEAP_SUBSCRIBE_ENDPOINT below to a
+     form backend (Google Form formResponse URL, Formspree, or listmonk's
+     /subscription endpoint when it exists). Empty = demo mode. -->
+<script>
+  window.LEAP_SUBSCRIBE_ENDPOINT = window.LEAP_SUBSCRIBE_ENDPOINT || "";
+  window.leapSubscribe = function (form) {
+    var email = form.querySelector('input[type="email"]').value;
+    var done = function (msg) {
+      form.innerHTML = '<div class="leap-subscribe-done">' + msg + "</div>";
+    };
+    var ep = window.LEAP_SUBSCRIBE_ENDPOINT;
+    if (!ep) {
+      done("Thanks! (Demo mode — the newsletter backend isn't connected yet, so this address wasn't stored.)");
+      return false;
+    }
+    var data = new FormData();
+    data.append("email", email);
+    fetch(ep, {method: "POST", mode: "no-cors", body: data})
+      .then(function () { done("Thanks — you're on the list!"); })
+      .catch(function () { done("Something went wrong; please try again later."); });
+    return false;
+  };
+</script>
+<div id="leap-side-subscribe" class="leap-side-subscribe">
+  <div class="leap-kicker">Newsletter</div>
+  <p>New articles, straight to your inbox.</p>
+  <form onsubmit="return leapSubscribe(this);">
+    <input type="email" placeholder="you@bagend.me" required="" aria-label="Email address">
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {
