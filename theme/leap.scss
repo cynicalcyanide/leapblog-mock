@@ -49,6 +49,38 @@ $btn-border-radius: 0;
 
 /*-- scss:rules --*/
 
+// ---------- Large screens: use the space, scale the type ----------
+// Root font-size drives every rem on the site, so the whole design
+// (navbar, cards, headings) scales up on big monitors.
+@media (min-width: 1500px) { html:root { --bs-root-font-size: 18px; font-size: 18px; } }
+@media (min-width: 1900px) { html:root { --bs-root-font-size: 19.5px; font-size: 19.5px; } }
+@media (min-width: 2300px) { html:root { --bs-root-font-size: 21px; font-size: 21px; } }
+
+// Listing pages (page-layout: full): let content flex to the screen
+// instead of Quarto's capped column + elastic gutters.
+@media (min-width: 1450px) {
+  #quarto-content.page-layout-full {
+    grid-template-columns:
+      [screen-start] 3rem
+      [screen-start-inset] 0
+      [page-start page-start-inset] 0
+      [body-start-outset] 0
+      [body-start] 0
+      [body-content-start] 1fr
+      [body-content-end] 0
+      [body-end] 0
+      [body-end-outset] 0
+      [page-end-inset] 0
+      [page-end] 0
+      [screen-end-inset] 3rem
+      [screen-end] !important;
+  }
+}
+// Very wide screens: four columns of cards instead of ever-larger ones
+@media (min-width: 2100px) {
+  .leap-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 // Latin Modern (the Computer Modern successor LaTeX uses), served from the
